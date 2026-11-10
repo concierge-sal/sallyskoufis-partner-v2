@@ -44,3 +44,6 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 
 - Opening ear cuff is now a real-looking 360 spin (Higgsfield, 10 Nov 2026) — x/edge-spin.mp4 / x/edge-spin-m.mp4, background crushed to black + screen blend so it sits on the navy; plays forward then back so it loops seamlessly. AI-generated: Sally to confirm every angle matches the real piece.
 - Ring: 360 spin (Higgsfield take 2, correct labradorite colour) x/lab-spin.mp4 / x/lab-spin-m.mp4, every frame a keyframe; scroll turns the ring a full 360 and lands on the front, then dissolves into the real photo for the dive. AI-generated: Sally to confirm.
+
+- Ring zoom now pushes into the spin video itself (1080px all-keyframe x/lab-spin.mp4), with a soft blur into the water; the photo handover is gone.
+- Reviews: all 8 MYER reviews — big quote rotates every ~3.6s while on screen + a moving strip of review cards. Add more (esp. US) to the REV list in index.html.
