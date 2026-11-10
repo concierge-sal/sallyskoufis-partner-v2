@@ -30,3 +30,9 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Previous v2.1 kept at /classic
 - Film: x/dive.mp4 (32s, 1280px, keyframe every 6 frames so scrubbing is smooth). Headings are placeholders until Jordie's five headings arrive — edit the `.dh` blocks in index.html
 - TODO: handmade production-reel scene, magazine logo rail, Jordie's email
+
+## v3.1 (10 Nov 2026)
+- Smoother: scroll is eased (time-based, same feel on any device); film re-cut with 1.8s dissolves and every frame a keyframe for clean scrubbing (x/dive.mp4 desktop 18MB, x/dive-m.mp4 phone 6MB)
+- Ear cuff and ring crossfade; the labradorite dissolves straight into the underwater film
+- Numbers now a "US snapshot": each with a one-line explanation + comparison bar, building one by one then holding together
+- New handmade scene (x/made.webp). NOTE: source file is iStock — confirm licence or swap for production-reel footage
