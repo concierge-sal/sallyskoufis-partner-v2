@@ -49,3 +49,5 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Reviews: all 8 MYER reviews — big quote rotates every ~3.6s while on screen + a moving strip of review cards. Add more (esp. US) to the REV list in index.html.
 
 - Film re-cut (x/dive.mp4, 34.7s): gem → ocean wave rolls and crashes into white foam (forward, p2 3:07) → underwater bubbles + light (p1 1:21.6, slowed 2x) → ringed hands → face → fabric → swim up → surfacing. Headlines re-timed to sit over the model shots.
+
+- Ending: brand end card from Drive ("2026-09-16_Sally-Skoufis_Endcard_Edncard_v01") — black silk, SS mark builds as you scroll, then the choices appear over it. x/endcard.mp4 / x/endcard-m.mp4 (all-keyframe). Phone: full-frame vertical; desktop: mark framed in the top half over blurred silk.
