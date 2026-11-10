@@ -36,3 +36,5 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Ear cuff and ring crossfade; the labradorite dissolves straight into the underwater film
 - Numbers now a "US snapshot": each with a one-line explanation + comparison bar, building one by one then holding together
 - Handmade scene now uses our own Production Reel footage (x/made.mp4, phone crop x/made-m.mp4), looping while on screen
+
+- Reviews scene: background loop of our own campaign footage (model wearing the pieces, x/rev.mp4 / x/rev-m.mp4), labelled "Campaign film" so it is not mistaken for the reviewers. Do NOT add actors or AI people speaking the quotes: that would be a fabricated testimonial. Real customer video/photo (with written permission) can go here later.
