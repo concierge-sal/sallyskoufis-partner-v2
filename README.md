@@ -41,3 +41,6 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 
 - Ring turn: real two-photo turn of the labradorite Vigour ring (front x/lab.webp ↔ side x/lab-side.webp from Drive "Vigour-Ring-side-3"), driven by scroll, before the dive into the stone. Ear cuff: gentle sway + light sweep (no side photo found yet).
 - Same Drive folder has the Vigour side view in 5 stones (labradorite, onyx, moonstone, amethyst, clear quartz) — candidate for a "one design, many stones" moment.
+
+- Opening ear cuff is now a real-looking 360 spin (Higgsfield, 10 Nov 2026) — x/edge-spin.mp4 / x/edge-spin-m.mp4, background crushed to black + screen blend so it sits on the navy; plays forward then back so it loops seamlessly. AI-generated: Sally to confirm every angle matches the real piece.
+- Ring AI spin NOT used: stone came out teal/emerald instead of olive-gold labradorite. Regenerate with tighter colour prompt.
