@@ -13,3 +13,10 @@ Moves to partners.sallyskoufis.com only once final.
 - How it works: "Imagery, attributes, orders & stock fully automated via Shopify"
 
 Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (partner room).
+
+## v2.1 redesign (10 Nov 2026)
+- Opening screen shows US proof first: #2 market, +79%, 0.75% returns, A$490 average order
+- Journey cut to 6 plain-titled slides: The brand · US results · Bestsellers · Fashion credentials · How it's made · Customer reviews
+- Partner room cut from 11 to 8 tabs: Why now · Why us · US performance · Bestsellers · Collections · How it works · Founder · Contact
+- "Download 1-page summary" (SALLY_SKOUFIS_Partner_Summary.pdf) + "Request a call" always visible in the partner room
+- PDF source: rebuild from the onepager HTML if numbers change

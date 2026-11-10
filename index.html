@@ -41,7 +41,7 @@ a{color:inherit}
 .mark sup{font-size:.34em;letter-spacing:0}
 .sub{position:relative;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.3vw,1.4rem);color:var(--mist)}
 #splash .mark,#splash .sub,#enter,#splash .hint{opacity:0;animation:rise 1.8s ease forwards}
-#splash .sub{animation-delay:.7s}#enter{animation-delay:1.3s}#splash .hint{animation-delay:1.9s}
+#splash .sub{animation-delay:.7s}.sstats{position:relative;display:grid;grid-template-columns:repeat(4,auto);gap:0;border-top:1px solid rgba(242,242,240,.18);border-bottom:1px solid rgba(242,242,240,.18);opacity:0;animation:rise 1.8s ease 1s forwards}.sstats div{padding:1rem clamp(.9rem,3vw,2.4rem);text-align:center}.sstats div+div{border-left:1px solid rgba(242,242,240,.18)}.sstats b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,4vw,2.8rem);line-height:1;color:#fff}.sstats span{display:block;margin-top:.45rem;font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mist)}@media (max-width:640px){.sstats{grid-template-columns:repeat(2,1fr)}.sstats div:nth-child(3){border-left:0}.sstats div:nth-child(n+3){border-top:1px solid rgba(242,242,240,.18)}#splash{gap:1.2rem;padding:0 1rem}#splash .sub{text-align:center;font-size:1rem}}#enter{animation-delay:1.3s}#splash .hint{animation-delay:1.9s}
 #enter{position:relative;margin-top:.8rem;font-size:.7rem;letter-spacing:.45em;text-transform:uppercase;padding:1.05rem 2.8rem 1.05rem 3.25rem;border:1px solid rgba(242,242,240,.45);transition:all .5s}
 #enter:hover,#enter:focus-visible{background:var(--bone);color:var(--void);outline:none}
 #splash .hint{position:absolute;bottom:calc(2rem + var(--safe-b));font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--stone)}
@@ -114,6 +114,8 @@ body.inroom #hud,body.inroom #brand,body.inroom #skip{opacity:0!important;pointe
 #room.show{opacity:1;visibility:visible}
 #room header{display:flex;align-items:center;justify-content:space-between;padding:calc(1.2rem + var(--safe-t)) clamp(1.2rem,4vw,3rem) 0}
 #room header .m{font-family:var(--serif);letter-spacing:.34em;font-size:.85rem}
+#room header .hact{display:flex;align-items:center;gap:clamp(.8rem,2.4vw,2rem)}#room header .hact a{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mist);text-decoration:none}#room header .hact a.cta{color:var(--void);background:var(--bone);padding:.75rem 1.2rem}@media (max-width:640px){#room header .hact a:not(.cta){display:none}}
+#toRoom2.pill{border:1px solid rgba(242,242,240,.5);padding:.7rem 1.1rem}
 #room header button{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mist)}
 #tabs{display:flex;gap:clamp(.9rem,3vw,2.6rem);padding:1.4rem clamp(1.2rem,4vw,3rem) 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
 #tabs::-webkit-scrollbar{display:none}
@@ -122,6 +124,7 @@ body.inroom #hud,body.inroom #brand,body.inroom #skip{opacity:0!important;pointe
 #panes{position:relative;flex:1;overflow:hidden}
 .pane{position:absolute;inset:0;padding:clamp(1.6rem,4vh,3rem) clamp(1.2rem,4vw,3rem) calc(1.2rem + var(--safe-b));display:flex;flex-direction:column;justify-content:center;opacity:0;visibility:hidden;transform:translateX(24px);transition:opacity .6s,transform .6s,visibility .6s;overflow:hidden}
 .pane.on{opacity:1;visibility:visible;transform:none}
+.pane.scroll{justify-content:flex-start;overflow-y:auto}.pane .sep{height:1px;background:var(--line);margin:2.4rem 0 1.6rem;flex:none}.pane.scroll>*{flex:none}
 .pane h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4.4vw,3.4rem);line-height:1.05;margin:.8rem 0 1.4rem}
 .pane h3 em{font-style:italic}
 .src{margin-top:1.4rem;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:#5d5d62}
@@ -339,9 +342,10 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
   <canvas id="ripple"></canvas>
   <div class="veil"></div>
   <div class="mark">SALLY SKOUFIS<sup>™</sup></div>
-  <div class="sub">Worn, not shown.</div>
-  <button id="enter" type="button">Enter</button>
-  <div class="hint2">Touch the water · Explore at your own pace</div>
+  <div class="sub">Sculptural Australian jewellery · already selling in the US</div>
+  <div class="sstats"><div><b>#2</b><span>US is our #2 market</span></div><div><b>+79%</b><span>US sales, 2026 vs 2025</span></div><div><b>0.75%</b><span>US return rate</span></div><div><b>A$490</b><span>Average US order</span></div></div>
+  <button id="enter" type="button">Enter · 60-second tour</button>
+  
   <div id="skipIntro"><button type="button" id="skipR">Skip intro → Partner room</button></div>
 </section>
 
@@ -349,7 +353,7 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 <div id="space" aria-label="Explore the worlds of SALLY SKOUFIS"></div>
 <ul id="idx"></ul>
 <div id="mark">SALLY SKOUFIS™</div>
-<button id="toRoom2" type="button">Partner room →</button>
+<button id="toRoom2" type="button" class="pill">Partner room →</button>
 <div id="depth"><div class="ctl"><button type="button" id="play" aria-label="Auto-play">▶ Auto-play</button><span class="spd" id="spd"><button type="button" data-s="0">0.5×</button><button type="button" data-s="1" class="on">1×</button><button type="button" data-s="2">2×</button></span><button type="button" id="skipArch">Skip to partner room →</button></div><div class="bar"><i></i></div><div class="hint">Scroll · swipe · arrow keys — or auto-play at your speed</div></div>
 
 <!-- PART 1 · ARCHIVE -->
@@ -380,7 +384,7 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 
 <!-- PART 2 -->
 <section id="room" aria-label="For marketplace partners">
-  <header><span class="m">SALLY SKOUFIS™</span><button id="backFilm" type="button">← Back</button></header>
+  <header><span class="m">SALLY SKOUFIS™</span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta" href="mailto:partnership@sallyskoufis.com?subject=SALLY%20SKOUFIS%E2%84%A2%20%E2%80%94%20marketplace%20partnership">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
   <nav id="tabs"></nav>
   <div id="panes">
 
@@ -404,16 +408,16 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
       <div class="kick">For your marketplace</div>
       <h3>Why <em>SALLY SKOUFIS™.</em></h3>
       <div class="grid6 six">
-        <div><i>01</i><b>Distinctive design</b><span>A sculptural point of view in a category of near-identical plated chains.</span></div>
-        <div><i>02</i><b>Proven retail</b><span>More than a decade of sell-through with MYER.</span></div>
-        <div><i>03</i><b>Hero products</b><span>The Edge Ear Cuff and family — recognised, repeat-purchased.</span></div>
-        <div><i>04</i><b>Accessible luxury</b><span>Fine-jewellery feel between fashion and fine pricing.</span></div>
-        <div><i>05</i><b>Cultural relevance</b><span>Runway pedigree and a new generation of wearers.</span></div>
-        <div><i>06</i><b>E-commerce ready</b><span>Products that communicate instantly online — and data that syncs via API.</span></div>
+        <div><i>01</i><b>Proven in department stores</b><span>10+ years stocked at MYER, Australia’s largest department store.</span></div>
+        <div><i>02</i><b>Already selling in the US</b><span>A$193K US net sales in 12 months, +79% on 2025.</span></div>
+        <div><i>03</i><b>Low returns</b><span>0.75% US return rate vs a 9.8% fashion average.</span></div>
+        <div><i>04</i><b>A clear #1 product</b><span>The Edge Ear Cuff: no piercing needed, easy to understand online, leads into the range.</span></div>
+        <div><i>05</i><b>Repeat customers</b><span>1 in 5 US customers bought again; ear styling builds multi-piece baskets.</span></div>
+        <div><i>06</i><b>Distinctive design</b><span>Sculptural pieces that stand out in a category of look-alike plated chains.</span></div>
       </div>
     </div>
 
-    <div class="pane" data-tab="US sales">
+    <div class="pane scroll" data-tab="US performance">
       <div class="split">
         <div>
           <div class="kick">It already sells in America</div>
@@ -438,11 +442,10 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="pane" data-tab="US audience">
+    
+<div class="sep"></div>
       <div class="kick">Who she is, and where</div>
-      <h3>Our largest audience <em>is already American.</em></h3>
+      <h3>Who buys, <em>and where.</em></h3>
       <div class="kpis k3">
         <div><b>66K</b><span>US visitors to sallyskoufis.com in 12 months · our #1 country, twice Australia</span></div>
         <div><b>337</b><span>US customers in the last 12 months</span></div>
@@ -459,42 +462,21 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
         </div>
       </div>
       <div class="src">Source: Shopify, sessions and net sales · states over the last two years</div>
+    
     </div>
 
-    <div class="pane" data-tab="Bestsellers">
+    <div class="pane scroll" data-tab="Bestsellers">
       <div class="kick">What she buys · in the colours she buys</div>
       <h3>The pieces people mean <em>when they say our name.</em></h3>
       <div class="cards"><a class="card" href="https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0101m02000000" target="_blank" rel="noopener"><div class="ph"><img alt="Edge Ear Cuff — White diamonds · 18K gold vermeil" src="p/edge-gold.jpg" onerror="this.remove()"></div><h4>Edge Ear Cuff</h4><em>White diamonds · 18K gold vermeil</em><small>#1 piece in the US</small><small class="p">RRP US$140</small></a><a class="card" href="https://sallyskoufis.com/products/destiny-ear-cuff-qbt103u0103m01000000" target="_blank" rel="noopener"><div class="ph"><img alt="Black Destiny — Black diamonds · black rhodium" src="p/destiny-black.jpg" onerror="this.remove()"></div><h4>Black Destiny</h4><em>Black diamonds · black rhodium</em><small>Best-selling Destiny · most units sold</small><small class="p">RRP US$100</small></a><a class="card" href="https://sallyskoufis.com/products/hybrid-climber" target="_blank" rel="noopener"><div class="ph"><img alt="Hybrid Climber — White diamonds · 18K gold" src="p/hybrid-gold.jpg" onerror="this.remove()"></div><h4>Hybrid Climber</h4><em>White diamonds · 18K gold</em><small>#1 ear climber in the US</small><small class="p">RRP US$390</small></a><a class="card" href="https://sallyskoufis.com/products/suspension-solitaire-climber" target="_blank" rel="noopener"><div class="ph"><img alt="Suspension Solitaire Climber — Sterling silver · UNCONTAINED" src="p/suspension.jpg" onerror="this.remove()"></div><h4>Suspension Solitaire Climber</h4><em>Sterling silver · UNCONTAINED</em><small>New · already selling in 10 countries</small><small class="p">RRP US$260</small></a><a class="card" href="https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0103m01000000" target="_blank" rel="noopener"><div class="ph"><img alt="Edge Ear Cuff — Black diamonds · black rhodium" src="p/edge-black.jpg" onerror="this.remove()"></div><h4>Edge Ear Cuff</h4><em>Black diamonds · black rhodium</em><small>The Black Diamond signature</small><small class="p">RRP US$140</small></a></div>
       <div class="src">Source: Shopify, US net sales Nov 2024 – Nov 2026 · tap any piece to see it on <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a></div>
-    </div>
-
-    <div class="pane" data-tab="Why it sells">
-      <div class="kick">Product characteristics, translated into marketplace value</div>
-      <h3>Why it <em>sells.</em></h3>
-      <div class="grid6 six">
-        <div><i>01</i><b>Immediate recognition</b><span>Distinctive silhouettes that own the thumbnail and stop the scroll.</span></div>
-        <div><i>02</i><b>Strong digital presentation</b><span>Sculptural forms photograph with high visual impact.</span></div>
-        <div><i>03</i><b>Easy product story</b><span>No piercing, instant understanding — low-friction discovery.</span></div>
-        <div><i>04</i><b>Collection-building</b><span>Ear styling invites multiple pieces per customer.</span></div>
-        <div><i>05</i><b>Cross-sell &amp; repeat</b><span>Signatures lead the shopper into the wider range.</span></div>
-        <div><i>06</i><b>Giftable &amp; ownable</b><span>Recognisable design with genuine gifting potential.</span></div>
-      </div>
-    </div>
-
-    <div class="pane" data-tab="The customer">
-      <div class="split">
-        <div>
-          <div class="kick">The customer</div>
-          <h3>She wears it <em>as identity.</em></h3>
-          <p class="bio">Fashion-led and design-literate, she buys jewellery as self-expression and personal power — and increasingly, as a conscious choice: fewer pieces, better made.</p>
-          <div class="ladder three">
+    
+      <div class="kick" style="margin:2rem 0 .8rem">How customers move through the range</div>
+      <div class="ladder three">
             <div><b>Aspirational entry</b><span>Discovers the brand through an accessible hero piece — the Edge Ear Cuff.</span></div>
             <div><b>Core contemporary</b><span>Returns for signatures and newness; builds a collection.</span></div>
             <div><b>Collector</b><span>Invests in elevated, statement and Warrior Soul pieces.</span></div>
           </div>
-        </div>
-        <div class="img" style="background-image:url(w/styled-1.jpg);background-position:center 30%"></div>
-      </div>
     </div>
 
     <div class="pane" data-tab="The collections">
@@ -529,6 +511,22 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
       <div class="src">Core &amp; Warrior Soul: US retail prices as listed for the US market on <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a>, 6 Nov 2026 · XS: indicative AUD, not yet live</div>
     </div>
 
+    <div class="pane" data-tab="How it works">
+      <div class="kick">Built for marketplaces</div>
+      <h3>Connected once. <em>Curated by us.</em></h3>
+      <div class="terms">
+        <div><span>Channel</span><span>Mirakl Connect · API integration</span></div>
+        <div><span>Assortment</span><span>Allocated &amp; curated by SALLY SKOUFIS™</span></div>
+        <div><span>Catalogue</span><span>Imagery, attributes, orders &amp; stock fully automated via Shopify</span></div>
+        <div><span>Merchandising</span><span>Led by proven US bestsellers</span></div>
+        <div><span>Terms &amp; margin</span><span>Agreed with each partner</span></div>
+        <div><span>Exclusivity</span><span>Non-exclusive</span></div>
+        <div><span>Fulfilment &amp; launch</span><span>Set with your partnerships contact</span></div>
+        <div><span>Assets</span><span>Film, campaign &amp; product imagery supplied</span></div>
+      </div>
+      <div class="src">More than a decade supplying MYER, Australia's largest department store — so our operations are proven, not experimental.</div>
+    </div>
+
     <div class="pane" data-tab="The founder">
       <div class="split founder">
         <div class="img" style="background-image:url(sally.jpg);background-position:center 30%"></div>
@@ -544,22 +542,6 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
           </ul>
         </div>
       </div>
-    </div>
-
-    <div class="pane" data-tab="How it works">
-      <div class="kick">Built for marketplaces</div>
-      <h3>Connected once. <em>Curated by us.</em></h3>
-      <div class="terms">
-        <div><span>Channel</span><span>Mirakl Connect · API integration</span></div>
-        <div><span>Assortment</span><span>Allocated &amp; curated by SALLY SKOUFIS™</span></div>
-        <div><span>Catalogue</span><span>Imagery, attributes, orders &amp; stock fully automated via Shopify</span></div>
-        <div><span>Merchandising</span><span>Led by proven US bestsellers</span></div>
-        <div><span>Terms &amp; margin</span><span>Agreed with each partner</span></div>
-        <div><span>Exclusivity</span><span>Non-exclusive</span></div>
-        <div><span>Fulfilment &amp; launch</span><span>Set with your partnerships contact</span></div>
-        <div><span>Assets</span><span>Film, campaign &amp; product imagery supplied</span></div>
-      </div>
-      <div class="src">More than a decade supplying MYER, Australia's largest department store — so our operations are proven, not experimental.</div>
     </div>
 
     <div class="pane contact" data-tab="Contact">
@@ -586,23 +568,19 @@ const CONTACT={name:'Jordie Smith',title:'Partnerships',email:'partnership@sally
 /* ---------- WORLD DATA ----------
    z: distance into the world (px). x/y: offset as fraction of viewport. w: width as fraction of viewport width (min px). */
 const WORLDS=[
-  {name:'Australian icon', bg:'#0b0b0c', card:{k:'01 · Australian icon', h:'One of Australia’s most <em>recognised</em> jewellery houses.', p:'Sculptural, handmade, instantly recognisable. More than a decade with MYER, Australia’s largest department store — proven sell-through, season after season.'},
+ {name:'The brand', bg:'#0b0b0c', card:{k:'01 · The brand', h:'Australian jewellery house. <em>10+ years at MYER.</em>', p:'Sculptural ear cuffs, climbers and rings, designed by Sally Skoufis and handmade. Stocked for more than a decade at MYER, Australia’s largest department store.'},
    pics:[['sally.jpg',-.30,-.12,.22,-700],['w/designer.jpg',.31,.16,.20,-350],['w/styled-1.jpg',-.27,.22,.16,250],['p/edge-gold.jpg',.30,-.22,.13,450]]},
- {name:'Already in America', bg:'#0b0b0c', card:{k:'02 · Already in America', h:'Already selling <em>in the US.</em>', p:'The US is already our second-largest market — and our fastest growing.', nums:[['#2','US market by sales'],['A$193K','US net sales · 12 mo'],['+79%','2026 vs all of 2025'],['0.75%','US return rate · 12 mo'],['66K','US visitors · 12 mo']]},
+ {name:'US results', bg:'#0b0b0c', card:{k:'02 · US results', h:'Our US results, <em>last 12 months.</em>', p:'The US is our second-largest market and our fastest-growing one.', nums:[['A$193K','US net sales'],['+79%','2026 vs all of 2025'],['0.75%','Return rate · avg 9.8%'],['A$490','Average US order'],['66K','US site visitors']]},
    pics:[['w/run-5.jpg',-.31,-.2,.2,-600],['w/c-kehlani.jpg',.31,.2,.15,-350],['p/edge-gold.jpg',.3,-.22,.12,400]]},
-  {name:'Runway', bg:'#0c0b0a', card:{k:'03 · Runway', h:'Opened shows in <em>New York</em> &amp; <em>Paris</em>.', p:'Several seasons opening at New York and Paris Fashion Week, with OC Fashion Week California and Mercedes-Benz Fashion Week Sydney. Seen in Vogue Paris.'},
-   pics:[['w/nyfw-1.jpg',-.30,-.08,.2,-800],['w/run-1.jpg',.30,-.2,.26,-550],['w/run-2.jpg',-.33,.2,.16,-250],['w/vogue.jpg',.28,.24,.24,100],['w/run-3.jpg',-.28,-.24,.16,380],['w/run-4.jpg',.31,.0,.24,560],['w/nyfw-2.jpg',0,.30,.14,700]]},
-  {name:'Star Power', bg:'#0b0a0c', card:{k:'04 · Star Power', h:'Worn by icons.<br><em>Discovered by a new generation.</em>', names:'Rihanna · Naomi Campbell · Kylie Minogue<br>Kelly Rowland · Rosie Huntington-Whiteley · Kehlani · Emma Myers · Bella Poarch'},
-   pics:[['w/c-rihanna.jpg',-.31,-.14,.18,-650,'Rihanna'],['w/c-naomi.jpg',.31,-.1,.18,-400,'Naomi Campbell'],['w/c-kylie.jpg',-.28,.2,.13,200,'Kylie Minogue'],['w/c-kehlani.jpg',.29,.22,.17,450,'Kehlani']]},
-  {name:'Bestsellers', bg:'#d9d8d4', light:1, card:{k:'05 · Bestsellers', h:'The pieces people mean <em>when they say our name.</em>', p:'The Edge Ear Cuff — our #1 piece in the US — and the Destiny, Hybrid and Suspension climbers. Sculptural, no piercing needed, instantly recognisable online.'},
+ {name:'Bestsellers', bg:'#d9d8d4', light:1, card:{k:'03 · Bestsellers', h:'Our US bestsellers.', p:'The Edge Ear Cuff is our #1 piece in the US. No piercing needed, easy to understand online, and it leads customers into the wider range.'},
    pics:[['p/edge-gold.jpg',-.30,-.1,.16,-700,'Edge Ear Cuff · US #1'],['p/destiny-black.jpg',.30,-.18,.15,-450,'Black Destiny'],['w/ear-1.jpg',-.29,.2,.2,-150],['p/hybrid-gold.jpg',.29,.2,.15,250,'Hybrid Climber · #1 climber US'],['p/suspension.jpg',-.3,-.22,.15,520,'Suspension Solitaire']]},
-  {name:'Handmade', bg:'#0d0b09', card:{k:'06 · Handmade', h:'Set by hand. <em>Finished over days.</em>', p:'Every piece is made by master artisans in Thailand, the home of stone-setting artistry — techniques passed down over generations, with days devoted to a single finish.'},
-   pics:[['w/artisan-1.jpg',-.29,-.12,.2,-650],['w/artisan-2.jpg',.29,.08,.2,-300],['p/vigour.jpg',-.27,.2,.14,250],['w/nyfw-3.jpg',.3,-.24,.15,480]]},
-  {name:'Conscious', bg:'#090c0b', card:{k:'07 · Conscious luxury', h:'Fewer pieces. <em>Better made.</em>', p:'Ethically sourced precious and semi-precious stones, man-made gemstones and solid silver. Black diamonds valued for their natural inclusions. Made to be worn and treasured for years.'},
-   pics:[['p/edge-black.jpg',-.29,-.14,.14,-600,'Black diamonds'],['p/vigour.jpg',.3,.12,.15,-300,'Black diamond &amp; labradorite'],['p/destiny-black.jpg',-.28,.2,.13,300]]},
- {name:'As seen in', bg:'#0c0c0d', card:{k:'08 · As seen in', h:'As seen <em>in.</em>', ph:'PLACEHOLDER — US magazine logos to come'}, pics:[['w/vogue.jpg',-.3,-.16,.18,-500,'Vogue Paris']]},
- {name:'Customer reviews', bg:'#0b0a0b', card:{k:'09 · Customer reviews', h:'Real customers. <em>Real sparkle.</em>', ph:'PLACEHOLDER — 4–6 verified US customer reviews to come'}, pics:[['w/styled-1.jpg',.3,.18,.16,-400],['w/ear-1.jpg',-.3,-.2,.16,300]]},
- {name:'Partner room', bg:'#0a0a0b', final:1, card:{k:'For marketplace partners', h:'The numbers, <em>the range, the terms.</em>', p:'US sales and audience, bestsellers, collections and how we work with marketplaces.'}, pics:[]}
+ {name:'Fashion credentials', bg:'#0c0b0a', card:{k:'04 · Fashion credentials', h:'Runway, press <em>&amp; star power.</em>', p:'Opened shows at New York and Paris Fashion Week, plus OC Fashion Week California and Mercedes-Benz Fashion Week Sydney. Seen in Vogue Paris.', names:'Worn by Rihanna · Naomi Campbell · Kylie Minogue · Kelly Rowland · Rosie Huntington-Whiteley · Kehlani · Emma Myers · Bella Poarch', ph:'PLACEHOLDER — US magazine logos to come'},
+   pics:[['w/c-rihanna.jpg',-.31,-.14,.17,-800,'Rihanna'],['w/run-1.jpg',.30,-.2,.24,-600],['w/c-naomi.jpg',.31,.16,.16,-350,'Naomi Campbell'],['w/vogue.jpg',-.29,.22,.2,-100,'Vogue Paris'],['w/nyfw-1.jpg',.3,-.22,.16,250],['w/c-kylie.jpg',-.3,-.2,.13,450,'Kylie Minogue'],['w/c-kehlani.jpg',.29,.2,.15,650,'Kehlani']]},
+ {name:'How it’s made', bg:'#0d0b09', card:{k:'05 · How it’s made', h:'Handmade. <em>Fewer pieces, better made.</em>', p:'Hand-set by master artisans in Thailand and finished in Perth. Solid silver, ethically sourced stones, man-made gemstones and natural black diamonds.'},
+   pics:[['w/artisan-1.jpg',-.29,-.12,.2,-650],['w/artisan-2.jpg',.29,.08,.2,-300],['p/vigour.jpg',-.27,.2,.14,250,'Black diamond &amp; labradorite'],['p/edge-black.jpg',.3,-.24,.13,480,'Black diamonds']]},
+ {name:'Customer reviews', bg:'#0b0a0b', card:{k:'06 · Customer reviews', h:'Real customers. <em>Real sparkle.</em>', ph:'PLACEHOLDER — 4–6 verified US customer reviews to come'},
+   pics:[['w/styled-1.jpg',.3,.18,.16,-400],['w/ear-1.jpg',-.3,-.2,.16,300]]},
+ {name:'Partner room', bg:'#0a0a0b', final:1, card:{k:'For marketplace partners', h:'Numbers, range <em>&amp; terms.</em>', p:'US performance, bestsellers, collections and how we work with marketplaces.'}, pics:[]}
 ];
 const GAP=2600, CARD_AHEAD=140;
 
@@ -617,7 +595,7 @@ WORLDS.forEach((w,i)=>{
   if(w.card.names)h+=`<div class="names">${w.card.names}</div>`;
   if(w.card.ph)h+=`<div class="ph-box">${w.card.ph}</div>`;
   if(w.card.nums)h+=`<div class="nums">${w.card.nums.map(n=>`<div><b>${n[0]}</b><span>${n[1]}</span></div>`).join('')}</div>`;
-  if(w.final)h+=`<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><button class="go" type="button" id="goRoomW">Enter the partner room →</button></div>`;
+  if(w.final)h+=`<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap"><button class="go" type="button" id="goRoomW">Enter the partner room →</button><a class="go ghost" href="SALLY_SKOUFIS_Partner_Summary.pdf" download style="text-decoration:none">Download 1-page summary</a></div>`;
   c.innerHTML=h;space.appendChild(c);
   items.push({el:c,z:z0,x:0,y:0,card:1,world:i});
   w.pics.forEach(p=>{
@@ -771,7 +749,7 @@ document.getElementById('skipR').onclick=e=>{e.stopPropagation();leaveSplash();d
 
 /* ---------- PART 2 (partner room) ---------- */
 const v=document.getElementById('film'), room=document.getElementById('room');
-const ROOM_FILM={'Why now':40,'Why us':30,'US sales':38,'US audience':32,'Bestsellers':22,'Why it sells':26,'The customer':34,'The collections':14,'The founder':2,'How it works':24,'Contact':44};
+const ROOM_FILM={'Why now':40,'Why us':30,'US performance':38,'Bestsellers':22,'The collections':14,'The founder':2,'How it works':24,'Contact':44};
 let loopFrom=null;
 function roomFilm(name){const t=ROOM_FILM[name];if(t==null)return;loopFrom=t;try{v.currentTime=t}catch(e){}v.play().catch(()=>{})}
 v.addEventListener('timeupdate',()=>{if(loopFrom!=null&&v.currentTime>loopFrom+7)v.currentTime=loopFrom});
