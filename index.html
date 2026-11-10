@@ -343,7 +343,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dcuff,#dlab{position:absolute;left:50%;top:50%;will-change:transform,opacity;pointer-events:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
 #dive .stage{perspective:1600px}
 #dcuff{mix-blend-mode:screen;filter:none;-webkit-mask:radial-gradient(ellipse 46% 50% at 50% 50%,#000 62%,transparent 100%);mask:radial-gradient(ellipse 46% 50% at 50% 50%,#000 62%,transparent 100%)}
-#dlab2{position:absolute;left:50%;top:50%;pointer-events:none;opacity:0;will-change:transform,opacity;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+#dlabV{position:absolute;left:50%;top:50%;height:min(78vh,800px);aspect-ratio:1;pointer-events:none;opacity:0;will-change:transform,opacity;mix-blend-mode:screen;-webkit-mask:radial-gradient(ellipse 48% 50% at 50% 50%,#000 60%,transparent 100%);mask:radial-gradient(ellipse 48% 50% at 50% 50%,#000 60%,transparent 100%);transform:translate(-50%,-50%)}
 @keyframes turn{0%,100%{rotate:y -20deg}50%{rotate:y 20deg}}
 .sheen{position:absolute;left:50%;top:50%;pointer-events:none;opacity:0;-webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;background:linear-gradient(105deg,transparent 0%,transparent 38%,rgba(255,255,255,.85) 48%,rgba(190,225,255,.55) 52%,transparent 62%,transparent 100%) 0 0/300% 100% no-repeat;mix-blend-mode:screen;animation:turn 9s ease-in-out infinite,sweep 4.5s ease-in-out infinite}
 #dlabS{animation:sweep 5.5s ease-in-out infinite}
@@ -486,14 +486,14 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    <video id="dv" src="x/dive.mp4" data-m="x/dive-m.mp4" poster="x/dive-start.jpg" muted playsinline preload="auto"></video>
    <div id="dshade"></div>
    <img id="dlab" src="x/lab.webp" alt="Vigour ring, labradorite and black diamonds">
-   <img id="dlab2" src="x/lab-side.webp" alt="" aria-hidden="true">
+   <video id="dlabV" src="x/lab-spin.mp4" data-m="x/lab-spin-m.mp4" poster="x/lab-spin-poster.jpg" muted playsinline preload="auto" aria-label="Vigour ring with labradorite, turning 360 degrees"></video>
    <video id="dcuff" src="x/edge-spin.mp4" data-m="x/edge-spin-m.mp4" poster="x/edge-spin-poster.jpg" muted playsinline loop autoplay preload="auto" aria-label="Edge Ear Cuff, sterling silver and black rhodium, turning"></video>
    <div class="sheen" id="dlabS" style="--m:url(x/lab.webp)"></div>
    <div id="dtint"></div>
    <div id="dveil"></div>
 
    <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">01 · The brand</div><h2>Australia’s <em>iconic</em><br>jewellery house.</h2></div>
-   <div class="dh low" data-a=".24" data-b=".31"><div class="k">MYER</div><h2>10+ years in <em>department stores.</em></h2></div>
+   <div class="dh low" data-a=".27" data-b=".33"><div class="k">MYER</div><h2>10+ years in <em>department stores.</em></h2></div>
    <div class="dh low" data-a=".34" data-b=".41"><div class="k">Craft</div><h2>Designed in Perth. <em>Handmade.</em></h2></div>
    <div class="dh low" data-a=".44" data-b=".52"><div class="k">Runway</div><h2>New York. <em>Paris.</em></h2></div>
    <div class="dh low" data-a=".55" data-b=".605"><div class="k">US market</div><h2>Already loved <em>in America.</em></h2></div>
@@ -971,7 +971,7 @@ const REV=[
  ['So many people have commented on how amazing they look.','Pure Drop Alchemy Huggies · Tasmania'],
  ['Subtle… yet edgy and fun. Haven’t taken them out!','Honeycomb Huggies in Black · Singleton, NSW']];
 const rq=document.getElementById('drq'),rc=document.getElementById('drc');let ri=-1;
-const VA=.185,VB=.62; // video window
+const VA=.21,VB=.62; // video window
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),seg=(p,a,b)=>cl((p-a)/(b-a)),ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 let vt=0,want=0,dur=32.5,ready=false;
 const chk=()=>{if(V.readyState>=1){dur=V.duration||dur;ready=true}};chk();V.addEventListener('loadedmetadata',chk);V.addEventListener('canplay',chk);
@@ -981,27 +981,27 @@ let shownOpp=false,sp=0,first=true;
 if(innerWidth<760&&V.dataset.m){V.src=V.dataset.m}
 const MV=document.getElementById('dmv');if(innerWidth<760&&cuff.dataset.m){cuff.src=cuff.dataset.m}cuff.play&&cuff.play().catch(()=>{});if(innerWidth<760){MV.src=MV.dataset.m;MV.poster=MV.dataset.mp}
 const RV=document.getElementById('drv');if(innerWidth<760){RV.src=RV.dataset.m;RV.poster=RV.dataset.mp}
-const lab2=document.getElementById('dlab2'),labS=document.getElementById('dlabS');
+const LV=document.getElementById('dlabV');if(innerWidth<760&&LV.dataset.m){LV.src=LV.dataset.m}let lvT=0,lvReady=false;const lvc=()=>{if(LV.readyState>=1)lvReady=true};lvc();LV.addEventListener('loadedmetadata',lvc);
+const labS=document.getElementById('dlabS');
 const tint=document.getElementById('dtint'),stats=document.getElementById('dstats'),sts=[...stats.querySelectorAll('.st')],made=document.getElementById('dmade'),mimg=made.querySelector('.img');
 function render(){
  const max=D.scrollHeight-D.clientHeight,raw=max>0?D.scrollTop/max:0;
  const now=performance.now(),dt=Math.min(100,now-(render.t||now));render.dt=dt;render.t=now;sp=first?raw:sp+(raw-sp)*(1-Math.exp(-dt/110));first=false;if(Math.abs(raw-sp)<.00005)sp=raw;const p=sp;
  bar.style.width=(p*100)+'%';hint.style.opacity=1-seg(p,0,.02);
  // 1 · ear cuff → labradorite (overlapping crossfade)
- const c=seg(p,0,.10);cuff.style.opacity=1-ease(seg(p,.055,.095));
+ const c=seg(p,0,.10);cuff.style.opacity=1-ease(seg(p,.045,.072));
  cuff.style.transform=`translate(-50%,-50%) scale(${1+ease(c)*.25}) rotate(${c*-6}deg)`;
- const l=seg(p,.14,.205),lo=ease(seg(p,.06,.085))*(1-ease(seg(p,.2,.235))),zs=.85+Math.pow(ease(l),2)*5;
- // real two-photo turn (front ↔ side), driven by scroll before the dive into the stone
- const th=90*Math.sin(Math.PI*ease(seg(p,.088,.138)));
- const fo=1-ease(seg(th,38,56)),so=ease(seg(th,38,56));
- lab.style.opacity=lo*fo;lab2.style.opacity=lo*so;
- lab.style.transform=`translate(-50%,-50%) scale(${zs}) rotateY(${th*.75}deg) rotate(${l*10}deg)`;
- lab2.style.width=(lab.offsetWidth*1.3)+'px';
- lab2.style.transform=`translate(-50%,-50%) scale(${zs}) rotateY(${(th-90)*.6}deg)`;
+ const l=seg(p,.165,.225),zs=(1.45+ease(seg(p,.155,.17))*.1)+Math.pow(ease(l),2)*4.2;
+ // 360° spin (scroll-driven), lands on the front, then hands over to the real photo for the dive
+ const so=ease(seg(p,.058,.08))*(1-ease(seg(p,.153,.163)));LV.style.opacity=so;LV.style.transform=`translate(-50%,-50%) scale(${1+ease(seg(p,.15,.165))*.12})`;
+ if(lvReady){const tgt=seg(p,.085,.155)*(LV.duration-.06);lvT+=(tgt-lvT)*(1-Math.exp(-(render.dt||16)/60));if(Math.abs(LV.currentTime-lvT)>.03&&!LV.seeking){try{LV.currentTime=lvT}catch(e){}}}
+ const lo=ease(seg(p,.156,.168))*(1-ease(seg(p,.22,.255)));
+ lab.style.opacity=lo;
+ lab.style.transform=`translate(-50%,-50%) scale(${zs}) rotate(${l*10}deg)`;
  for(const [im,sh] of [[lab,labS]]){sh.style.width=im.offsetWidth+'px';sh.style.height=im.offsetHeight+'px';sh.style.top=getComputedStyle(im).top;sh.style.transform=im.style.transform;sh.style.opacity=(+im.style.opacity||0)*.9}
  // 2 · labradorite blue washes into the water
- tint.style.opacity=.5*ease(seg(p,.17,.2))*(1-ease(seg(p,.215,.25)));
- V.style.opacity=ease(seg(p,.19,.235))*(1-ease(seg(p,.6,.64))*.7)*(1-ease(seg(p,.79,.82)));
+ tint.style.opacity=.5*ease(seg(p,.195,.225))*(1-ease(seg(p,.24,.275)));
+ V.style.opacity=ease(seg(p,.215,.255))*(1-ease(seg(p,.6,.64))*.7)*(1-ease(seg(p,.79,.82)));
  want=seg(p,VA,VB)*(dur-.05);
  veil.style.opacity=ease(seg(p,.9,.92))*.85;
  // headlines

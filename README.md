@@ -43,4 +43,4 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Same Drive folder has the Vigour side view in 5 stones (labradorite, onyx, moonstone, amethyst, clear quartz) — candidate for a "one design, many stones" moment.
 
 - Opening ear cuff is now a real-looking 360 spin (Higgsfield, 10 Nov 2026) — x/edge-spin.mp4 / x/edge-spin-m.mp4, background crushed to black + screen blend so it sits on the navy; plays forward then back so it loops seamlessly. AI-generated: Sally to confirm every angle matches the real piece.
-- Ring AI spin NOT used: stone came out teal/emerald instead of olive-gold labradorite. Regenerate with tighter colour prompt.
+- Ring: 360 spin (Higgsfield take 2, correct labradorite colour) x/lab-spin.mp4 / x/lab-spin-m.mp4, every frame a keyframe; scroll turns the ring a full 360 and lands on the front, then dissolves into the real photo for the dive. AI-generated: Sally to confirm.
