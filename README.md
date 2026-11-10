@@ -47,3 +47,5 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 
 - Ring zoom now pushes into the spin video itself (1080px all-keyframe x/lab-spin.mp4), with a soft blur into the water; the photo handover is gone.
 - Reviews: all 8 MYER reviews — big quote rotates every ~3.6s while on screen + a moving strip of review cards. Add more (esp. US) to the REV list in index.html.
+
+- Film re-cut (x/dive.mp4, 34.7s): gem → ocean wave rolls and crashes into white foam (forward, p2 3:07) → underwater bubbles + light (p1 1:21.6, slowed 2x) → ringed hands → face → fabric → swim up → surfacing. Headlines re-timed to sit over the model shots.

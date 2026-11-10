@@ -505,10 +505,10 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    <div id="dveil"></div>
 
    <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">01 · The brand</div><h2>Australia’s <em>iconic</em><br>jewellery house.</h2></div>
-   <div class="dh low" data-a=".27" data-b=".33"><div class="k">MYER</div><h2>10+ years in <em>department stores.</em></h2></div>
-   <div class="dh low" data-a=".34" data-b=".41"><div class="k">Craft</div><h2>Designed in Perth. <em>Handmade.</em></h2></div>
-   <div class="dh low" data-a=".44" data-b=".52"><div class="k">Runway</div><h2>New York. <em>Paris.</em></h2></div>
-   <div class="dh low" data-a=".55" data-b=".605"><div class="k">US market</div><h2>Already loved <em>in America.</em></h2></div>
+   <div class="dh low" data-a=".29" data-b=".345"><div class="k">MYER</div><h2>10+ years in <em>department stores.</em></h2></div>
+   <div class="dh low" data-a=".365" data-b=".415"><div class="k">Craft</div><h2>Designed in Perth. <em>Handmade.</em></h2></div>
+   <div class="dh low" data-a=".43" data-b=".48"><div class="k">Runway</div><h2>New York. <em>Paris.</em></h2></div>
+   <div class="dh low" data-a=".565" data-b=".61"><div class="k">US market</div><h2>Already loved <em>in America.</em></h2></div>
 
    <div id="dstats">
     <div class="sk">Our US business · last 12 months</div>
@@ -990,7 +990,7 @@ const REV=[
  ['Perfect if you like simple earrings but are looking for something more unique than a basic stud.','Verified MYER customer']];
 (function(){const st=document.getElementById('drstrip');if(!st)return;const html=REV.map(r=>`<div class="rc"><i>★★★★★</i><p>“${r[0]}”</p><small>${r[1]}</small></div>`).join('');st.innerHTML=html+html})();
 const rq=document.getElementById('drq'),rc=document.getElementById('drc');let ri=-1;
-const VA=.21,VB=.62; // video window
+const VA=.2,VB=.62; // video window
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),seg=(p,a,b)=>cl((p-a)/(b-a)),ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 let vt=0,want=0,dur=32.5,ready=false;
 const chk=()=>{if(V.readyState>=1){dur=V.duration||dur;ready=true}};chk();V.addEventListener('loadedmetadata',chk);V.addEventListener('canplay',chk);
@@ -1017,8 +1017,8 @@ function render(){
  LV.style.transform=`translate(-50%,-50%) scale(${1+Math.pow(zl,1.7)*8})`;
  LV.style.filter=zl>.01?`blur(${(zl*zl*6).toFixed(2)}px) saturate(${1+zl*.35})`:'none';
  // 2 · labradorite blue washes into the water
- tint.style.opacity=.5*ease(seg(p,.195,.225))*(1-ease(seg(p,.24,.275)));
- V.style.opacity=ease(seg(p,.215,.255))*(1-ease(seg(p,.6,.64))*.7)*(1-ease(seg(p,.79,.82)));
+ tint.style.opacity=.35*ease(seg(p,.19,.215))*(1-ease(seg(p,.225,.25)));
+ V.style.opacity=ease(seg(p,.198,.232))*(1-ease(seg(p,.6,.64))*.7)*(1-ease(seg(p,.79,.82)));
  want=seg(p,VA,VB)*(dur-.05);
  veil.style.opacity=ease(seg(p,.9,.92))*.85;
  // headlines
