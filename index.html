@@ -329,6 +329,13 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 #skipIntro button{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mist);padding:.55rem .9rem;border:1px solid rgba(242,242,240,.25);border-radius:99px;background:rgba(10,10,11,.4)}
 #skipIntro button:hover{background:var(--bone);color:var(--void)}
 @media (max-width:520px){#skipIntro{left:1rem;right:1rem;justify-content:center}}
+#mailFb{position:fixed;left:50%;bottom:calc(1.4rem + var(--safe-b,0px));transform:translate(-50%,20px);z-index:90;width:min(92vw,520px);padding:1.1rem 2.6rem 1.1rem 1.2rem;background:rgba(6,20,32,.96);border:1px solid rgba(143,178,196,.35);box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:opacity .35s,transform .35s,visibility .35s;color:#dfe8ee}
+#mailFb.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+#mailFb p{font-size:.78rem;line-height:1.5;margin:0 0 .8rem}#mailFb p a.tel{all:unset;color:#fff;text-decoration:underline;cursor:pointer;white-space:nowrap}
+#mailFb div{display:flex;flex-wrap:wrap;gap:.5rem}
+#mailFb a,#mailFb .cp{font:inherit;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:#dfe8ee;border:1px solid rgba(223,232,238,.4);padding:.65rem .9rem;background:none;cursor:pointer;text-decoration:none}
+#mailFb a:hover,#mailFb .cp:hover{background:#dfe8ee;color:#02080e}
+#mailFb .x{position:absolute;top:.4rem;right:.6rem;background:none;border:0;color:#8fb2c4;font-size:1.3rem;cursor:pointer}
 /* ===== V3 · SCROLL DIVE ===== */
 :root{--navy:#061420;--abyss:#02080e;--ice:#dfe8ee;--tide:#8fb2c4}
 body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.v3 #depth,body.v3 #chap,body.v3 #hud,body.v3 #brand,body.v3 #skip{display:none!important}
@@ -608,7 +615,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     <div class="k" style="font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)">For selected partners</div>
     <h2>Let’s bring the ear <em>to your floor.</em></h2>
     <p>The numbers, the range and how we work together are inside.</p>
-    <div class="btns"><button class="dbtn solid" type="button" id="dRoom">Enter the partner room</button><a class="dbtn" id="dMail" href="#">Let’s connect — Contact us</a></div>
+    <div class="btns"><button class="dbtn solid" type="button" id="dRoom">Enter the partner room</button><a class="dbtn mailgo" id="dMail" href="mailto:jordie@sallyskoufis.com">Let’s connect — Contact us</a></div>
    </div>
    </div>
 
@@ -623,14 +630,14 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
   <div class="k">Partnership opportunity · 2027</div>
   <h3 id="oppH">Secure your <em>launch partnership.</em></h3>
   <p>We’re selecting a small number of US partners for our next phase of growth. Tell us you’re interested and Jordie will call you.</p>
-  <div class="btns"><a class="dbtn solid" id="oMail" href="#">Yes — I’m interested</a><button class="dbtn" type="button" id="oRoom">Keep exploring</button></div>
+  <div class="btns"><a class="dbtn solid mailgo" id="oMail" href="mailto:jordie@sallyskoufis.com">Yes — I’m interested</a><button class="dbtn" type="button" id="oRoom">Keep exploring</button></div>
   <button class="x" type="button" id="oX">Not now</button>
  </div>
 </div>
 
 <!-- PART 2 -->
 <section id="room" aria-label="For marketplace partners">
-  <header><span class="m logo"><img src="x/logo.webp" alt="SALLY SKOUFIS"></span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta" href="mailto:partnership@sallyskoufis.com?subject=SALLY%20SKOUFIS%E2%84%A2%20%E2%80%94%20marketplace%20partnership">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
+  <header><span class="m logo"><img src="x/logo.webp" alt="SALLY SKOUFIS"></span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta mailgo" href="mailto:jordie@sallyskoufis.com">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
   <nav id="tabs"></nav>
   <div id="panes">
 
@@ -792,12 +799,14 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     <div class="pane contact" data-tab="Contact">
       <div class="kick">Partnerships</div>
       <h3>Let's bring the ear <em>to your marketplace.</em></h3>
-      <div class="who" id="who">Jordie Smith<small id="role">Partnerships</small></div>
-      <div class="mail" id="mail">partnership@sallyskoufis.com</div>
+      <div class="who" id="who">Jordie Smith<small id="role">Head of Global Markets</small></div>
+      <div class="mail" id="mail">jordie@sallyskoufis.com</div>
+      <div class="mail" id="phone" style="margin-top:.35rem"><a href="tel:+61408347700" style="color:inherit">+61 408 347 700</a></div>
       <div class="btns">
-        <a class="btn solid" id="mailBtn" href="mailto:partnership@sallyskoufis.com?subject=SALLY%20SKOUFIS%E2%84%A2%20%E2%80%94%20marketplace%20partnership&body=Hi%20Jordie%2C%0A%0AWe%E2%80%99d%20like%20to%20book%20a%20call%20about%20listing%20SALLY%20SKOUFIS%E2%84%A2%20on%20our%20marketplace.%0A%0AMarketplace%3A%0AName%20%26%20role%3A%0ABest%20times%20to%20talk%3A%0A">Request a call</a><span id="copied" style="display:block;margin-top:1rem;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mist);opacity:0;transition:opacity .4s">Email address copied: partnership@sallyskoufis.com</span>
+        <a class="btn solid mailgo" id="mailBtn" href="mailto:jordie@sallyskoufis.com">Request a call</a>
         <a class="btn" href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a>
       </div>
+      <span id="copied" style="display:block;margin-top:1rem;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mist);opacity:0;transition:opacity .4s">Email address copied: jordie@sallyskoufis.com</span>
       <div class="sig">Sally Skoufis, Founder &amp; Designer</div>
     </div>
 
@@ -807,7 +816,23 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 
 <script>
 /* ============ EDIT ME ============ */
-const CONTACT={name:'Jordie Smith',title:'Partnerships',email:'partnership@sallyskoufis.com'};
+const CONTACT={name:'Jordie Smith',title:'Head of Global Markets',email:'jordie@sallyskoufis.com',phone:'+61 408 347 700'};
+// the email every "contact" button opens — edit the wording here
+const MAIL_SUBJECT='Partnership enquiry — SALLY SKOUFIS™';
+const MAIL_BODY=`Dear Sally, Jordie and the SALLY SKOUFIS™ Team,
+
+Thank you for introducing us to SALLY SKOUFIS™. We have reviewed the brand at sallyskoufis.com and are very interested in exploring the possibility of working together and featuring your collections on our platform.
+
+Please let us know a convenient time to connect.
+
+We look forward to the possibility of working together.
+
+Kind regards,
+
+[Your Name]
+[Title]
+[Company / Marketplace Name]
+[Email] | [Phone]`;
 /* ================================= */
 
 /* ---------- WORLD DATA ----------
@@ -1016,6 +1041,21 @@ room.addEventListener('touchend',e=>{if(rx===null)return;const dx=e.changedTouch
 document.addEventListener('keydown',e=>{if(!room.classList.contains('show'))return;if(e.key==='ArrowRight')goTab(tab+1);if(e.key==='ArrowLeft')goTab(tab-1);if(e.key==='Escape')document.getElementById('backFilm').click()});
 if(CONTACT.email){document.getElementById('who').innerHTML=CONTACT.name+'<small>'+CONTACT.title+'</small>';document.getElementById('mail').textContent=CONTACT.email;
   const m=document.getElementById('mail');m.innerHTML='<a href="mailto:'+CONTACT.email+'" style="color:inherit">'+CONTACT.email+'</a>';}
+(function(){
+ const e=encodeURIComponent,to=CONTACT.email;
+ const MAILTO='mailto:'+to+'?subject='+e(MAIL_SUBJECT)+'&body='+e(MAIL_BODY);
+ const GMAIL='https://mail.google.com/mail/?view=cm&fs=1&to='+e(to)+'&su='+e(MAIL_SUBJECT)+'&body='+e(MAIL_BODY);
+ const OUTLOOK='https://outlook.office.com/mail/deeplink/compose?to='+e(to)+'&subject='+e(MAIL_SUBJECT)+'&body='+e(MAIL_BODY);
+ const fb=document.createElement('div');fb.id='mailFb';fb.setAttribute('role','dialog');fb.setAttribute('aria-label','Choose how to email us');
+ fb.innerHTML='<p>Email didn’t open? Choose one — the message is ready to send. Or call Jordie on <a class="tel" href="tel:'+CONTACT.phone.replace(/\\s/g,'')+'">'+CONTACT.phone+'</a>.</p><div><a href="'+GMAIL+'" target="_blank" rel="noopener">Gmail</a><a href="'+OUTLOOK+'" target="_blank" rel="noopener">Outlook</a><a href="'+MAILTO+'">Mail app</a><button type="button" class="cp">Copy email</button></div><button type="button" class="x" aria-label="Close">×</button>';
+ document.body.appendChild(fb);let fbT;
+ const hide=()=>fb.classList.remove('show');
+ fb.querySelector('.x').onclick=hide;fb.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setTimeout(hide,300)));
+ fb.querySelector('.cp').onclick=function(){try{navigator.clipboard.writeText(to)}catch(err){}this.textContent='Copied: '+to};
+ document.querySelectorAll('.mailgo').forEach(a=>{a.href=MAILTO;a.addEventListener('click',()=>{
+   let left=false;const on=()=>{left=true};addEventListener('blur',on,{once:true});document.addEventListener('visibilitychange',on,{once:true});
+   setTimeout(()=>{removeEventListener('blur',on);if(!left){fb.querySelector('.cp').textContent='Copy email';fb.classList.add('show');clearTimeout(fbT);fbT=setTimeout(hide,20000)}},1600)})});
+})();
 document.getElementById('mailBtn').addEventListener('click',()=>{try{navigator.clipboard.writeText(CONTACT.email)}catch(e){}const c=document.getElementById('copied');c.style.opacity=1;setTimeout(()=>c.style.opacity=0,6000)});
 
 /* ---------- SPLASH RIPPLE — touch the water ---------- */
@@ -1032,9 +1072,7 @@ document.getElementById('mailBtn').addEventListener('click',()=>{try{navigator.c
 /* ============ V3 · SCROLL DIVE ============ */
 (function(){
 document.body.classList.add('v3');
-const PARTNER={name:'Jordie',email:'partnership@sallyskoufis.com'};
-const mailHref='mailto:'+PARTNER.email+'?subject='+encodeURIComponent('SALLY SKOUFIS™ partnership — we’re interested')+'&body='+encodeURIComponent('Hi '+PARTNER.name+',\n\nWe’ve seen the SALLY SKOUFIS™ partner presentation and we’re interested in discussing a partnership.\n\nCompany:\nName & role:\nBest number to call:\n\nThanks,\n');
-['dMail','oMail'].forEach(id=>document.getElementById(id).href=mailHref);
+// mail buttons are wired once, near CONTACT (see mailgo)
 const D=document.getElementById('dive'),V=document.getElementById('dv'),cuff=document.getElementById('dcuff'),lab=document.getElementById('dlab'),veil=document.getElementById('dveil'),bar=document.getElementById('dbar'),hint=document.getElementById('dhint'),cred=document.getElementById('dcred'),rev=document.getElementById('drev'),end=document.getElementById('dend');
 const H=[...D.querySelectorAll('.dh')];
 const faces=[...cred.querySelectorAll('.face')];
