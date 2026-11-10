@@ -341,6 +341,14 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dshade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,8,14,.15) 0%,rgba(2,8,14,.65) 100%);pointer-events:none}
 #dveil{position:absolute;inset:0;background:var(--abyss);opacity:0;pointer-events:none}
 #dcuff,#dlab{position:absolute;left:50%;top:50%;will-change:transform,opacity;pointer-events:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+#dive .stage{perspective:1600px}
+#dcuff,#dlab{animation:turn 9s ease-in-out infinite}
+#dlab{animation-duration:11s}
+@keyframes turn{0%,100%{rotate:y -20deg}50%{rotate:y 20deg}}
+.sheen{position:absolute;left:50%;top:50%;pointer-events:none;opacity:0;-webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;background:linear-gradient(105deg,transparent 0%,transparent 38%,rgba(255,255,255,.85) 48%,rgba(190,225,255,.55) 52%,transparent 62%,transparent 100%) 0 0/300% 100% no-repeat;mix-blend-mode:screen;animation:turn 9s ease-in-out infinite,sweep 4.5s ease-in-out infinite}
+#dlabS{animation-duration:11s,5.5s}
+@keyframes sweep{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
+@media (prefers-reduced-motion:reduce){#dcuff,#dlab,.sheen{animation:none}}
 #dcuff{height:min(52vh,560px);top:40%;transform:translate(-50%,-50%)}
 .dh.low.first{bottom:7vh}.dh.low.first h2{font-size:clamp(2rem,5.4vw,4.6rem)}
 #dlab{width:min(46vw,420px);opacity:0;transform:translate(-50%,-50%)}
@@ -479,6 +487,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    <div id="dshade"></div>
    <img id="dlab" src="x/lab.webp" alt="Vigour ring, labradorite and black diamonds">
    <img id="dcuff" src="x/edge.webp" alt="Edge Ear Cuff, sterling silver and black rhodium">
+   <div class="sheen" id="dlabS" style="--m:url(x/lab.webp)"></div><div class="sheen" id="dcuffS" style="--m:url(x/edge.webp)"></div>
    <div id="dtint"></div>
    <div id="dveil"></div>
 
@@ -971,6 +980,7 @@ let shownOpp=false,sp=0,first=true;
 if(innerWidth<760&&V.dataset.m){V.src=V.dataset.m}
 const MV=document.getElementById('dmv');if(innerWidth<760){MV.src=MV.dataset.m;MV.poster=MV.dataset.mp}
 const RV=document.getElementById('drv');if(innerWidth<760){RV.src=RV.dataset.m;RV.poster=RV.dataset.mp}
+const cuffS=document.getElementById('dcuffS'),labS=document.getElementById('dlabS');
 const tint=document.getElementById('dtint'),stats=document.getElementById('dstats'),sts=[...stats.querySelectorAll('.st')],made=document.getElementById('dmade'),mimg=made.querySelector('.img');
 function render(){
  const max=D.scrollHeight-D.clientHeight,raw=max>0?D.scrollTop/max:0;
@@ -981,6 +991,7 @@ function render(){
  cuff.style.transform=`translate(-50%,-50%) scale(${1+ease(c)*.25}) rotate(${c*-6}deg)`;
  const l=seg(p,.06,.165);lab.style.opacity=ease(seg(p,.06,.09))*(1-ease(seg(p,.17,.205)));
  lab.style.transform=`translate(-50%,-50%) scale(${.85+Math.pow(ease(l),2)*5}) rotate(${l*10}deg)`;
+ for(const [im,sh] of [[cuff,cuffS],[lab,labS]]){sh.style.width=im.offsetWidth+'px';sh.style.height=im.offsetHeight+'px';sh.style.top=getComputedStyle(im).top;sh.style.transform=im.style.transform;sh.style.opacity=(+im.style.opacity||0)*.9}
  // 2 · labradorite blue washes into the water
  tint.style.opacity=.5*ease(seg(p,.13,.16))*(1-ease(seg(p,.175,.215)));
  V.style.opacity=ease(seg(p,.15,.2))*(1-ease(seg(p,.6,.64))*.7)*(1-ease(seg(p,.79,.82)));
