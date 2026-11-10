@@ -400,10 +400,10 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dstats .ssrc{margin-top:1.2rem;font-size:.55rem;letter-spacing:.16em;color:rgba(143,178,196,.7)}
 @media (max-width:820px){#dstats .sg{grid-template-columns:1fr 1fr}#dstats .st p{font-size:.72rem;min-height:0;margin-top:.45rem}#dstats .st b{font-size:2rem}#dstats .sh{margin-bottom:1rem}#dstats{padding-top:4rem}}
 #dmade{position:absolute;inset:0;opacity:0;pointer-events:none}
-#dmade .img{position:absolute;inset:-4%;background:url(x/made.webp) center/cover;filter:saturate(.75) brightness(.8);will-change:transform}
+#dmade .img{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;filter:saturate(.75) brightness(.8);will-change:transform}
 #dmade::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,14,.5) 0%,rgba(2,8,14,0) 35%,rgba(2,8,14,.75) 100%)}
 #dmade .dh{z-index:2}
-@media (max-width:640px){#dmade .img{background-image:url(x/made-m.webp)}}
+
 /* opportunity pop-up */
 #opp{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(2,8,14,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;padding:1.2rem}
 #opp.show{opacity:1;visibility:visible}
@@ -499,7 +499,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     <div class="ssrc">Source: Shopify, AUD, 12 months to Nov 2026 · Returns benchmark: Loop Returns</div>
    </div>
 
-   <div id="dmade"><div class="img"></div><div class="dh mid" style="opacity:1;position:absolute;top:auto;bottom:12vh;transform:translate(-50%,0)"><div class="k">The atelier</div><h2>Hand-set. <em>Hand-finished.</em></h2></div></div>
+   <div id="dmade"><video class="img" id="dmv" src="x/made.mp4" data-m="x/made-m.mp4" poster="x/made-poster.jpg" data-mp="x/made-m-poster.jpg" muted playsinline loop preload="none"></video><div class="dh mid" style="opacity:1;position:absolute;top:auto;bottom:12vh;transform:translate(-50%,0)"><div class="k">Our atelier</div><h2>Hand-set. <em>Hand-finished.</em></h2></div></div>
 
    <div id="dcred">
     <div class="face" style="background-image:url(w/c-rihanna.jpg);left:5%;top:12%" data-dx="-60"><span>Rihanna</span></div>
@@ -966,6 +966,7 @@ function unlock(){V.play().then(()=>V.pause()).catch(()=>{});window.removeEventL
 window.addEventListener('touchstart',unlock,{passive:true});D.addEventListener('scroll',unlock,{passive:true});
 let shownOpp=false,sp=0,first=true;
 if(innerWidth<760&&V.dataset.m){V.src=V.dataset.m}
+const MV=document.getElementById('dmv');if(innerWidth<760){MV.src=MV.dataset.m;MV.poster=MV.dataset.mp}
 const tint=document.getElementById('dtint'),stats=document.getElementById('dstats'),sts=[...stats.querySelectorAll('.st')],made=document.getElementById('dmade'),mimg=made.querySelector('.img');
 function render(){
  const max=D.scrollHeight-D.clientHeight,raw=max>0?D.scrollTop/max:0;
@@ -994,7 +995,7 @@ function render(){
  faces.forEach((f,i)=>{f.style.transform=`translate(${(+f.dataset.dx)*(cr-.5)*2}px,${(1-cr)*50*(i%2?1:-1)}px)`});
  rail.style.transform=`translateX(${-cr*rail.scrollWidth*.4}px)`;
  // 5 · handmade
- const mo=Math.min(ease(seg(p,.855,.875)),1-ease(seg(p,.905,.925)));made.style.opacity=mo;
+ const mo=Math.min(ease(seg(p,.855,.875)),1-ease(seg(p,.905,.925)));made.style.opacity=mo;if(mo>.02){if(MV.paused){MV.preload='auto';MV.play().catch(()=>{})}}else if(!MV.paused)MV.pause();
  mimg.style.transform=`scale(${1.12-seg(p,.855,.925)*.12})`;
  // 6 · reviews
  const ro=Math.min(ease(seg(p,.915,.93)),1-ease(seg(p,.955,.965)));rev.style.opacity=ro;
