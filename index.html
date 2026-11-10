@@ -110,7 +110,7 @@ body.inroom #hud,body.inroom #brand,body.inroom #skip{opacity:0!important;pointe
 .kick{font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;color:var(--stone)}
 
 /* ===== BUYER ROOM ===== */
-#room{position:fixed;inset:0;z-index:30;background:linear-gradient(90deg,rgba(10,10,11,.93) 0%,rgba(10,10,11,.8) 55%,rgba(10,10,11,.62) 100%);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .9s,visibility .9s}
+#room{position:fixed;inset:0;z-index:30;background:linear-gradient(90deg,rgba(2,9,15,.94) 0%,rgba(4,16,26,.84) 55%,rgba(6,20,32,.66) 100%);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .9s,visibility .9s}
 #room.show{opacity:1;visibility:visible}
 #room header{display:flex;align-items:center;justify-content:space-between;padding:calc(1.2rem + var(--safe-t)) clamp(1.2rem,4vw,3rem) 0}
 #room header .m{font-family:var(--serif);letter-spacing:.34em;font-size:.85rem}
@@ -132,7 +132,7 @@ body.inroom #hud,body.inroom #brand,body.inroom #skip{opacity:0!important;pointe
 .split .img{height:min(62vh,560px);background:center/cover;filter:grayscale(.15)}
 @media (max-width:820px){.split{grid-template-columns:1fr}.split .img{display:none}}
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.kpis div{background:rgba(10,10,11,.72);padding:1.2rem 1.1rem}
+.kpis div{background:rgba(4,14,22,.75);padding:1.2rem 1.1rem}
 .kpis b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1;color:var(--white)}
 .kpis span{display:block;margin-top:.5rem;font-size:.7rem;line-height:1.45;color:var(--stone)}
 .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(.6rem,1.4vw,1.2rem)}
@@ -192,7 +192,7 @@ body.inroom #hud,body.inroom #brand,body.inroom #skip{opacity:0!important;pointe
 @keyframes breathe{from{transform:scale(1.06)}to{transform:scale(1.14)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.6rem}
-.grid6>div{background:rgba(10,10,11,.72);padding:1.6rem 1.4rem 1.7rem;display:flex;flex-direction:column;gap:.55rem}
+.grid6>div{background:rgba(4,14,22,.75);padding:1.6rem 1.4rem 1.7rem;display:flex;flex-direction:column;gap:.55rem}
 .grid6 i{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--stone);line-height:1}
 .grid6 b{font-family:var(--serif);font-weight:400;font-size:1.35rem;color:#fff;line-height:1.15}
 .grid6 span{font-size:.86rem;line-height:1.6;color:var(--mist)}
@@ -329,6 +329,71 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 #skipIntro button{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mist);padding:.55rem .9rem;border:1px solid rgba(242,242,240,.25);border-radius:99px;background:rgba(10,10,11,.4)}
 #skipIntro button:hover{background:var(--bone);color:var(--void)}
 @media (max-width:520px){#skipIntro{left:1rem;right:1rem;justify-content:center}}
+/* ===== V3 · SCROLL DIVE ===== */
+:root{--navy:#061420;--abyss:#02080e;--ice:#dfe8ee;--tide:#8fb2c4}
+body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.v3 #depth,body.v3 #chap,body.v3 #hud,body.v3 #brand,body.v3 #skip{display:none!important}
+#dive{position:fixed;inset:0;z-index:35;overflow-y:auto;overflow-x:hidden;background:var(--abyss);transition:opacity .9s,visibility .9s;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#dive::-webkit-scrollbar{display:none}
+#dive.gone{opacity:0;visibility:hidden;pointer-events:none}
+#dive .track{height:1300vh;position:relative}
+#dive .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#0b2233 0%,var(--navy) 45%,var(--abyss) 100%)}
+#dv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+#dshade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,8,14,.15) 0%,rgba(2,8,14,.65) 100%);pointer-events:none}
+#dveil{position:absolute;inset:0;background:var(--abyss);opacity:0;pointer-events:none}
+#dcuff,#dlab{position:absolute;left:50%;top:50%;will-change:transform,opacity;pointer-events:none;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+#dcuff{height:min(52vh,560px);top:40%;transform:translate(-50%,-50%)}
+.dh.low.first{bottom:7vh}.dh.low.first h2{font-size:clamp(2rem,5.4vw,4.6rem)}
+#dlab{width:min(46vw,420px);opacity:0;transform:translate(-50%,-50%)}
+#dtop{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:calc(1.1rem + var(--safe-t,0px)) clamp(1.1rem,3vw,2.2rem);z-index:5}
+#dtop img{height:clamp(22px,3.2vw,34px);width:auto}
+#dtop button{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(223,232,238,.45);padding:.75rem 1.1rem;background:rgba(2,8,14,.35);backdrop-filter:blur(4px)}
+#dtop button:hover{background:var(--ice);color:var(--abyss)}
+#dbar{position:absolute;left:0;bottom:0;height:2px;background:var(--tide);width:0;z-index:5}
+.dh{position:absolute;left:50%;transform:translate(-50%,-50%);width:min(92vw,1100px);text-align:center;pointer-events:none;opacity:0;will-change:opacity,transform}
+.dh .k{font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide);margin-bottom:1.1rem}
+.dh h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.3rem,7vw,6.4rem);line-height:1.02;color:#fff;text-shadow:0 6px 50px rgba(0,0,0,.55)}
+.dh h2 em{font-style:italic;color:var(--ice)}
+.dh.low{top:auto;bottom:12vh;transform:translate(-50%,0)}
+.dh.mid{top:50%}
+.dh.side{top:50%}
+#dhint{position:absolute;bottom:calc(1.6rem + var(--safe-b,0px));left:50%;transform:translateX(-50%);font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--tide);text-align:center;z-index:4}
+#dhint i{display:block;width:1px;height:34px;margin:.7rem auto 0;background:linear-gradient(var(--tide),transparent);animation:dhint 2s ease-in-out infinite}
+@keyframes dhint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.dnum b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(5rem,18vw,15rem);line-height:.9;color:#fff;letter-spacing:-.02em}
+.dnum span{display:block;margin-top:1.2rem;font-size:clamp(.66rem,1.1vw,.8rem);letter-spacing:.34em;text-transform:uppercase;color:var(--ice)}
+.dnum small{display:block;margin-top:.7rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tide)}
+#dcred{position:absolute;inset:0;opacity:0;pointer-events:none}
+#dcred .face{position:absolute;width:clamp(120px,15vw,230px);aspect-ratio:3/4;background:center/cover;filter:grayscale(.35) contrast(1.05);box-shadow:0 30px 60px rgba(0,0,0,.5);will-change:transform}
+#dcred .face span{position:absolute;left:0;right:0;bottom:-1.5rem;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide);text-align:center}
+#dcred .rail{position:absolute;left:0;bottom:7vh;display:flex;gap:1.2rem;will-change:transform}
+#dcred .rail div{width:clamp(110px,11vw,170px);aspect-ratio:3/4;background:center/cover;flex:none;opacity:.9}
+#drev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;padding:0 6vw;text-align:center}
+#drev .stars{font-size:1rem;letter-spacing:.4em;color:var(--ice);margin-bottom:1.4rem}
+#drev q{display:block;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.6rem,4.4vw,3.6rem);line-height:1.2;color:#fff;max-width:20em;quotes:"“" "”"}
+#drev cite{display:block;margin-top:1.3rem;font-style:normal;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
+#drev .fn{position:absolute;bottom:calc(1.4rem + var(--safe-b,0px));font-size:.55rem;letter-spacing:.14em;color:rgba(143,178,196,.75);max-width:52em;line-height:1.5}
+#dend{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;pointer-events:none;text-align:center;padding:0 6vw}
+#dend.live{pointer-events:auto}
+#dend h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,7vw,6rem);line-height:1.04;color:#fff}
+#dend h2 em{font-style:italic}
+#dend p{font-size:clamp(.9rem,1.4vw,1.05rem);color:var(--ice);max-width:34em;line-height:1.6}
+#dend .btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem}
+.dbtn{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;padding:1.1rem 2rem;border:1px solid var(--ice);color:var(--ice);text-decoration:none;background:transparent;cursor:pointer}
+.dbtn.solid{background:var(--ice);color:var(--abyss)}
+.dbtn:hover{background:#fff;color:var(--abyss)}
+/* opportunity pop-up */
+#opp{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(2,8,14,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s;padding:1.2rem}
+#opp.show{opacity:1;visibility:visible}
+#opp .box{width:min(520px,100%);background:linear-gradient(160deg,#0c2232,#040d15);border:1px solid rgba(143,178,196,.35);padding:clamp(1.8rem,4vw,2.8rem);text-align:center;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+#opp .k{font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:var(--tide)}
+#opp h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,4.4vw,2.7rem);line-height:1.1;color:#fff;margin:1rem 0}
+#opp p{font-size:.92rem;line-height:1.6;color:var(--ice);margin-bottom:1.6rem}
+#opp .btns{display:flex;flex-direction:column;gap:.8rem}
+#opp .x{margin-top:1rem;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
+#room header .m.logo{display:flex;align-items:center}#room header .m.logo img{height:24px;width:auto}
+@media (max-width:640px){#dcred .face{width:30vw}#dtop button{padding:.65rem .8rem;font-size:.5rem}}
+@media (prefers-reduced-motion:reduce){#dhint i{animation:none}}
+
 </style>
 </head>
 <body>
@@ -367,7 +432,7 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
     <button class="begin" type="button" id="begin">Scroll to begin</button><button type="button" id="backWorlds" style="position:absolute;top:1.4rem;left:1.4rem;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mist)">← Replay the journey</button>
   </section>
   <div class="abar" id="bar">
-    <span class="m">SALLY SKOUFIS™</span>
+    <span class="m logo"><img src="x/logo.webp" alt="SALLY SKOUFIS"></span>
     <div class="chips" id="chips"></div>
     <button class="room" type="button" id="toRoomBar">Partner room →</button>
   </div>
@@ -382,9 +447,69 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 </main>
 <div id="lb" aria-modal="true" role="dialog"><button class="x" type="button" id="lbX">Close ✕</button><div class="ph" id="lbPh"></div><div><div class="k" id="lbK"></div><h3 id="lbH"></h3><p id="lbP"></p><div class="nav"><button type="button" id="lbPrev">← Prev</button><button type="button" id="lbNext">Next →</button></div></div></div>
 
+<!-- V3 · SCROLL DIVE -->
+<section id="dive" aria-label="SALLY SKOUFIS for marketplace partners">
+ <div class="track">
+  <div class="stage">
+   <video id="dv" src="x/dive.mp4" poster="x/dive-start.jpg" muted playsinline preload="auto"></video>
+   <div id="dshade"></div>
+   <img id="dlab" src="x/lab.webp" alt="Vigour ring, labradorite and black diamonds">
+   <img id="dcuff" src="x/edge.webp" alt="Edge Ear Cuff, sterling silver and black rhodium">
+   <div id="dveil"></div>
+
+   <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">01 · The brand</div><h2>Australia’s <em>iconic</em><br>jewellery house.</h2></div>
+   <div class="dh low" data-a=".24" data-b=".31"><div class="k">MYER</div><h2>10+ years in <em>department stores.</em></h2></div>
+   <div class="dh low" data-a=".34" data-b=".41"><div class="k">Craft</div><h2>Designed in Perth. <em>Handmade.</em></h2></div>
+   <div class="dh low" data-a=".44" data-b=".52"><div class="k">Runway</div><h2>New York. <em>Paris.</em></h2></div>
+   <div class="dh low" data-a=".555" data-b=".62"><div class="k">US market</div><h2>Already loved <em>in America.</em></h2></div>
+
+   <div class="dh mid dnum" data-a=".63" data-b=".665"><b>#2</b><span>The US is our second-largest market</span></div>
+   <div class="dh mid dnum" data-a=".665" data-b=".70"><b>+79%</b><span>US sales, 2026 vs all of 2025</span></div>
+   <div class="dh mid dnum" data-a=".70" data-b=".735"><b>0.75%</b><span>US return rate, last 12 months</span><small>Fashion average 9.8%</small></div>
+   <div class="dh mid dnum" data-a=".735" data-b=".77"><b>A$490</b><span>Average US order</span></div>
+
+   <div id="dcred">
+    <div class="face" style="background-image:url(w/c-rihanna.jpg);left:5%;top:12%" data-dx="-60"><span>Rihanna</span></div>
+    <div class="face" style="background-image:url(w/c-naomi.jpg);right:5%;top:12%" data-dx="70"><span>Naomi Campbell</span></div>
+    <div class="face" style="background-image:url(w/c-kylie.jpg);left:9%;top:44%" data-dx="-40"><span>Kylie Minogue</span></div>
+    <div class="face" style="background-image:url(w/c-kehlani.jpg);right:9%;top:44%" data-dx="50"><span>Kehlani</span></div>
+    <div class="rail" id="drail"></div>
+   </div>
+   <div class="dh mid" style="top:38%" data-a=".78" data-b=".86"><div class="k">Runway · Press · Stars</div><h2>Worn by <em>icons.</em></h2></div>
+
+   <div id="drev">
+    <div class="stars">★★★★★</div>
+    <q id="drq"></q>
+    <cite id="drc"></cite>
+    <div class="fn">Verified MYER customer reviews (Australia), 5.0 / 5. Reviewers were entered into a prize draw. Light typo corrections only.</div>
+   </div>
+
+   <div id="dend">
+    <div class="k" style="font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)">For selected partners</div>
+    <h2>Let’s bring the ear <em>to your floor.</em></h2>
+    <p>The numbers, the range and how we work together are inside.</p>
+    <div class="btns"><button class="dbtn solid" type="button" id="dRoom">Enter the partner room</button><a class="dbtn" id="dMail" href="#">I’m interested — email Jordie</a></div>
+   </div>
+
+   <div id="dtop"><img src="x/logo.webp" alt="SALLY SKOUFIS"><button type="button" id="dSkip">Partner room →</button></div>
+   <div id="dhint">Scroll to dive<i></i></div>
+   <div id="dbar"></div>
+  </div>
+ </div>
+</section>
+<div id="opp" role="dialog" aria-modal="true" aria-labelledby="oppH">
+ <div class="box">
+  <div class="k">Partnership opportunity · 2027</div>
+  <h3 id="oppH">Secure your <em>launch partnership.</em></h3>
+  <p>We’re selecting a small number of US partners for our next phase of growth. Tell us you’re interested and Jordie will call you.</p>
+  <div class="btns"><a class="dbtn solid" id="oMail" href="#">Yes — I’m interested</a><button class="dbtn" type="button" id="oRoom">Keep exploring</button></div>
+  <button class="x" type="button" id="oX">Not now</button>
+ </div>
+</div>
+
 <!-- PART 2 -->
 <section id="room" aria-label="For marketplace partners">
-  <header><span class="m">SALLY SKOUFIS™</span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta" href="mailto:partnership@sallyskoufis.com?subject=SALLY%20SKOUFIS%E2%84%A2%20%E2%80%94%20marketplace%20partnership">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
+  <header><span class="m logo"><img src="x/logo.webp" alt="SALLY SKOUFIS"></span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta" href="mailto:partnership@sallyskoufis.com?subject=SALLY%20SKOUFIS%E2%84%A2%20%E2%80%94%20marketplace%20partnership">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
   <nav id="tabs"></nav>
   <div id="panes">
 
@@ -520,7 +645,6 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
         <div><span>Catalogue</span><span>Imagery, attributes, orders &amp; stock fully automated via Shopify</span></div>
         <div><span>Merchandising</span><span>Led by proven US bestsellers</span></div>
         <div><span>Terms &amp; margin</span><span>Agreed with each partner</span></div>
-        <div><span>Exclusivity</span><span>Non-exclusive</span></div>
         <div><span>Fulfilment &amp; launch</span><span>Set with your partnerships contact</span></div>
         <div><span>Assets</span><span>Film, campaign &amp; product imagery supplied</span></div>
       </div>
@@ -784,6 +908,75 @@ document.getElementById('mailBtn').addEventListener('click',()=>{try{navigator.c
     d.forEach(o=>{o.r+=1.5*dpr;o.a*=.976;for(let k=0;k<2;k++){x.beginPath();x.arc(o.x,o.y,o.r*(1-k*.35),0,6.283);x.strokeStyle='rgba(242,242,240,'+(o.a*(1-k*.5))+')';x.lineWidth=dpr;x.stroke()}});
     if(!sp.classList.contains('gone'))requestAnimationFrame(loop);else clearInterval(auto)})();
 })();
+/* ============ V3 · SCROLL DIVE ============ */
+(function(){
+document.body.classList.add('v3');
+const PARTNER={name:'Jordie',email:'partnership@sallyskoufis.com'};
+const mailHref='mailto:'+PARTNER.email+'?subject='+encodeURIComponent('SALLY SKOUFIS™ partnership — we’re interested')+'&body='+encodeURIComponent('Hi '+PARTNER.name+',\n\nWe’ve seen the SALLY SKOUFIS™ partner presentation and we’re interested in discussing a partnership.\n\nCompany:\nName & role:\nBest number to call:\n\nThanks,\n');
+['dMail','oMail'].forEach(id=>document.getElementById(id).href=mailHref);
+const D=document.getElementById('dive'),V=document.getElementById('dv'),cuff=document.getElementById('dcuff'),lab=document.getElementById('dlab'),veil=document.getElementById('dveil'),bar=document.getElementById('dbar'),hint=document.getElementById('dhint'),cred=document.getElementById('dcred'),rev=document.getElementById('drev'),end=document.getElementById('dend');
+const H=[...D.querySelectorAll('.dh')];
+const faces=[...cred.querySelectorAll('.face')];
+const rail=document.getElementById('drail');
+['w/vogue.jpg','w/run-1.jpg','w/nyfw-1.jpg','w/run-3.jpg','w/run-4.jpg','w/nyfw-2.jpg','w/run-2.jpg','w/run-5.jpg','w/vogue.jpg','w/run-1.jpg','w/nyfw-1.jpg','w/run-3.jpg'].forEach(s=>{const d=document.createElement('div');d.style.backgroundImage=`url(${s})`;rail.appendChild(d)});
+const REV=[
+ ['They will become a keepsake.','Bridal Temptation Earrings · Balcatta, WA'],
+ ['She absolutely loves it and gets compliments all the time.','Pure Stud & Ear Cuff Set · Brisbane, QLD'],
+ ['So many people have commented on how amazing they look.','Pure Drop Alchemy Huggies · Tasmania'],
+ ['Subtle… yet edgy and fun. Haven’t taken them out!','Honeycomb Huggies in Black · Singleton, NSW']];
+const rq=document.getElementById('drq'),rc=document.getElementById('drc');let ri=-1;
+const VA=.15,VB=.62; // video window
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),seg=(p,a,b)=>cl((p-a)/(b-a)),ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+let vt=0,want=0,dur=32.5,ready=false;
+const chk=()=>{if(V.readyState>=1){dur=V.duration||dur;ready=true}};chk();V.addEventListener('loadedmetadata',chk);V.addEventListener('canplay',chk);
+function unlock(){V.play().then(()=>V.pause()).catch(()=>{});window.removeEventListener('touchstart',unlock);D.removeEventListener('scroll',unlock)}
+window.addEventListener('touchstart',unlock,{passive:true});D.addEventListener('scroll',unlock,{passive:true});
+let shownOpp=false;
+function render(){
+ const max=D.scrollHeight-D.clientHeight,p=max>0?D.scrollTop/max:0;
+ bar.style.width=(p*100)+'%';hint.style.opacity=1-seg(p,0,.02);
+ // 1 · ear cuff hero
+ const c=seg(p,0,.11);cuff.style.opacity=1-seg(p,.07,.11);
+ cuff.style.transform=`translate(-50%,-50%) scale(${1+ease(c)*.35}) rotate(${c*-8}deg)`;
+ // 2 · into the labradorite
+ const l=seg(p,.07,.16);lab.style.opacity=l<=0?0:Math.min(1,l*4)*(1-seg(p,.145,.16));
+ lab.style.transform=`translate(-50%,-50%) scale(${.6+Math.pow(l,2.2)*9}) rotate(${l*12}deg)`;
+ // 3 · film scrub
+ V.style.opacity=seg(p,.135,.16)*(1-seg(p,.775,.80)*.75);
+ want=seg(p,VA,VB)*(dur-.05);
+ veil.style.opacity=Math.max(seg(p,.62,.635)*.55*(1-seg(p,.77,.78)), seg(p,.875,.89)*.85);
+ // headlines
+ H.forEach(h=>{const a=+h.dataset.a,b=+h.dataset.b,w=(b-a)*.25;let o;
+  if(h.dataset.fade==='in'&&p<a+w)o=1;else o=Math.min(seg(p,a,a+w),1-seg(p,b-w,b));
+  h.style.opacity=o;const y=(1-o)*24*(p<(a+b)/2?1:-1);
+  h.style.transform=h.classList.contains('low')?`translate(-50%,${y}px)`:`translate(-50%,calc(-50% + ${y}px))`});
+ // credentials
+ const cr=seg(p,.77,.875),co=Math.min(seg(p,.77,.79),1-seg(p,.86,.875));cred.style.opacity=co;
+ faces.forEach((f,i)=>{f.style.transform=`translate(${(+f.dataset.dx)*(cr-.5)*2}px,${(1-cr)*60*(i%2?1:-1)}px)`});
+ rail.style.transform=`translateX(${-cr*rail.scrollWidth*.45}px)`;
+ // reviews
+ const ro=Math.min(seg(p,.875,.89),1-seg(p,.935,.945));rev.style.opacity=ro;
+ const k=Math.min(REV.length-1,Math.floor(seg(p,.875,.94)*REV.length));if(k!==ri&&ro>0){ri=k;rq.textContent=REV[k][0];rc.textContent=REV[k][1]}
+ // end
+ const eo=seg(p,.945,.97);end.style.opacity=eo;end.classList.toggle('live',eo>.6);
+ if(eo>.95&&!shownOpp){shownOpp=true;setTimeout(()=>{if(!D.classList.contains('gone'))openOpp()},1600)}
+}
+function tick(){render();if(ready){vt+=(want-vt)*.22;if(Math.abs(V.currentTime-vt)>.035&&!V.seeking){try{V.currentTime=vt}catch(e){}}}requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+const opp=document.getElementById('opp');
+function openOpp(){opp.classList.add('show')}
+function closeOpp(){opp.classList.remove('show')}
+function toRoom(){closeOpp();D.classList.add('gone');openRoom(0);clearTimeout(window.__oppT);if(!shownOpp)window.__oppT=setTimeout(()=>{if(!shownOpp){shownOpp=true;openOpp()}},30000)}
+document.getElementById('dSkip').onclick=toRoom;document.getElementById('dRoom').onclick=toRoom;
+document.getElementById('oRoom').onclick=()=>{closeOpp();if(!D.classList.contains('gone'))toRoom()};
+document.getElementById('oX').onclick=closeOpp;opp.addEventListener('click',e=>{if(e.target===opp)closeOpp()});
+document.getElementById('oMail').addEventListener('click',()=>setTimeout(closeOpp,400));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOpp()});
+// back from partner room returns to the dive (at the end)
+document.getElementById('backFilm').addEventListener('click',()=>{D.classList.remove('gone')});
+if(location.hash==='#room')toRoom();
+})();
+
 </script>
 </body>
 </html>

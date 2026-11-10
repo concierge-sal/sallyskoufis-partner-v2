@@ -20,3 +20,13 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Partner room cut from 11 to 8 tabs: Why now · Why us · US performance · Bestsellers · Collections · How it works · Founder · Contact
 - "Download 1-page summary" (SALLY_SKOUFIS_Partner_Summary.pdf) + "Request a call" always visible in the partner room
 - PDF source: rebuild from the onepager HTML if numbers change
+
+## v3 — scroll dive (10 Nov 2026, after the creative regroup)
+- New opening: one long scroll down. Edge Ear Cuff → into the labradorite (Vigour ring) → Warrior Soul film scrubbed by scroll (ocean ending reversed, underwater, hands, surfacing) → 4 numbers one at a time → Runway/press/stars (faces, not names) → reviews → "Let's bring the ear to your floor"
+- Navy/black palette, real SS logo (x/logo.webp) instead of typed wordmark
+- Opportunity pop-up + one-click pre-written email to Jordie (no Calendly). Wording "small number of US partners" — TO CONFIRM with Sally/Jordie
+- "Non-exclusive" removed everywhere (site + PDF)
+- Reviews: MYER (Australia) verified, prize-draw disclosed in footnote
+- Previous v2.1 kept at /classic
+- Film: x/dive.mp4 (32s, 1280px, keyframe every 6 frames so scrubbing is smooth). Headings are placeholders until Jordie's five headings arrive — edit the `.dh` blocks in index.html
+- TODO: handmade production-reel scene, magazine logo rail, Jordie's email
