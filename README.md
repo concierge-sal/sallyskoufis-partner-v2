@@ -51,3 +51,10 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Film re-cut (x/dive.mp4, 34.7s): gem → ocean wave rolls and crashes into white foam (forward, p2 3:07) → underwater bubbles + light (p1 1:21.6, slowed 2x) → ringed hands → face → fabric → swim up → surfacing. Headlines re-timed to sit over the model shots.
 
 - Ending: brand end card from Drive ("2026-09-16_Sally-Skoufis_Endcard_Edncard_v01") — black silk, SS mark builds as you scroll, then the choices appear over it. x/endcard.mp4 / x/endcard-m.mp4 (all-keyframe). Phone: full-frame vertical; desktop: mark framed in the top half over blurred silk.
+
+## v3.5 (local branch `press-reorder`, NOT pushed, awaiting approval)
+- Order: ring → stone → ocean → press pages → she surfaces → Edge ear cuff → atelier → US numbers → icons → model wall → reviews → end card.
+- Jordie's five headline statements replace the old film headlines (medium wording as kicker, short wording as headline).
+- Press scene: Vogue Paris + Harper's Bazaar editorials, Harper's Bazaar Vietnam cover (Aug 2023), NYC press moment (approved), Vogue quote clip; drifting masthead row (Vogue, Elle, Bazaar, NYFW, PFW) from the brand's own logo files. Elle page skipped for now.
+- Model wall: 7 campaign clips from Drive; split ads cropped to model half only (no "60% OFF" visible). Phone shows 5.
+- Track 1600vh → 2000vh.
