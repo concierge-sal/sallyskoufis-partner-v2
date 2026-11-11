@@ -385,6 +385,55 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dcred .rway{position:absolute;left:50%;top:52%;width:min(38vw,62vh);margin:0;transform:translateX(-50%);will-change:transform}
 #dcred .rway video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;-webkit-mask:radial-gradient(ellipse 72% 70% at 50% 50%,#000 55%,rgba(0,0,0,.55) 78%,transparent 100%);mask:radial-gradient(ellipse 72% 70% at 50% 50%,#000 55%,rgba(0,0,0,.55) 78%,transparent 100%)}
 #dcred .rway figcaption{margin-top:.2rem;font-size:.52rem;letter-spacing:.34em;text-transform:uppercase;color:var(--tide);text-align:center}
+/* ---------- The website tab: home page preview (from the live theme's index.json, 11 Nov 2026) ---------- */
+.pane.web{justify-content:flex-start;padding-top:clamp(1.2rem,3vh,2.2rem)}
+.pane.web h3{margin:.6rem 0 .5rem}
+.bw-visit{margin:0 0 clamp(.8rem,2vh,1.3rem);font-size:.82rem;color:var(--ice)}.bw-visit a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.bw{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid rgba(143,178,196,.28);border-radius:10px;overflow:hidden;background:#0a1621;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.bw-bar{display:flex;align-items:center;gap:1rem;padding:.6rem .9rem;background:#0e1d2a;border-bottom:1px solid rgba(143,178,196,.18);flex:none}
+.bw-dots{display:flex;gap:6px}.bw-dots i{width:10px;height:10px;border-radius:50%;background:rgba(223,232,238,.22)}
+.bw-url{flex:1;max-width:460px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.72rem;letter-spacing:.04em;color:#cfdbe3;background:rgba(2,8,14,.55);border-radius:999px;padding:.38rem 1rem}
+.bw-url svg{width:11px;height:11px;opacity:.7}
+.bw-open{font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ice);text-decoration:none;white-space:nowrap}.bw-open:hover{text-decoration:underline}
+.bw-view{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:#f7f6f3;color:#141414;scrollbar-width:thin}
+.bw-view a{color:inherit}
+.bw-view .w-k{display:block;font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;margin-bottom:.8rem}
+.bw-view h4{font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,3.4vw,3rem);line-height:1.02;margin:0 0 .9rem}
+.bw-view h4 i,.bw-view h5 i{font-style:italic}
+.w-btn{display:inline-block;margin-top:1rem;padding:.75rem 1.4rem;font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;text-decoration:none;border:1px solid currentColor}
+.w-hero,.w-curtain{position:relative;color:#fff;overflow:hidden}
+.w-hero picture img,.w-curtain picture img{display:block;width:100%;height:clamp(300px,52vh,560px);object-fit:cover}
+.w-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.15) 65%)}
+.w-curtain::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.w-hero .w-in,.w-curtain .w-in{position:absolute;z-index:1;left:clamp(1.2rem,5%,3.5rem);top:50%;transform:translateY(-50%);max-width:min(440px,80%)}
+.w-curtain .w-in{left:50%;transform:translate(-50%,-50%);text-align:center}
+.w-hero p,.w-curtain p{font-size:.86rem;line-height:1.6;margin:0;opacity:.92}
+.w-logo{height:16px;width:auto;display:block;margin-bottom:1.6rem}
+.w-stmt{padding:clamp(2.6rem,7vh,4.4rem) clamp(1.2rem,8%,6rem);text-align:center}
+.w-stmt p{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.3;max-width:760px;margin:0 auto}
+.w-stmt i{font-style:italic}
+.w-rail{padding:clamp(1.6rem,4vh,2.6rem) clamp(1rem,4%,2.6rem)}
+.w-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-bottom:1.2rem}
+.w-head h5{font-family:var(--serif);font-weight:300;font-size:clamp(1.3rem,2.2vw,1.9rem);margin:0 0 .3rem}
+.w-head p{margin:0;font-size:.78rem;color:#666;max-width:460px}
+.w-head a{font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
+.w-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.7rem,1.4vw,1.2rem)}
+.w-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,1.4vw,1.2rem)}
+.w-grid a,.w-cols a{display:block;text-decoration:none}
+.w-grid figure,.w-cols figure{margin:0;aspect-ratio:3/4;background:#eceae5;overflow:hidden}
+.w-grid img,.w-cols img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.w-grid a:hover img,.w-cols a:hover img{transform:scale(1.05)}
+.w-grid .t,.w-cols .t{display:block;margin-top:.6rem;font-size:.8rem}
+.w-grid .pr,.w-cols .cap{display:block;margin-top:.2rem;font-size:.72rem;color:#666}
+.w-artist{position:relative;display:grid;grid-template-columns:1fr 1fr;background:#0d0d0d;color:#eee}
+.w-artist>img{width:100%;height:100%;min-height:340px;object-fit:cover;object-position:25% 50%}
+.w-artist .w-in{padding:clamp(1.6rem,5vh,3rem) clamp(1.2rem,4%,2.8rem)}
+.w-artist p{font-size:.82rem;line-height:1.65;opacity:.85;margin:0 0 .8rem}
+.w-links{display:flex;gap:1.4rem;margin:1rem 0 1.8rem}.w-links a{font-size:.55rem;letter-spacing:.24em;text-transform:uppercase}
+.w-pil{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.4rem}
+.w-pil li{font-size:.74rem;line-height:1.5;opacity:.8}.w-pil b{display:block;font-weight:500;font-size:.78rem;opacity:1;margin-bottom:.15rem}
+.w-foot{padding:1.6rem 1.2rem 2rem;text-align:center;font-size:.72rem;color:#666}.w-foot a{color:#111}
+@media (max-width:760px){.bw-url{font-size:.66rem;padding:.32rem .7rem}.bw-open{display:none}.w-grid{grid-template-columns:repeat(2,1fr)}.w-cols{grid-template-columns:repeat(2,1fr)}.w-artist{grid-template-columns:1fr}.w-artist>img{min-height:0;height:260px}.w-hero picture img{height:62vh}.w-hero::after{background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,.1) 70%)}.w-hero .w-in{top:auto;bottom:1.4rem;transform:none}.w-head{flex-direction:column;align-items:flex-start}.w-pil{grid-template-columns:1fr}}
 #dpress{position:absolute;inset:0;opacity:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 60% 55%,rgba(6,20,32,.45) 0%,rgba(2,8,14,.88) 75%)}
 #dpress .pk{position:absolute;left:7vw;top:calc(12vh + var(--safe-t,0px));font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
 #dpress .ph{position:absolute;left:7vw;top:calc(15vh + var(--safe-t,0px));margin:0;font-family:var(--serif);font-weight:300;font-size:clamp(1.6rem,3vw,2.8rem);line-height:1.08;color:#fff;text-shadow:0 6px 40px rgba(0,0,0,.6)}
@@ -793,6 +842,27 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
             <li><b>Worn by</b><span>Rihanna · Naomi Campbell · Emma Myers · Kehlani · Bella Poarch</span></li>
             <li><b>Ateliers</b><span>Perth, Australia · Thailand</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane web" data-tab="The website">
+      <div class="kick">The brand online · sallyskoufis.com</div>
+      <h3>Our home page, <em>right here.</em></h3>
+      <p class="bw-visit">For the best, real experience, visit our site: <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com ↗</a></p>
+      <div class="bw" role="region" aria-label="SALLY SKOUFIS home page preview">
+        <div class="bw-bar"><span class="bw-dots"><i></i><i></i><i></i></span><span class="bw-url"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2h.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h.5zm1.5 0h4V5a2 2 0 0 0-4 0v2z" fill="currentColor"/></svg>sallyskoufis.com</span><a class="bw-open" href="https://sallyskoufis.com" target="_blank" rel="noopener">Open full site ↗</a></div>
+        <div class="bw-view" id="bwView">
+          <section class="w-hero"><picture><source media="(max-width:760px)" srcset="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-Minx-Banner-Mobile.png?v=1792039865&width=800"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-Minx-Signet-Homepage-Banner.jpg?v=1792039863&width=1800" alt="Minx Shell signet ring in mother of pearl"></picture>
+            <div class="w-in"><img class="w-logo" src="x/logo-w.webp" alt="SALLY SKOUFIS"><span class="w-k">The new signature</span><h4>Minx,<br>now in <i>mother of pearl</i></h4><p>Natural pearl shell and conscious diamonds, set into our most iconic silhouette.</p><a class="w-btn" href="https://sallyskoufis.com/collections/minx-shell" target="_blank" rel="noopener">Shop Minx Shell</a></div></section>
+          <section class="w-stmt"><span class="w-k">Conscious modern luxury</span><p>Symbolic jewelry, handcrafted to represent who you are. Made to be <i>worn, not shown.</i></p></section>
+          <section class="w-rail"><div class="w-head"><div><h5>The Minx Shell edit</h5><p>Four new pieces in pink, white and black natural pearl shell.</p></div><a href="https://sallyskoufis.com/collections/minx-shell" target="_blank" rel="noopener">Shop the edit</a></div><div class="w-grid"><a href="https://sallyskoufis.com/products/minx-shell-necklace-18k-gold" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-MinxShellSignetNecklace_Gold_02.png?v=1770103307&width=480" alt="Minx Shell Necklace" loading="lazy"></figure><span class="t">Minx Shell Necklace</span><span class="pr">US$345</span></a><a href="https://sallyskoufis.com/products/minx-shell-signet-ring-pink-shell" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-MinxShellSignetRing-Gold.png?v=1770107302&width=480" alt="Minx Shell Signet Ring" loading="lazy"></figure><span class="t">Minx Shell Signet Ring</span><span class="pr">US$127</span></a><a href="https://sallyskoufis.com/products/minx-shell-lariat-silver" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-MinxShellSignetNecklace_Product.png?v=1770097143&width=480" alt="Minx Shell Lariat" loading="lazy"></figure><span class="t">Minx Shell Lariat</span><span class="pr">US$380</span></a><a href="https://sallyskoufis.com/products/minx-shell-bracelet-18k-gold" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-MinxShellSignetBracelet_Gold.png?v=1770101448&width=480" alt="Minx Shell Bracelet" loading="lazy"></figure><span class="t">Minx Shell Bracelet</span><span class="pr">US$140</span></a></div></section>
+          <section class="w-curtain"><picture><source media="(max-width:760px)" srcset="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-Minx-Mobile-Parallax.png?v=1792039893&width=800"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-Minx-Signet-Homepage-Parallax.jpg?v=1792039890&width=1800" alt="" loading="lazy"></picture><div class="w-in"><h4>Worn, not shown</h4><p>Pieces you'll still reach for in ten years, chosen for sentiment rather than trend.</p><a class="w-btn" href="https://sallyskoufis.com/pages/design-philosophy" target="_blank" rel="noopener">Our design philosophy</a></div></section>
+          <section class="w-rail"><div class="w-head"><div><h5>Iconic best sellers</h5><p>The ear cuffs and climbers that built the house, in black diamond and black rhodium.</p></div><a href="https://sallyskoufis.com/collections/iconic" target="_blank" rel="noopener">View all</a></div><div class="w-grid"><a href="https://sallyskoufis.com/products/destiny-ear-cuff-qbt103u0103m01000000" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/DESTINY_EARCUFF_AllBlk.png?v=1764814907&width=480" alt="Destiny Ear Cuff" loading="lazy"></figure><span class="t">Destiny Ear Cuff</span><span class="pr">US$100</span></a><a href="https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0101m02000000" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT203U0101M02000000-01.png?v=1698171539&width=480" alt="Edge Ear Cuff" loading="lazy"></figure><span class="t">Edge Ear Cuff</span><span class="pr">US$140</span></a><a href="https://sallyskoufis.com/products/pure-ear-climber-wst203l0102m02000003" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/WST203L0102M02000003-01.png?v=1698682591&width=480" alt="Solitaire Ear Climber" loading="lazy"></figure><span class="t">Solitaire Ear Climber</span><span class="pr">US$160</span></a><a href="https://sallyskoufis.com/products/oct-new-ear-cuff-2-black" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-SuspendedSolitaireCuff-BLK_02.png?v=1769739471&width=480" alt="Suspension Solitaire Cuff" loading="lazy"></figure><span class="t">Suspension Solitaire Cuff</span><span class="pr">US$110</span></a></div></section>
+          <section class="w-rail"><div class="w-head"><div><h5>Shop by collection</h5></div></div><div class="w-cols"><a href="https://sallyskoufis.com/collections/minx" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY_SKOUFIS__Minx_Lariat.png?v=1792466386&width=520" alt="Minx" loading="lazy"></figure><span class="t">Minx</span><span class="cap">Shell, solitaires and fine chains</span></a><a href="https://sallyskoufis.com/collections/uncontained" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-SuspensionSolitaireClimber-BLK02.jpg?v=1770024148&width=520" alt="Uncontained" loading="lazy"></figure><span class="t">Uncontained</span><span class="cap">Suspended Fancy Cuts with Pave</span></a><a href="https://sallyskoufis.com/collections/eclipse" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS-ECLIPSE-CLIMBER.jpg?v=1746770143&width=520" alt="Eclipse" loading="lazy"></figure><span class="t">Eclipse</span><span class="cap">Natural Pearl Sculpted Pieces</span></a><a href="https://sallyskoufis.com/collections/ear-cuffs-climbers-huggies" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_-Minx-Cliber-18kGold.png?v=1781838832&width=520" alt="Ear cuffs" loading="lazy"></figure><span class="t">Ear cuffs</span><span class="cap">Iconic Bestselling Cuffs, Climbers &amp; Huggies</span></a><a href="https://sallyskoufis.com/collections/rings" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY_SKOUFIS__Minx_Signet_Silver.png?v=1792471970&width=520" alt="Rings" loading="lazy"></figure><span class="t">Rings</span><span class="cap">Signets, solitaires, midis</span></a><a href="https://sallyskoufis.com/collections/men" target="_blank" rel="noopener"><figure><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/PET103A0103N18010000-mens.jpg?v=1703556312&width=520" alt="For him" loading="lazy"></figure><span class="t">For him</span><span class="cap">Rings, chains and ear cuffs</span></a></div></section>
+          <section class="w-artist"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY-SKOUFIS-JEWELRY-DESIGNER-PROFILE_1.jpg?v=1698936151&width=1400" alt="Sally Skoufis, artist and jewelry designer" loading="lazy"><div class="w-in"><h4>Artist &amp;<br><i>jewelry designer</i></h4><p>Sally's designs follow environmental evolution, not trend. Each piece is made to mark an occasion, a sentiment, or simply who you are.</p><p>Precious and semi-precious stones are ethically sourced and set by hand, so every piece carries both the earth and the maker.</p><div class="w-links"><a href="https://sallyskoufis.com/pages/designer-profile" target="_blank" rel="noopener">Meet Sally</a><a href="https://sallyskoufis.com/pages/design-philosophy" target="_blank" rel="noopener">Design philosophy</a></div>
+            <span class="w-k">Materials</span><ul class="w-pil"><li><b>Conscious diamonds</b>Man-made diamonds and ethically sourced stones.</li><li><b>925 sterling silver</b>Finished in 18K gold vermeil or rhodium.</li><li><b>Hypoallergenic</b>Made for every day and every ear.</li><li><b>Minimal quantities</b>Each design is made in small, exclusive runs.</li></ul></div></section>
+          <div class="w-foot">This is a preview of our home page. For the best, real experience, <a href="https://sallyskoufis.com" target="_blank" rel="noopener">visit sallyskoufis.com ↗</a></div>
         </div>
       </div>
     </div>
