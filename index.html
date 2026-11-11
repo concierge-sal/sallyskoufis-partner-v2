@@ -336,6 +336,36 @@ body.lightw #depth .bar i{background:#0a0a0b} body.lightw #depth .bar{background
 #mailFb a,#mailFb .cp{font:inherit;font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:#dfe8ee;border:1px solid rgba(223,232,238,.4);padding:.65rem .9rem;background:none;cursor:pointer;text-decoration:none}
 #mailFb a:hover,#mailFb .cp:hover{background:#dfe8ee;color:#02080e}
 #mailFb .x{position:absolute;top:.4rem;right:.6rem;background:none;border:0;color:#8fb2c4;font-size:1.3rem;cursor:pointer}
+
+/* ---------- The website tab ---------- */
+.pane.web{justify-content:flex-start;padding-top:clamp(1.2rem,3vh,2.2rem)}
+.pane.web h3{margin-bottom:clamp(.8rem,2vh,1.4rem)}
+.bw{flex:1;min-height:0;max-height:min(66vh,720px);display:flex;flex-direction:column;border:1px solid rgba(143,178,196,.28);border-radius:10px;overflow:hidden;background:#0a1621;box-shadow:0 40px 90px rgba(0,0,0,.55)}
+.bw-bar{display:flex;align-items:center;gap:1rem;padding:.6rem .9rem;background:#0e1d2a;border-bottom:1px solid rgba(143,178,196,.18)}
+.bw-dots{display:flex;gap:6px}.bw-dots i{width:10px;height:10px;border-radius:50%;background:rgba(223,232,238,.22)}
+.bw-url{flex:1;max-width:460px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:.45rem;font-size:.72rem;letter-spacing:.04em;color:#cfdbe3;background:rgba(2,8,14,.55);border-radius:999px;padding:.38rem 1rem}
+.bw-url svg{width:11px;height:11px;opacity:.7}
+.bw-open{font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ice);text-decoration:none;white-space:nowrap}
+.bw-open:hover{text-decoration:underline}
+.bw-view{flex:1;overflow-y:auto;overscroll-behavior:contain;background:#f6f5f2;color:#141414;scrollbar-width:thin}
+.bw-nav{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.9rem clamp(.9rem,2.4vw,1.8rem);background:rgba(246,245,242,.94);backdrop-filter:blur(6px);border-bottom:1px solid #e3e0da}
+.bw-nav img{height:18px;width:auto;filter:invert(1)}
+.bw-nav nav{display:flex;gap:.2rem;flex-wrap:wrap}
+.bw-nav button{font:inherit;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:#555;background:none;border:0;padding:.45rem .6rem;cursor:pointer;border-bottom:1px solid transparent}
+.bw-nav button.on,.bw-nav button:hover{color:#111;border-bottom-color:#111}
+.bw-hero{height:clamp(120px,22vh,210px);background:linear-gradient(90deg,rgba(6,20,32,.78),rgba(6,20,32,.15)),url(x/dive-end.jpg) center 40%/cover;display:flex;align-items:center;padding:0 clamp(1rem,3vw,2.4rem);color:#fff}
+.bw-hero span{display:block;font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;opacity:.85;margin-bottom:.5rem}
+.bw-hero b{font-family:var(--serif);font-weight:300;font-size:clamp(1.4rem,2.6vw,2.2rem)}
+.bw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:clamp(.8rem,1.6vw,1.4rem);padding:clamp(1rem,2.4vw,1.8rem)}
+.bw-grid a{color:inherit;text-decoration:none;display:block}
+.bw-grid figure{margin:0;position:relative;aspect-ratio:2/3;background:#fff;overflow:hidden}
+.bw-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.bw-grid a:hover img{transform:scale(1.05)}
+.bw-grid em{position:absolute;top:.6rem;left:.6rem;font-style:normal;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;background:#111;color:#fff;padding:.3rem .5rem}
+.bw-grid .t{display:block;margin-top:.6rem;font-size:.78rem;letter-spacing:.02em}
+.bw-grid .pr{display:block;margin-top:.2rem;font-size:.72rem;color:#666}
+.bw-foot{padding:0 1.8rem 1.6rem;font-size:.6rem;letter-spacing:.06em;color:#8a8a8a;text-align:center}
+@media (max-width:760px){.bw{max-height:none;min-height:62vh}.bw-url{font-size:.66rem;padding:.32rem .7rem}.bw-open{display:none}.bw-grid{grid-template-columns:repeat(2,1fr)}.bw-nav{justify-content:center}.bw-nav nav{justify-content:center}}
 /* ===== V3 · SCROLL DIVE ===== */
 :root{--navy:#061420;--abyss:#02080e;--ice:#dfe8ee;--tide:#8fb2c4}
 body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.v3 #depth,body.v3 #chap,body.v3 #hud,body.v3 #brand,body.v3 #skip{display:none!important}
@@ -361,7 +391,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .dh.low.first{bottom:7vh}.dh.low.first h2{font-size:clamp(2rem,5.4vw,4.6rem)}
 #dlab{width:min(46vw,420px);opacity:0;transform:translate(-50%,-50%)}
 #dtop{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:calc(1.1rem + var(--safe-t,0px)) clamp(1.1rem,3vw,2.2rem);z-index:5}
-#dtop img{height:clamp(22px,3.2vw,34px);width:auto}
+#dtop img{height:clamp(24px,2.6vw,38px);width:auto;filter:drop-shadow(0 1px 10px rgba(0,0,0,.5))}
 #dtop button{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(223,232,238,.45);padding:.75rem 1.1rem;background:rgba(2,8,14,.35);backdrop-filter:blur(4px)}
 #dtop button:hover{background:var(--ice);color:var(--abyss)}
 #dbar{position:absolute;left:0;bottom:0;height:2px;background:var(--tide);width:0;z-index:5}
@@ -381,6 +411,14 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dcred{position:absolute;inset:0;opacity:0;pointer-events:none}
 #dcred .face{position:absolute;width:clamp(120px,15vw,230px);aspect-ratio:3/4;background:center/cover;filter:grayscale(.35) contrast(1.05);box-shadow:0 30px 60px rgba(0,0,0,.5);will-change:transform}
 #dcred .face span{position:absolute;left:0;right:0;bottom:-1.5rem;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide);text-align:center}
+#dcred #dsally{position:absolute;left:50%;top:49%;margin:0;width:min(29vw,40vh);transform:translate(-50%,-50%);box-shadow:0 30px 70px rgba(0,0,0,.6);will-change:transform}
+#dcred #dsally img{display:block;width:100%;height:auto}
+#dcred #dsally figcaption{position:absolute;left:0;right:0;bottom:-1.6rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
+@media (max-width:640px){#dcred #dsally{width:74vw;top:56%}
+#dcred .face{width:21vw!important;top:20%!important;right:auto!important}
+#dcred .face:nth-child(1){left:3vw!important}#dcred .face:nth-child(2){left:27.3vw!important}#dcred .face:nth-child(3){left:51.6vw!important}#dcred .face:nth-child(4){left:75.9vw!important}
+#dcred .face span{font-size:.4rem;letter-spacing:.1em;bottom:-1.2rem;white-space:nowrap}
+.dh.mid[data-a=".785"]{top:11%!important}}
 #dcred .rail{position:absolute;left:0;bottom:7vh;display:flex;gap:1.2rem;will-change:transform}
 #dcred .rail div{width:clamp(110px,11vw,170px);aspect-ratio:3/4;background:center/cover;flex:none;opacity:.9}
 #drev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;padding:0 6vw;text-align:center}
@@ -453,15 +491,6 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dpress .pl-t img.pfw{height:clamp(26px,3.6vw,44px)}
 @keyframes plm{to{transform:translateX(-50%)}}
 @media (max-width:760px){#dlabV{height:min(68vh,118vw);top:42%}.dh.low.first{bottom:13vh}#dpress .land{--h:12vh}#dpress .tall{--h:17vh}#dpress .sq{--h:14vh}#dpress .cover{--h:31vh}#dpress .pg{top:57%}#dpress .pg figcaption{font-size:.42rem;letter-spacing:.16em;padding:1rem .45rem .4rem}#dpress .ph{top:calc(13vh + var(--safe-t,0px))}}
-/* model wall */
-#dworn{position:absolute;inset:0;opacity:0;pointer-events:none;--u:min(34vh,19.5vw);--g:min(1.2vh,.8vw)}
-#dworn .wk{position:absolute;left:0;right:0;top:calc(8.5vh + var(--safe-t,0px));text-align:center;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
-#dworn .wg{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);display:grid;grid-template-columns:calc((var(--u)*2 + var(--g))*.8) repeat(3,calc(var(--u)*.8));grid-template-rows:repeat(2,var(--u));gap:var(--g)}
-#dworn .wt{position:relative;margin:0;overflow:hidden;background:#0b1824;opacity:0;will-change:transform,opacity;box-shadow:0 24px 50px rgba(0,0,0,.5)}
-#dworn .wt.big{grid-row:span 2}
-#dworn .wt video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-#dworn .wt figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.2rem .7rem .55rem;font-size:.5rem;letter-spacing:.26em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(2,8,14,.8))}
-@media (max-width:760px){#dworn .wg{top:55%;grid-template-columns:repeat(2,44vw);grid-template-rows:31vh repeat(2,21vh);gap:2vw}#dworn .wt.big{grid-row:auto;grid-column:span 2}#dworn .wt video{object-position:50% 30%}#dworn .wt:nth-child(n+6){display:none}#dworn .wt figcaption{font-size:.44rem;letter-spacing:.18em}}
 #dmade{position:absolute;inset:0;opacity:0;pointer-events:none}
 #dmade .img{position:absolute;inset:-4%;width:108%;height:108%;object-fit:cover;filter:saturate(.75) brightness(.8);will-change:transform}
 #dmade::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,8,14,.5) 0%,rgba(2,8,14,0) 35%,rgba(2,8,14,.75) 100%)}
@@ -476,7 +505,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #opp p{font-size:.92rem;line-height:1.6;color:var(--ice);margin-bottom:1.6rem}
 #opp .btns{display:flex;flex-direction:column;gap:.8rem}
 #opp .x{margin-top:1rem;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
-#room header .m.logo{display:flex;align-items:center}#room header .m.logo img{height:24px;width:auto}
+#room header .m.logo{display:flex;align-items:center}#room header .m.logo img{height:clamp(20px,2vw,28px);width:auto}@media (max-width:640px){#room header .m.logo img{height:13px}}
 @media (max-width:640px){#dcred .face{width:30vw}#dtop button{padding:.65rem .8rem;font-size:.5rem}}
 @media (prefers-reduced-motion:reduce){#dhint i{animation:none}}
 
@@ -547,7 +576,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    <div id="dveil"></div>
 
    <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">Conscious modern luxury</div><h2>Your inner power, <em>made visible.</em></h2></div>
-   <div class="dh low" data-a=".525" data-b=".6"><div class="k">Real diamonds · gold vermeil · natural pearl</div><h2>Demi-fine, <em>redefined.</em></h2></div>
+   <div class="dh low" data-a=".525" data-b=".6"><div class="k">Conscious diamonds · gold vermeil · black rhodium</div><h2>Demi-fine, <em>redefined.</em></h2></div>
 
    <div id="dpress">
     <div class="pk">Press-proven · runway-tested</div>
@@ -581,22 +610,11 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     <div class="face" style="background-image:url(w/c-naomi.jpg);right:5%;top:12%" data-dx="70"><span>Naomi Campbell</span></div>
     <div class="face" style="background-image:url(w/c-kylie.jpg);left:9%;top:44%" data-dx="-40"><span>Kylie Minogue</span></div>
     <div class="face" style="background-image:url(w/c-kehlani.jpg);right:9%;top:44%" data-dx="50"><span>Kehlani</span></div>
+    <figure id="dsally"><img src="x/cred/sally-backstage.webp" alt="Sally Skoufis backstage with the runway collection"><figcaption>Sally Skoufis · backstage with the collection</figcaption></figure>
     <div class="rail" id="drail"></div>
    </div>
-   <div class="dh mid" style="top:38%" data-a=".785" data-b=".845"><div class="k">Runway · Stars</div><h2>Worn by <em>icons.</em></h2></div>
+   <div class="dh mid" style="top:24%" data-a=".785" data-b=".885"><div class="k">Runway · Stars</div><h2>Worn by <em>icons.</em></h2></div>
 
-   <div id="dworn">
-    <div class="wk">On the ear · campaign films</div>
-    <div class="wg">
-     <figure class="wt big"><video data-src="x/worn/w-alchemy.mp4" poster="x/worn/w-alchemy.jpg" muted playsinline loop preload="none"></video><figcaption>Edge Alchemy</figcaption></figure>
-     <figure class="wt"><video data-src="x/worn/w-stack-black.mp4" poster="x/worn/w-stack-black.jpg" muted playsinline loop preload="none"></video><figcaption>The black stack</figcaption></figure>
-     <figure class="wt"><video data-src="x/worn/w-duo.mp4" poster="x/worn/w-duo.jpg" muted playsinline loop preload="none"></video><figcaption>Edge Duo Ear Cuff</figcaption></figure>
-     <figure class="wt"><video data-src="x/worn/w-city.mp4" poster="x/worn/w-city.jpg" muted playsinline loop preload="none"></video><figcaption>Edge Ear Cuff</figcaption></figure>
-     <figure class="wt"><video data-src="x/worn/w-stack-gold.mp4" poster="x/worn/w-stack-gold.jpg" muted playsinline loop preload="none"></video><figcaption>The gold stack</figcaption></figure>
-     <figure class="wt mx"><video data-src="x/worn/w-lowbun.mp4" poster="x/worn/w-lowbun.jpg" muted playsinline loop preload="none"></video><figcaption>Edge Ear Cuff</figcaption></figure>
-     <figure class="wt mx"><video data-src="x/worn/w-edge.mp4" poster="x/worn/w-edge.jpg" muted playsinline loop preload="none"></video><figcaption>Edge Ear Cuff</figcaption></figure>
-    </div>
-   </div>
 
    <div id="drev">
     <video class="rbg" id="drv" src="x/rev.mp4" data-m="x/rev-m.mp4" poster="x/rev-poster.jpg" data-mp="x/rev-m-poster.jpg" muted playsinline loop preload="none"></video><div class="rshade"></div>
@@ -619,7 +637,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    </div>
    </div>
 
-   <div id="dtop"><img src="x/logo.webp" alt="SALLY SKOUFIS"><button type="button" id="dSkip">Partner room →</button></div>
+   <div id="dtop"><img src="x/logo-h.webp" alt="SALLY SKOUFIS"><button type="button" id="dSkip">Partner room →</button></div>
    <div id="dhint">Scroll to dive<i></i></div>
    <div id="dbar"></div>
   </div>
@@ -637,7 +655,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 
 <!-- PART 2 -->
 <section id="room" aria-label="For marketplace partners">
-  <header><span class="m logo"><img src="x/logo.webp" alt="SALLY SKOUFIS"></span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta mailgo" href="mailto:jordie@sallyskoufis.com">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
+  <header><span class="m logo"><img src="x/logo-h.webp" alt="SALLY SKOUFIS"></span><span class="hact"><a href="SALLY_SKOUFIS_Partner_Summary.pdf" download>Download 1-page summary</a><a class="cta mailgo" href="mailto:jordie@sallyskoufis.com">Request a call</a><button id="backFilm" type="button">← Tour</button></span></header>
   <nav id="tabs"></nav>
   <div id="panes">
 
@@ -792,6 +810,20 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
             <li><b>Worn by</b><span>Rihanna · Naomi Campbell · Emma Myers · Kehlani · Bella Poarch</span></li>
             <li><b>Ateliers</b><span>Perth, Australia · Thailand</span></li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pane web" data-tab="The website">
+      <div class="kick">The brand online · live store</div>
+      <h3>Browse <em>sallyskoufis.com</em> right here.</h3>
+      <div class="bw" role="region" aria-label="SALLY SKOUFIS website preview">
+        <div class="bw-bar"><span class="bw-dots"><i></i><i></i><i></i></span><span class="bw-url"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 7V5a3.5 3.5 0 0 1 7 0v2h.5a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h.5zm1.5 0h4V5a2 2 0 0 0-4 0v2z" fill="currentColor"/></svg>sallyskoufis.com</span><a class="bw-open" href="https://sallyskoufis.com" target="_blank" rel="noopener">Open full site ↗</a></div>
+        <div class="bw-view" id="bwView">
+          <div class="bw-nav"><img src="x/logo-h.webp" alt="SALLY SKOUFIS"><nav id="bwCats"><button type="button" data-c="all" class="on">All</button><button type="button" data-c="cuffs">Ear cuffs</button><button type="button" data-c="climbers">Huggies &amp; climbers</button><button type="button" data-c="rings">Rings</button><button type="button" data-c="ws">Warrior Soul</button></nav></div>
+          <div class="bw-hero"><div><span>Conscious modern luxury</span><b>Sculpted for the ear.</b></div></div>
+          <div class="bw-grid" id="bwGrid"></div>
+          <div class="bw-foot">Live product images and US prices from sallyskoufis.com · every piece opens on the real site</div>
         </div>
       </div>
     </div>
@@ -1072,12 +1104,20 @@ document.getElementById('mailBtn').addEventListener('click',()=>{try{navigator.c
 /* ============ V3 · SCROLL DIVE ============ */
 (function(){
 document.body.classList.add('v3');
+
+/* ---------- The website tab: live products from sallyskoufis.com (US prices, 11 Nov 2026) ---------- */
+(function(){const P=[{"n": "Edge Ear Cuff", "p": 140, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT203U0102M02000000-01.png?v=1698171474&width=520", "u": "https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0102m02000000", "c": "cuffs", "b": "US #1"}, {"n": "Edge Duo Ear Cuff", "p": 110, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-EdgeDuo-AllBlk.png?v=1769761180&width=520", "u": "https://sallyskoufis.com/products/edge-duo-ear-cuff-qbt203u0102m02000001", "c": "cuffs", "b": ""}, {"n": "Destiny Ear Cuff", "p": 100, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/DESTINY_EARCUFF_AllBlk.png?v=1764814907&width=520", "u": "https://sallyskoufis.com/products/destiny-ear-cuff-qbt103u0103m01000000", "c": "cuffs", "b": ""}, {"n": "Hybrid Climber", "p": 390, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS-HYBRID-EAR-CLIMBER-White-Diamonds-in-Silver.png?v=1748317440&width=520", "u": "https://sallyskoufis.com/products/hybrid-climber-1", "c": "climbers", "b": "#1 climber"}, {"n": "Edge Mono Ear Cuff", "p": 90, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT203U0102M02000002-01.png?v=1698173401&width=520", "u": "https://sallyskoufis.com/products/edge-mono-ear-cuff-qbt203u0102m02000002", "c": "cuffs", "b": ""}, {"n": "Alchemy Huggie Earrings", "p": 120, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS-ALCHEMY-HUGGIE-in-Silver.png?v=1760502736&width=520", "u": "https://sallyskoufis.com/products/alchemy-huggie-qbt203h0102x00000000", "c": "climbers", "b": ""}, {"n": "Vigour Ring · Labradorite", "p": 580, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_VIGROUR_RING_Labradorite_in_Platinum.png?v=1741244216&width=520", "u": "https://sallyskoufis.com/products/vigour-ring-wst105d0102n13030000", "c": "rings ws", "b": ""}, {"n": "Nourish Necklace", "p": 890, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/WST10160103N02030200-01.png?v=1698678827&width=520", "u": "https://sallyskoufis.com/products/nourish-necklace-wst10160103n02030200", "c": "ws", "b": "US bestseller"}, {"n": "Edge Chain Ear Cuff", "p": 100, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT203U0102M02000200-01.png?v=1698171065&width=520", "u": "https://sallyskoufis.com/products/edge-chain-ear-cuff-qbt203u0102m02000200", "c": "cuffs", "b": ""}, {"n": "Destiny Asymmetric Hoop", "p": 220, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT103H0102M02000000-01.png?v=1698168798&width=520", "u": "https://sallyskoufis.com/products/destiny-asymmetric-hoop-qbt103h0102m02000000", "c": "climbers", "b": ""}, {"n": "Nourish Ring", "p": 560, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/WST105D0103N02030000-01.png?v=1698678350&width=520", "u": "https://sallyskoufis.com/products/nourish-ring-wst105d0103n02030000", "c": "rings ws", "b": ""}, {"n": "Warrior Cuff", "p": 640, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/ELT108U0000X00000001-01.png?v=1701150986&width=520", "u": "https://sallyskoufis.com/products/warrior-cuff", "c": "ws", "b": ""}, {"n": "Alchemy Ear Cuff", "p": 100, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/QBT304X0102X00000000-01.png?v=1698169330&width=520", "u": "https://sallyskoufis.com/products/alchemy-cuff-qbt304x0102x00000000", "c": "cuffs", "b": ""}, {"n": "Urge Earrings", "p": 290, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/23113D12M10000-01.png?v=1701308004&width=520", "u": "https://sallyskoufis.com/products/urge-earrings", "c": "ws", "b": ""}, {"n": "Nourish Drop Earrings", "p": 1200, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/WST103L0103N02030000-01.png?v=1699087578&width=520", "u": "https://sallyskoufis.com/products/nourish-drop-earrings-wst103l0103n02030000", "c": "ws", "b": ""}, {"n": "Vigour Ring · Black Diamond", "p": 580, "i": "https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_VIGOUR_RING_Black_Diamond_in_Platinum.png?v=1741244304&width=520", "u": "https://sallyskoufis.com/products/vigour-ring-wst105d0103n01030000", "c": "rings ws", "b": ""}];
+ const g=document.getElementById('bwGrid'),cats=document.getElementById('bwCats');
+ const draw=c=>{g.innerHTML=P.filter(x=>c==='all'||x.c.split(' ').includes(c)).map(x=>`<a href="${x.u}" target="_blank" rel="noopener"><figure><img src="${x.i}" alt="${x.n}" loading="lazy">${x.b?`<em>${x.b}</em>`:''}</figure><span class="t">${x.n}</span><span class="pr">US$${x.p.toLocaleString('en-US')}</span></a>`).join('')};
+ draw('all');
+ cats.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;cats.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));draw(b.dataset.c);document.getElementById('bwView').scrollTo({top:0,behavior:'smooth'})});
+})();
 // mail buttons are wired once, near CONTACT (see mailgo)
 const D=document.getElementById('dive'),V=document.getElementById('dv'),cuff=document.getElementById('dcuff'),lab=document.getElementById('dlab'),veil=document.getElementById('dveil'),bar=document.getElementById('dbar'),hint=document.getElementById('dhint'),cred=document.getElementById('dcred'),rev=document.getElementById('drev'),end=document.getElementById('dend');
 const H=[...D.querySelectorAll('.dh')];
 const faces=[...cred.querySelectorAll('.face')];
-const rail=document.getElementById('drail');
-['w/vogue.jpg','w/run-1.jpg','w/nyfw-1.jpg','w/run-3.jpg','w/run-4.jpg','w/nyfw-2.jpg','w/run-2.jpg','w/run-5.jpg','w/vogue.jpg','w/run-1.jpg','w/nyfw-1.jpg','w/run-3.jpg'].forEach(s=>{const d=document.createElement('div');d.style.backgroundImage=`url(${s})`;rail.appendChild(d)});
+const rail=document.getElementById('drail'),sally=document.getElementById('dsally');
+['x/cred/bs-7.webp','x/cred/bs-1.webp','x/cred/bs-2.webp','x/cred/bs-3.webp','x/cred/bs-8.webp','x/cred/bs-4.webp','x/cred/bs-5.webp','x/cred/bs-7.webp','x/cred/bs-1.webp','x/cred/bs-2.webp','x/cred/bs-3.webp','x/cred/bs-8.webp'].forEach(s=>{const d=document.createElement('div');d.style.backgroundImage=`url(${s})`;rail.appendChild(d)});
 const REV=[
  ['Wonderful, just perfect to uplift my outfits and stay on trend and sophisticated.','Edge Duo Ear Cuff in Silver'],
  ['They will become a keepsake.','Bridal Temptation Earrings · Balcatta, WA'],
@@ -1104,10 +1144,9 @@ const LV=document.getElementById('dlabV');if(innerWidth<760&&LV.dataset.m){LV.sr
 const labS=document.getElementById('dlabS');
 const tint=document.getElementById('dtint'),stats=document.getElementById('dstats'),sts=[...stats.querySelectorAll('.st')],made=document.getElementById('dmade'),mimg=made.querySelector('.img');
 const PR=document.getElementById('dpress'),PQ=document.getElementById('dpq'),PG=[...PR.querySelectorAll('.pg')];
-const WO=document.getElementById('dworn'),WT=[...WO.querySelectorAll('.wt')],WS=WT.map(t=>getComputedStyle(t).display!=='none');
 // resting spot for each press page: [x vw, y vh, rotate deg]; arrival order = data-i
 const PD=innerWidth<760?[[-24,-15,-6],[24,-13,5],[-25,17,-4],[25,18,5],[0,1,0]]:[[-29,-8,-5],[29,-7,4],[-19,13,4],[19,13,-4],[0,1,0]];
-const filmT=p=>{const d=dur-.05;if(p<=VA)return 0;if(p<.335)return (p-VA)/(.335-VA)*19/34.7*d;if(p<.43)return (19+(p-.335)/.095*5)/34.7*d;return Math.min(d,(24+(p-.43)/(VB-.43)*10.7)/34.7*d)};
+const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335-VA)*9.4;else if(p<.43)t=9.4+(p-.335)/.095*5;else t=14.4+(p-.43)/(VB-.43)*9.9;return Math.min(d,t)}; // film: waves 0–2.8 · model 2.8–9.4 · fabric (press) 9.4–14.4 · swim 14.4–19.2 · surface 19.2–24.3
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
 function render(){
  const max=D.scrollHeight-D.clientHeight,raw=max>0?D.scrollTop/max:0;
@@ -1141,15 +1180,13 @@ function render(){
  stats.style.opacity=Math.min(ease(seg(p,.668,.69)),1-ease(seg(p,.772,.79)));
  sts.forEach((t,i)=>t.classList.toggle('on',p>.692+i*.02));
  // 4 · credentials
- const cr=seg(p,.785,.85),co=Math.min(ease(seg(p,.785,.805)),1-ease(seg(p,.835,.852)));cred.style.opacity=co;
- faces.forEach((f,i)=>{f.style.transform=`translate(${(+f.dataset.dx)*(cr-.5)*2}px,${(1-cr)*50*(i%2?1:-1)}px)`});
+ const cr=seg(p,.785,.895),co=Math.min(ease(seg(p,.785,.805)),1-ease(seg(p,.875,.895)));cred.style.opacity=co;
+ faces.forEach((f,i)=>{f.style.transform=`translate(${(+f.dataset.dx)*(cr-.5)*2*(innerWidth<640?.1:1)}px,${(1-cr)*50*(i%2?1:-1)*(innerWidth<640?.12:1)}px)`});
  rail.style.transform=`translateX(${-cr*rail.scrollWidth*.4}px)`;
+ sally.style.transform=`translate(-50%,calc(-50% + ${(1-ease(seg(p,.785,.81)))*40}px)) scale(${.94+cr*.08})`;
  // 5 · handmade
  const mo=Math.min(ease(seg(p,.605,.625)),1-ease(seg(p,.655,.675)));made.style.opacity=mo;if(mo>.02){if(MV.paused){MV.preload='auto';MV.play().catch(()=>{})}}else if(!MV.paused)MV.pause();
  mimg.style.transform=`scale(${1.12-seg(p,.605,.675)*.12})`;
- // 5b · model wall
- const wo=Math.min(ease(seg(p,.848,.865)),1-ease(seg(p,.895,.91)));WO.style.opacity=wo;
- WT.forEach((t,i)=>{const a=ease(seg(p,.85+i*.004,.864+i*.004));t.style.opacity=a;t.style.transform=`translateY(${(1-a)*40}px) scale(${.94+a*.06})`;vplay(t.querySelector('video'),wo>.02&&WS[i])});
  // 6 · reviews
  const ro=Math.min(ease(seg(p,.906,.92)),1-ease(seg(p,.96,.97)));rev.style.opacity=ro;if(ro>.02){if(RV.paused){RV.preload='auto';RV.play().catch(()=>{})}}else if(!RV.paused)RV.pause();
  if(ro>0){const now2=performance.now();if(ri<0||now2-(render.rt||0)>3600){ri=(ri+1)%REV.length;render.rt=now2;rq.classList.remove('in');void rq.offsetWidth;rq.textContent=REV[ri][0];rc.textContent=REV[ri][1];rq.classList.add('in')}}else{ri=-1}

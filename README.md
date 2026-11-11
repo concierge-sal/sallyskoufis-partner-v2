@@ -58,3 +58,12 @@ Edit content in `index.html` → `WORLDS` (journey) and the `.pane` blocks (part
 - Press scene: Vogue Paris + Harper's Bazaar editorials, Harper's Bazaar Vietnam cover (Aug 2023), NYC press moment (approved), Vogue quote clip; drifting masthead row (Vogue, Elle, Bazaar, NYFW, PFW) from the brand's own logo files. Elle page skipped for now.
 - Model wall: 7 campaign clips from Drive; split ads cropped to model half only (no "60% OFF" visible). Phone shows 5.
 - Track 1600vh → 2000vh.
+
+## v3.6 (local branch `nov11-edits`, NOT pushed, awaiting approval)
+- Logo: horizontal white lockup (emblem beside wordmark, x/logo-h.webp), larger, with soft shadow; partner room header too.
+- Ring + ear cuff spins rebuilt from the Higgsfield originals with silver-only sharpening/brightening (stone colour untouched); cuff gets extra sharpening toward the bottom.
+- Film recut (24.3s): waves → model moving underwater → fabric (under press) → swim up → surface; dark hand close-ups dropped; push-ins so water fills the frame.
+- Cuff line: Conscious diamonds · gold vermeil · black rhodium.
+- Runway slide: Sally backstage with the collection (Drive: Designer Profile Images) as the hero; rail now backstage jewellery portraits only (leg/catwalk crops removed). Phone layout reworked.
+- Removed "On the ear · campaign films" wall.
+- Partner room: new "The website" tab before Contact — browser-window preview of sallyskoufis.com with live product images + US prices from Shopify, category filters, each piece opens the real product page. (A true live embed is blocked by Shopify's anti-framing header.)
