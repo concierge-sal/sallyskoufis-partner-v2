@@ -343,7 +343,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dive{position:fixed;inset:0;z-index:35;overflow-y:auto;overflow-x:hidden;background:var(--abyss);transition:opacity .9s,visibility .9s;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 #dive::-webkit-scrollbar{display:none}
 #dive.gone{opacity:0;visibility:hidden;pointer-events:none}
-#dive .track{height:2200vh;position:relative}
+#dive .track{height:2300vh;position:relative}
 #dive .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#0b2233 0%,var(--navy) 45%,var(--abyss) 100%)}
 #dv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
 #dshade{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(2,8,14,.15) 0%,rgba(2,8,14,.65) 100%);pointer-events:none}
@@ -613,9 +613,10 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
      <figure class="pg" data-r="0"><img src="x/press/vogue_italia.webp" alt="Vogue Italia cover, July 2022" loading="lazy"></figure>
      <figure class="pg" data-r="1"><img src="x/press/harpers.webp" alt="Harper’s Bazaar editorial featuring SALLY SKOUFIS™ jewellery" loading="lazy"></figure>
      <figure class="pg" data-r="1"><img src="x/press/hb_vietnam.webp" alt="Harper’s Bazaar Vietnam cover, August 2023" loading="lazy"></figure>
+     <figure class="pg soft" data-r="2"><img src="x/press/elle_zendaya.webp" alt="ELLE cover, September 2023" loading="lazy"></figure>
      <figure class="pg wide" data-r="2"><img src="x/press/elle_angelina.webp" alt="Elle covers" loading="lazy"></figure>
     </div>
-    <div class="hcap">Vogue Paris</div><div class="hcap">Vogue Italia · cover · July 2022</div><div class="hcap">Harper’s Bazaar · editorial</div><div class="hcap">Harper’s Bazaar Vietnam · cover · Aug 2023</div><div class="hcap">Elle</div>
+    <div class="hcap">Vogue Paris</div><div class="hcap">Vogue Italia · cover · July 2022</div><div class="hcap">Harper’s Bazaar · editorial</div><div class="hcap">Harper’s Bazaar Vietnam · cover · Aug 2023</div><div class="hcap">ELLE · cover · Sept 2023</div><div class="hcap">ELLE</div>
     <div class="ray"></div><div class="bub"></div>
     <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="water" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
      <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.006 0.018" numOctaves="2" seed="3" result="n"/>
@@ -1179,8 +1180,8 @@ const PR=document.getElementById('dpress'),PG=[...PR.querySelectorAll('.pg')],PC
 (function(){const b=PR.querySelector('.bub');for(let i=0;i<34;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';const z=(.5+Math.random()*1.6)*3;e.style.width=e.style.height=z+'px';e.style.opacity=.15+Math.random()*.45;e.style.animationDuration=9+Math.random()*12+'s';e.style.animationDelay=-Math.random()*20+'s';b.appendChild(e)}})();
 const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335-VA)*19;else if(p<.43)t=19+(p-.335)/.095*6.5;else t=25.5+(p-.43)/(VB-.43)*12.4;return Math.min(d,t)}; // film: waves 0–2.8 · fabric scene 2.8–19 · far swim under the press pages 19–25.5 · dive, swim up, surface 25.5–37.9
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
-// extra scroll for the magazines: press window .335–.43 gets 390vh of a 2200vh track instead of 190vh of 2000vh
-const WQ=[0,.3045,.4818,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
+// extra scroll for the magazines: press window .335–.43 gets 490vh of a 2300vh track instead of 190vh of 2000vh
+const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
 function render(){
  const max=D.scrollHeight-D.clientHeight,raw=warp(max>0?D.scrollTop/max:0);
  const now=performance.now(),dt=Math.min(100,now-(render.t||now));render.dt=dt;render.t=now;sp=first?raw:sp+(raw-sp)*(1-Math.exp(-dt/110));first=false;if(Math.abs(raw-sp)<.00005)sp=raw;const p=sp;
