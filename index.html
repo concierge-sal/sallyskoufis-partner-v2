@@ -593,6 +593,27 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .tile.txt h3,#lb h3{font-family:var(--serif);font-weight:300;font-size:var(--fh2)}
 .dh .k,#dstats .sk,#dcr .crk3 span{font-family:var(--sans);font-size:var(--fk);letter-spacing:.42em;text-transform:uppercase}
 @media (max-width:760px){:root{--fh:clamp(1.5rem,6.4vw,1.9rem)}}
+
+/* icons slide: letterbox bars, heading in the top bar, name + counter in the bottom bar */
+#crC{--lt:23vh;--lb:15vh;background:#000}
+#crC .ichero{top:var(--lt);bottom:var(--lb)}
+#crC .icside{top:0;bottom:0;overflow:visible;background:transparent}
+#crC .iccyc{position:absolute;left:0;right:0;top:var(--lt);bottom:var(--lb);overflow:hidden;background:#0b1218}
+#crC .icshade{display:none}
+#dcr .crk3{top:auto;left:calc(4vw - 50vw);bottom:calc(100% - var(--lt) + 2.8vh)}
+#crC .icname{bottom:3.6vh}
+#crC .iccnt{bottom:4.4vh}
+#crC .icbar{bottom:calc(var(--lb) - 3.4vh)}
+@media (max-width:760px){
+ #crC{--lt:calc(19vh + var(--safe-t,0px));--lb:calc(12vh + var(--safe-b,0px));--band:calc((100vh - var(--lt) - var(--lb))/2)}
+ #crC .ichero{right:0;width:auto;bottom:auto;height:var(--band)}
+ #crC .icside{left:0;top:0}
+ #crC .iccyc{top:calc(var(--lt) + var(--band))}
+ #dcr .crk3{left:6vw;bottom:calc(100% - var(--lt) + 1.6vh)}
+ #crC .icname{bottom:calc(2.6vh + var(--safe-b,0px))}
+ #crC .iccnt{bottom:calc(3.2vh + var(--safe-b,0px))}
+ #crC .icbar{bottom:calc(var(--lb) - 2.6vh)}
+}
 </style>
 </head>
 <body>
