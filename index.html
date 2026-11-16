@@ -493,7 +493,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #dcr .crk3 h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:1;margin-top:.9rem;color:#fff}
 #dcr h2 em{font-style:italic;color:var(--ice)}
 #dcr .crworn{position:absolute;left:0;right:0;top:52%;display:flex;justify-content:center;gap:1.6vw}
-#dcr .crworn .f{width:clamp(110px,12vw,180px);aspect-ratio:3/4;background:center/cover;position:relative;opacity:0;box-shadow:0 22px 50px rgba(0,0,0,.6)}
+#dcr .crworn .f{width:clamp(100px,11vw,170px);aspect-ratio:3/4;background:center/cover;position:relative;opacity:0;box-shadow:0 22px 50px rgba(0,0,0,.6)}
 #dcr .crworn .f video{width:100%;height:100%;object-fit:cover;display:block}
 #dcr .crworn .f span{position:absolute;left:0;right:0;bottom:-1.7rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
 @media (max-width:760px){
@@ -503,7 +503,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
  #dcr .crlogos{left:5vw;right:5vw;bottom:calc(6vh + var(--safe-b,0px))}#dcr .crlogos img{height:44px}#dcr .crlogos img.w{height:30px}
  #crB{--gw:100vw}#crB .crph{object-position:24% 50%}
  #crB .crp{left:6vw;right:6vw;bottom:calc(var(--gw)*4/9 + 3vh);font-size:.74rem;text-shadow:0 2px 14px rgba(0,0,0,.9)}
- #dcr .crworn{flex-wrap:wrap;gap:2.4rem 3vw;padding:0 6vw;top:40%}#dcr .crworn .f{width:26vw}
+ #dcr .crworn{flex-wrap:wrap;gap:2.2rem 3vw;padding:0 4vw;top:33%}#dcr .crworn .f{width:20vw}#dcr .crworn .f span{letter-spacing:.14em;white-space:nowrap;font-size:.46rem;bottom:-1.4rem}
  #dcr .crk3{top:calc(17vh + var(--safe-t,0px))}
 }
 #drev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;padding:0 6vw;text-align:center}
@@ -701,6 +701,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     <section class="crpg" id="crC"><div class="crbg2"></div>
      <div class="crk3" id="crk3"><span>Runway · stars</span><h2>Worn by <em>icons.</em></h2></div>
      <div class="crworn" id="crworn">
+     <div class="f"><video src="w/i-anabergman.mp4" poster="w/i-anabergman.jpg" muted playsinline loop preload="none"></video><span>Ana Bergman</span></div>
      <div class="f"><video id="crhal" src="w/i-halsey.mp4" poster="w/i-halsey.jpg" muted playsinline loop preload="none"></video><span>Halsey</span></div>
      <div class="f" style="background-image:url(x/cr/f-rihanna.webp)"><span>Rihanna</span></div>
      <div class="f" style="background-image:url(x/cr/f-jessiej.webp)"><span>Jessie J</span></div>
@@ -1255,17 +1256,17 @@ const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
 // extra scroll for the magazines: press window .335–.43 gets 490vh of a 2300vh track instead of 190vh of 2000vh
 const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
-const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),CRW=[...document.querySelectorAll('#crworn .f')],CRH=document.getElementById('crhal');
+const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),CRW=[...document.querySelectorAll('#crworn .f')],CRV=[...document.querySelectorAll('#crworn video')];
 function renderCR(n){
  // the section fades in from the handmade film and out to the US snapshot
- const o=Math.min(ease(seg(n,0,.035)),1-ease(seg(n,.965,1)));CR.style.opacity=o;if(o<=.001){vplay(CRH,false);return}
+ const o=Math.min(ease(seg(n,0,.035)),1-ease(seg(n,.965,1)));CR.style.opacity=o;if(o<=.001){CRV.forEach(v=>vplay(v,false));return}
  // two media-kit pages, shown as still images; each new page fades in over the last
  const bIn=ease(seg(n,.31,.36)),cIn=ease(seg(n,.63,.68));
  crA.style.opacity=bIn>=1?0:1;crB.style.opacity=cIn>=1?0:bIn;crC.style.opacity=cIn;
  // then the artists
  const k3=ease(seg(n,.66,.7));crk3.style.opacity=k3;crk3.style.transform=`translateY(${((1-k3)*16).toFixed(1)}px)`;
  CRW.forEach((f,i)=>{const a=ease(seg(n,.68+i*.02,.73+i*.02));f.style.opacity=a;f.style.transform=`translateY(${((1-a)*40).toFixed(1)}px)`});
- vplay(CRH,n>.62);
+ CRV.forEach(v=>vplay(v,n>.62));
 }
 // timeline: ring → film → ear cuff → handmade → [Covers & Runways → magazines → artists] → US snapshot → reviews → end
 const QT=1.187;
