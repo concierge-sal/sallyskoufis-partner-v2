@@ -488,11 +488,15 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #crB .crgrid{position:absolute;right:0;bottom:0;width:var(--gw);display:grid;grid-template-columns:repeat(6,1fr)}
 #crB .crgrid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
 #crC .crbg2{position:absolute;inset:0;background:url(x/cr/walk2.webp) 58% 40%/cover;filter:brightness(.5)}
-#dcr .crk3{position:absolute;left:0;right:0;text-align:center;top:calc(20vh + var(--safe-t,0px))}
+#crC{--rw:calc(76vh*9/16);--sx:calc(9vw + var(--rw) + 6vw)}
+#crC .crreel{position:absolute;left:9vw;top:50%;height:76vh;width:var(--rw);margin:0;transform:translateY(-50%);opacity:0}
+#crC .crreel video{display:block;width:100%;height:100%;object-fit:cover;box-shadow:0 30px 70px rgba(0,0,0,.6)}
+#crC .crreel figcaption{position:absolute;left:0;right:0;bottom:-1.7rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide);white-space:nowrap}
+#dcr .crk3{position:absolute;left:var(--sx);right:4vw;text-align:left;top:calc(16vh + var(--safe-t,0px))}
 #dcr .crk3 span{font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
 #dcr .crk3 h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:1;margin-top:.9rem;color:#fff}
 #dcr h2 em{font-style:italic;color:var(--ice)}
-#dcr .crworn{position:absolute;left:0;right:0;top:52%;display:flex;justify-content:center;gap:1.6vw}
+#dcr .crworn{position:absolute;left:var(--sx);right:4vw;top:34vh;display:grid;grid-template-columns:repeat(3,max-content);gap:2.6rem 1.6vw}
 #dcr .crworn .f{width:clamp(100px,11vw,170px);aspect-ratio:3/4;background:center/cover;position:relative;opacity:0;box-shadow:0 22px 50px rgba(0,0,0,.6)}
 #dcr .crworn .f video{width:100%;height:100%;object-fit:cover;display:block}
 #dcr .crworn .f span{position:absolute;left:0;right:0;bottom:-1.7rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
@@ -503,8 +507,8 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
  #dcr .crlogos{left:5vw;right:5vw;bottom:calc(6vh + var(--safe-b,0px))}#dcr .crlogos img{height:44px}#dcr .crlogos img.w{height:30px}
  #crB{--gw:100vw}#crB .crph{object-position:24% 50%}
  #crB .crp{left:6vw;right:6vw;bottom:calc(var(--gw)*4/9 + 3vh);font-size:.74rem;text-shadow:0 2px 14px rgba(0,0,0,.9)}
- #dcr .crworn{flex-wrap:wrap;gap:2.2rem 3vw;padding:0 4vw;top:33%}#dcr .crworn .f{width:20vw}#dcr .crworn .f span{letter-spacing:.14em;white-space:nowrap;font-size:.46rem;bottom:-1.4rem}
- #dcr .crk3{top:calc(17vh + var(--safe-t,0px))}
+ #crC .crreel{left:50%;top:calc(21vh + var(--safe-t,0px));height:37vh;width:calc(37vh*9/16);transform:translateX(-50%)}#crC .crreel figcaption{bottom:-1.4rem;font-size:.46rem;letter-spacing:.16em}#dcr .crworn{left:0;right:0;top:auto;bottom:calc(5vh + var(--safe-b,0px));justify-content:center;gap:1.9rem 4vw}#dcr .crworn .f{width:19vw}#dcr .crworn .f span{letter-spacing:.14em;white-space:nowrap;font-size:.46rem;bottom:-1.4rem}
+ #dcr .crk3{left:0;right:0;text-align:center;top:calc(11vh + var(--safe-t,0px))}#dcr .crk3 h2{font-size:1.9rem;margin-top:.5rem}
 }
 #drev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;padding:0 6vw;text-align:center}
 #drev .rbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}#drev .rshade{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(2,8,14,.55) 0%,rgba(2,8,14,.82) 70%,rgba(2,8,14,.92) 100%)}#drev{isolation:isolate}#drev .ftg{position:absolute;top:calc(4.6rem + var(--safe-t,0px));right:clamp(1.1rem,3vw,2.2rem);font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(143,178,196,.6)}
@@ -699,9 +703,9 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
      <div class="crgrid"><img src="x/cr/cov/c01.webp" alt="ELLE · Angelina Jolie cover"><img src="x/cr/cov/c02.webp" alt="Harper’s Bazaar Vietnam · Ana Bergman cover"><img src="x/cr/cov/c03.webp" alt="Stellar · Margot Robbie cover"><img src="x/cr/cov/c04.webp" alt="Cosmopolitan · Miley Cyrus cover"><img src="x/cr/cov/c05.webp" alt="GQ · Jennifer Lopez cover"><img src="x/cr/cov/c06.webp" alt="Vanity Fair · Natalie Portman cover"><img src="x/cr/cov/c07.webp" alt="Vogue · Cara Delevingne cover"><img src="x/cr/cov/c08.webp" alt="Grazia · Avril Lavigne cover"><img src="x/cr/cov/c09.webp" alt="ELLE · Zendaya cover"><img src="x/cr/cov/c10.webp" alt="Vogue · Lorde cover"><img src="x/cr/cov/c11.webp" alt="Vanity Fair · Billie Eilish cover"><img src="x/cr/cov/c12.webp" alt="ELLE · Margaret Zhang cover"></div>
     </section>
     <section class="crpg" id="crC"><div class="crbg2"></div>
+     <figure class="crreel" id="crreelF"><video id="crreel" src="w/icons-reel.mp4" data-m="w/icons-reel-m.mp4" poster="w/icons-reel.jpg" muted playsinline loop preload="none" aria-label="Ana Bergman for Harper’s Bazaar Vietnam, behind the scenes"></video><figcaption>Ana Bergman · Harper’s Bazaar Vietnam</figcaption></figure>
      <div class="crk3" id="crk3"><span>Runway · stars</span><h2>Worn by <em>icons.</em></h2></div>
      <div class="crworn" id="crworn">
-     <div class="f"><video src="w/i-anabergman.mp4" poster="w/i-anabergman.jpg" muted playsinline loop preload="none"></video><span>Ana Bergman</span></div>
      <div class="f"><video id="crhal" src="w/i-halsey.mp4" poster="w/i-halsey.jpg" muted playsinline loop preload="none"></video><span>Halsey</span></div>
      <div class="f" style="background-image:url(x/cr/f-rihanna.webp)"><span>Rihanna</span></div>
      <div class="f" style="background-image:url(x/cr/f-jessiej.webp)"><span>Jessie J</span></div>
@@ -1256,7 +1260,7 @@ const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
 // extra scroll for the magazines: press window .335–.43 gets 490vh of a 2300vh track instead of 190vh of 2000vh
 const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
-const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),CRW=[...document.querySelectorAll('#crworn .f')],CRV=[...document.querySelectorAll('#crworn video')];
+const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),CRW=[...document.querySelectorAll('#crworn .f')],CRV=[...document.querySelectorAll('#crC video')],crreelF=document.getElementById('crreelF');{const r=document.getElementById('crreel');if(innerWidth<760&&r.dataset.m)r.src=r.dataset.m}
 function renderCR(n){
  // the section fades in from the handmade film and out to the US snapshot
  const o=Math.min(ease(seg(n,0,.035)),1-ease(seg(n,.965,1)));CR.style.opacity=o;if(o<=.001){CRV.forEach(v=>vplay(v,false));return}
@@ -1264,7 +1268,7 @@ function renderCR(n){
  const bIn=ease(seg(n,.31,.36)),cIn=ease(seg(n,.63,.68));
  crA.style.opacity=bIn>=1?0:1;crB.style.opacity=cIn>=1?0:bIn;crC.style.opacity=cIn;
  // then the artists
- const k3=ease(seg(n,.66,.7));crk3.style.opacity=k3;crk3.style.transform=`translateY(${((1-k3)*16).toFixed(1)}px)`;
+ const k3=ease(seg(n,.66,.7));crk3.style.opacity=k3;crreelF.style.opacity=ease(seg(n,.66,.71));crk3.style.transform=`translateY(${((1-k3)*16).toFixed(1)}px)`;
  CRW.forEach((f,i)=>{const a=ease(seg(n,.68+i*.02,.73+i*.02));f.style.opacity=a;f.style.transform=`translateY(${((1-a)*40).toFixed(1)}px)`});
  CRV.forEach(v=>vplay(v,n>.62));
 }
