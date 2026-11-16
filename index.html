@@ -487,21 +487,18 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #crB .crp{left:calc(100vw - var(--gw));right:4vw;top:auto;bottom:calc(var(--gw)*4/9 + 6vh);text-shadow:none}
 #crB .crgrid{position:absolute;right:0;bottom:0;width:var(--gw);display:grid;grid-template-columns:repeat(6,1fr)}
 #crB .crgrid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
-#crC .crbg2{position:absolute;inset:0;background:url(x/cr/walk2.webp) 58% 40%/cover;filter:brightness(.5)}
-#crC{--rw:calc(76vh*9/16);--sx:calc(9vw + var(--rw) + 6vw)}
-#crC .crreel{position:absolute;left:9vw;top:50%;height:76vh;width:var(--rw);margin:0;transform:translateY(-50%);opacity:0}
-#crC .crreel{box-shadow:0 30px 70px rgba(0,0,0,.6);background:#05080b}
-#crC .crreel video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;opacity:0}
-#crC .crcount{position:absolute;right:0;top:-1.5rem;font-size:.5rem;letter-spacing:.3em;color:var(--tide)}
-#crC .crreel figcaption{position:absolute;left:0;right:0;bottom:-1.7rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide);white-space:nowrap}
-#dcr .crk3{position:absolute;left:var(--sx);right:4vw;text-align:left;top:calc(16vh + var(--safe-t,0px))}
-#dcr .crk3 span{font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
+#dcr .crk3 span{display:block;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
 #dcr .crk3 h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:1;margin-top:.9rem;color:#fff}
 #dcr h2 em{font-style:italic;color:var(--ice)}
-#dcr .crworn{position:absolute;left:var(--sx);right:4vw;top:34vh;display:grid;grid-template-columns:repeat(3,max-content);gap:2.6rem 1.6vw}
-#dcr .crworn .f{width:clamp(100px,11vw,170px);aspect-ratio:3/4;background:center/cover;position:relative;opacity:0;box-shadow:0 22px 50px rgba(0,0,0,.6)}
-#dcr .crworn .f video{width:100%;height:100%;object-fit:cover;display:block}
-#dcr .crworn .f span{position:absolute;left:0;right:0;bottom:-1.7rem;text-align:center;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
+#crC .ichero{position:absolute;left:0;top:0;bottom:0;width:50vw;margin:0;overflow:hidden}
+#crC .ichero img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+#crC .ichero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,11,0) 70%,rgba(5,8,11,.9) 100%)}
+#crC .ichero figcaption{position:absolute;left:3vw;bottom:calc(4vh + var(--safe-b,0px));z-index:1;font-size:.55rem;letter-spacing:.32em;text-transform:uppercase;color:#fff;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+#crC .icside{position:absolute;left:50vw;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-top:calc(7vh + var(--safe-t,0px));text-align:center}
+#dcr .crk3{position:static;text-align:center}
+#crC .iccyc{position:relative;height:54vh;aspect-ratio:3/4;margin-top:4vh;box-shadow:0 30px 70px rgba(0,0,0,.6);background:#0b1218}
+#crC .iccyc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0}
+#crC .icname{margin-top:1.2rem;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--tide);min-height:1em}
 @media (max-width:760px){
  #crA .crph{object-position:90% 40%}
  #dcr .crk{left:6vw;top:calc(13vh + var(--safe-t,0px))}
@@ -509,8 +506,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
  #dcr .crlogos{left:5vw;right:5vw;bottom:calc(6vh + var(--safe-b,0px))}#dcr .crlogos img{height:44px}#dcr .crlogos img.w{height:30px}
  #crB{--gw:100vw}#crB .crph{object-position:24% 50%}
  #crB .crp{left:6vw;right:6vw;bottom:calc(var(--gw)*4/9 + 3vh);font-size:.74rem;text-shadow:0 2px 14px rgba(0,0,0,.9)}
- #crC .crreel{left:50%;top:calc(21vh + var(--safe-t,0px));height:37vh;width:calc(37vh*9/16);transform:translateX(-50%)}#crC .crreel figcaption{bottom:-1.4rem;font-size:.46rem;letter-spacing:.16em}#dcr .crworn{left:0;right:0;top:auto;bottom:calc(5vh + var(--safe-b,0px));justify-content:center;gap:1.9rem 4vw}#dcr .crworn .f{width:19vw}#dcr .crworn .f span{letter-spacing:.14em;white-space:nowrap;font-size:.46rem;bottom:-1.4rem}
- #dcr .crk3{left:0;right:0;text-align:center;top:calc(11vh + var(--safe-t,0px))}#dcr .crk3 h2{font-size:1.9rem;margin-top:.5rem}
+ #crC .ichero{right:0;width:auto;bottom:auto;height:47vh}#crC .ichero::after{background:linear-gradient(180deg,rgba(5,8,11,0) 65%,rgba(5,8,11,.95) 100%)}#crC .ichero figcaption{left:6vw;bottom:1.2rem}#crC .icside{left:0;top:47vh;padding-top:0;justify-content:flex-start}#crC .iccyc{height:29vh;margin-top:2vh}#crC .icname{margin-top:.8rem}
 }
 #drev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;padding:0 6vw;text-align:center}
 #drev .rbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}#drev .rshade{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,rgba(2,8,14,.55) 0%,rgba(2,8,14,.82) 70%,rgba(2,8,14,.92) 100%)}#drev{isolation:isolate}#drev .ftg{position:absolute;top:calc(4.6rem + var(--safe-t,0px));right:clamp(1.1rem,3vw,2.2rem);font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(143,178,196,.6)}
@@ -585,6 +581,15 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 @media (max-width:640px){#dcred .face{width:30vw}#dcred .face:nth-of-type(3){top:47%!important}#dcred .face:nth-of-type(4){top:43%!important}#dcred .rway{top:auto;bottom:calc(5vh + var(--safe-b,0px));width:90vw}#dtop{grid-template-columns:1fr;justify-items:center;row-gap:.65rem;padding-left:.9rem;padding-right:.9rem}#dtop>span{display:none}#dtop img{grid-column:1;height:min(22px,5.8vw)}#dtop button{justify-self:center;padding:.4rem .75rem;font-size:.46rem;letter-spacing:.22em}#dtop button .lg{display:none}#dtop button .sm{display:inline}#dhint{right:.55rem}}
 @media (prefers-reduced-motion:reduce){#dhint i{animation:none}}
 
+
+/* ---- one type scale for every section: headings stay smaller than the SALLY SKOUFIS wordmark ---- */
+:root{--fh:clamp(1.7rem,3.1vw,3.5rem);--fh2:clamp(1.2rem,1.8vw,1.7rem);--fk:.6rem}
+#chap h2,#end h2,.pane h3,.wcard h2,.hero h1,.outro h2,.dh h2,.dh.low.first h2,#dcr .crk3 h2,#dend h2,#dstats .sh,#opp h3{font-family:var(--serif);font-weight:300;font-size:var(--fh);line-height:1.08;letter-spacing:0}
+#dcr .crk b{font-size:var(--fh);font-weight:400;line-height:1.08}
+#dcr .crk i{font-size:calc(var(--fh)*.5)}
+.tile.txt h3,#lb h3{font-family:var(--serif);font-weight:300;font-size:var(--fh2)}
+.dh .k,#dstats .sk,#dcr .crk3 span{font-family:var(--sans);font-size:var(--fk);letter-spacing:.42em;text-transform:uppercase}
+@media (max-width:760px){:root{--fh:clamp(1.5rem,6.4vw,1.9rem)}}
 </style>
 </head>
 <body>
@@ -704,17 +709,13 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
      <p class="crp"><b>SALLY SKOUFIS</b> is worn, commissioned and celebrated by influential artists such as <b>Naomi Campbell</b>, <b>Rihanna</b>, <b>Kelly Rowland</b>, <b>Jessie J</b>, <b>Christian Louboutin</b>, <b>Tom Hanks</b> &amp; <b>Rita Wilson</b>, <b>Nia Vardalos</b>, <b>Paula Abdul</b>, <b>Rosie Huntington-Whiteley</b>, <b>Kylie Minogue</b>, <b>Dannii Minogue</b> and <b>Delta Goodrem</b>.</p>
      <div class="crgrid"><img src="x/cr/cov/c01.webp" alt="ELLE · Angelina Jolie cover"><img src="x/cr/cov/c02.webp" alt="Harper’s Bazaar Vietnam · Ana Bergman cover"><img src="x/cr/cov/c03.webp" alt="Stellar · Margot Robbie cover"><img src="x/cr/cov/c04.webp" alt="Cosmopolitan · Miley Cyrus cover"><img src="x/cr/cov/c05.webp" alt="GQ · Jennifer Lopez cover"><img src="x/cr/cov/c06.webp" alt="Vanity Fair · Natalie Portman cover"><img src="x/cr/cov/c07.webp" alt="Vogue · Cara Delevingne cover"><img src="x/cr/cov/c08.webp" alt="Grazia · Avril Lavigne cover"><img src="x/cr/cov/c09.webp" alt="ELLE · Zendaya cover"><img src="x/cr/cov/c10.webp" alt="Vogue · Lorde cover"><img src="x/cr/cov/c11.webp" alt="Vanity Fair · Billie Eilish cover"><img src="x/cr/cov/c12.webp" alt="ELLE · Margaret Zhang cover"></div>
     </section>
-    <section class="crpg" id="crC"><div class="crbg2"></div>
-     <figure class="crreel" id="crreelF"><video src="w/ic-bazaar.mp4" data-m="w/ic-bazaar-m.mp4" poster="w/ic-bazaar.jpg" data-c="Ana Bergman · Harper’s Bazaar Vietnam" muted playsinline loop preload="none" aria-label="Ana Bergman · Harper’s Bazaar Vietnam"></video><video src="w/ic-halsey.mp4" data-m="w/ic-halsey-m.mp4" poster="w/ic-halsey.jpg" data-c="Halsey" muted playsinline loop preload="none" aria-label="Halsey"></video><video src="w/ic-melb.mp4" data-m="w/ic-melb-m.mp4" poster="w/ic-melb.jpg" data-c="Mel B" muted playsinline loop preload="none" aria-label="Mel B"></video><video src="w/ic-muni.mp4" data-m="w/ic-muni-m.mp4" poster="w/ic-muni.jpg" data-c="Muni Long" muted playsinline loop preload="none" aria-label="Muni Long"></video><video src="w/ic-tori.mp4" data-m="w/ic-tori-m.mp4" poster="w/ic-tori.jpg" data-c="Tori Kelly" muted playsinline loop preload="none" aria-label="Tori Kelly"></video><figcaption id="crreelC">Ana Bergman · Harper’s Bazaar Vietnam</figcaption><span class="crcount" id="crcount">01 / 05</span></figure>
-     <div class="crk3" id="crk3"><span>Runway · stars</span><h2>Worn by <em>icons.</em></h2></div>
-     <div class="crworn" id="crworn">
-     <div class="f"><video id="crhal" src="w/i-halsey.mp4" poster="w/i-halsey.jpg" muted playsinline loop preload="none"></video><span>Halsey</span></div>
-     <div class="f" style="background-image:url(x/cr/f-rihanna.webp)"><span>Rihanna</span></div>
-     <div class="f" style="background-image:url(x/cr/f-jessiej.webp)"><span>Jessie J</span></div>
-     <div class="f" style="background-image:url(w/i-avril.webp)"><span>Avril Lavigne</span></div>
-     <div class="f" style="background-image:url(w/i-kehlani.webp)"><span>Kehlani</span></div>
-     <div class="f" style="background-image:url(w/i-melb.webp)"><span>Mel B</span></div>
-    </div>
+    <section class="crpg" id="crC">
+     <figure class="ichero"><img src="x/ic/hero.webp" alt="Avril Lavigne for Grazia, wearing SALLY SKOUFIS" decoding="async"><figcaption>Avril Lavigne · Grazia</figcaption></figure>
+     <div class="icside">
+      <div class="crk3" id="crk3"><span>Runway · stars</span><h2>Worn by <em>icons.</em></h2></div>
+      <div class="iccyc" id="iccyc"><img src="x/ic/f00.webp" alt="Rihanna" data-n="Rihanna" decoding="async"><img src="x/ic/f01.webp" alt="Naomi Campbell" data-n="Naomi Campbell" decoding="async"><img src="x/ic/f03.webp" alt="Halsey" data-n="Halsey" decoding="async"><img src="x/ic/f04.webp" alt="Kylie Minogue" data-n="Kylie Minogue" decoding="async"><img src="x/ic/f05.webp" alt="Jessie J" data-n="Jessie J" decoding="async"><img src="x/ic/f06.webp" alt="Kehlani" data-n="Kehlani" decoding="async"><img src="x/ic/f07.webp" alt="Mel B" data-n="Mel B" decoding="async"><img src="x/ic/f08.webp" alt="Ana Bergman" data-n="Ana Bergman" decoding="async"><img src="x/ic/f09.webp" alt="Muni Long" data-n="Muni Long" decoding="async"><img src="x/ic/f10.webp" alt="Bella Poarch" data-n="Bella Poarch" decoding="async"><img src="x/ic/f13.webp" alt="Tori Kelly" data-n="Tori Kelly" decoding="async"><img src="x/ic/f15.webp" alt="Emma Myers" data-n="Emma Myers" decoding="async"></div>
+      <div class="icname" id="icname">Rihanna</div>
+     </div>
     </section>
    </div>
 
@@ -1262,20 +1263,19 @@ const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
 // extra scroll for the magazines: press window .335–.43 gets 490vh of a 2300vh track instead of 190vh of 2000vh
 const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
-const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),CRW=[...document.querySelectorAll('#crworn .f')],CRV=[...document.querySelectorAll('#crC video')],crreelF=document.getElementById('crreelF'),crcap=document.getElementById('crreelC'),crcount=document.getElementById('crcount'),RV5=[...document.querySelectorAll('#crreelF video')];if(innerWidth<760)RV5.forEach(v=>{v.src=v.dataset.m});
+const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),ICF=[...document.querySelectorAll('#iccyc img')],icname=document.getElementById('icname');let icT0=0;
 function renderCR(n){
  // the section fades in from the handmade film and out to the US snapshot
- const o=Math.min(ease(seg(n,0,.035)),1-ease(seg(n,.965,1)));CR.style.opacity=o;if(o<=.001){CRV.forEach(v=>vplay(v,false));return}
+ const o=Math.min(ease(seg(n,0,.035)),1-ease(seg(n,.965,1)));CR.style.opacity=o;if(o<=.001){icT0=0;return}
  // two media-kit pages, shown as still images; each new page fades in over the last
- const bIn=ease(seg(n,.17,.21)),cIn=ease(seg(n,.36,.4));
+ const bIn=ease(seg(n,.28,.33)),cIn=ease(seg(n,.6,.65));
  crA.style.opacity=bIn>=1?0:1;crB.style.opacity=cIn>=1?0:bIn;crC.style.opacity=cIn;
- // then the artists: the Bazaar film first, then each icon's video on its own, one after another
- const k3=ease(seg(n,.38,.42));crk3.style.opacity=k3;crreelF.style.opacity=ease(seg(n,.38,.43));crk3.style.transform=`translateY(${((1-k3)*16).toFixed(1)}px)`;
- CRW.forEach((f,i)=>{const a=ease(seg(n,.4+i*.015,.45+i*.015));f.style.opacity=a;f.style.transform=`translateY(${((1-a)*40).toFixed(1)}px)`});
- const V0=.38,VL=(.965-V0)/RV5.length,F=(n-V0)/VL,k=Math.max(0,Math.min(RV5.length-1,Math.floor(F)));
- RV5.forEach((v,i)=>{let a=0;if(i===0)a=1-ease(seg(F,.88,1.04));else if(i===RV5.length-1)a=ease(seg(F,i-.12,i+.04));else a=Math.min(ease(seg(F,i-.12,i+.04)),1-ease(seg(F,i+.88,i+1.04)));v.style.opacity=a;vplay(v,cIn>.5&&a>.02)});
- const c=RV5[k].dataset.c;if(crcap.textContent!==c)crcap.textContent=c;const t=`0${k+1} / 0${RV5.length}`;if(crcount.textContent!==t)crcount.textContent=t;
- CRV.forEach(v=>{if(!RV5.includes(v))vplay(v,n>.36)});
+ const k3=ease(seg(n,.62,.67));crk3.style.opacity=k3;crk3.style.transform=`translateY(${((1-k3)*14).toFixed(1)}px)`;
+ // icons: a quick fade-through of faces, one after another (time-based while the slide is up)
+ if(cIn<=0){icT0=0;return}
+ const now=performance.now();if(!icT0)icT0=now;const D=1500,X=500,t=now-icT0,N=ICF.length,i=Math.floor(t/D)%N,p=t%D,nx=(i+1)%N,f=p>D-X?ease((p-(D-X))/X):0;
+ ICF.forEach((im,j)=>{const a=j===i?1:j===nx?f:0;if(im._a!==a){im.style.opacity=a;im._a=a}im.style.zIndex=j===nx?2:j===i?1:0});
+ const nm=ICF[f>.5?nx:i].dataset.n;if(icname.textContent!==nm)icname.textContent=nm;
 }
 // timeline: ring → film → ear cuff → handmade → [Covers & Runways → magazines → artists] → US snapshot → reviews → end
 const QT=1.187;
