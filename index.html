@@ -359,11 +359,12 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 @keyframes sweep{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
 @media (prefers-reduced-motion:reduce){#dcuff,.sheen{animation:none}}
 #dcuff{height:min(66vh,680px);aspect-ratio:1;top:40%;transform:translate(-50%,-50%)}
-.dh.low.first{bottom:7vh}.dh.low.first h2{font-size:clamp(2rem,5.4vw,4.6rem)}
+.dh.low.first{bottom:6vh}.dh.low.first h2{font-size:clamp(2rem,4.3vw,4rem)}
 #dlab{width:min(46vw,420px);opacity:0;transform:translate(-50%,-50%)}
-#dtop{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:calc(1.1rem + var(--safe-t,0px)) clamp(1.1rem,3vw,2.2rem);z-index:5}
-#dtop img{height:clamp(11px,1.25vw,18px);width:auto;filter:drop-shadow(0 1px 10px rgba(0,0,0,.5))}
-#dtop button{font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(223,232,238,.45);padding:.75rem 1.1rem;background:rgba(2,8,14,.35);backdrop-filter:blur(4px)}
+#dtop{position:absolute;top:0;left:0;right:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:calc(1.1rem + var(--safe-t,0px)) clamp(1.1rem,3vw,2.2rem);z-index:5}
+#dtop img{grid-column:2;height:clamp(14px,1.75vw,25px);width:auto;filter:drop-shadow(0 1px 10px rgba(0,0,0,.5))}
+#dtop button{justify-self:end;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ice);border:1px solid rgba(223,232,238,.3);border-radius:999px;padding:.62rem 1.05rem;background:rgba(2,8,14,.3);backdrop-filter:blur(6px);white-space:nowrap;transition:background .3s,color .3s,border-color .3s}
+#dtop button .sm{display:none}
 #dtop button:hover{background:var(--ice);color:var(--abyss)}
 #dbar{position:absolute;left:0;bottom:0;height:2px;background:var(--tide);width:0;z-index:5}
 .dh{position:absolute;left:50%;transform:translate(-50%,-50%);width:min(92vw,1100px);text-align:center;pointer-events:none;opacity:0;will-change:opacity,transform}
@@ -373,8 +374,8 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .dh.low{top:auto;bottom:12vh;transform:translate(-50%,0)}
 .dh.mid{top:50%}
 .dh.side{top:50%}
-#dhint{position:absolute;bottom:calc(1.6rem + var(--safe-b,0px));left:50%;transform:translateX(-50%);font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--tide);text-align:center;z-index:4}
-#dhint i{display:block;width:1px;height:34px;margin:.7rem auto 0;background:linear-gradient(var(--tide),transparent);animation:dhint 2s ease-in-out infinite}
+#dhint{position:absolute;right:clamp(1.1rem,3vw,2.2rem);top:50%;transform:translateY(-50%);writing-mode:vertical-rl;display:flex;align-items:center;gap:.8rem;font-size:.5rem;letter-spacing:.38em;text-transform:uppercase;color:var(--tide);opacity:.75;z-index:4;pointer-events:none}
+#dhint i{display:block;width:1px;height:34px;background:linear-gradient(var(--tide),transparent);animation:dhint 2s ease-in-out infinite}
 @keyframes dhint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .dnum b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(5rem,18vw,15rem);line-height:.9;color:#fff;letter-spacing:-.02em}
 .dnum span{display:block;margin-top:1.2rem;font-size:clamp(.66rem,1.1vw,.8rem);letter-spacing:.34em;text-transform:uppercase;color:var(--ice)}
@@ -529,7 +530,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #opp .btns{display:flex;flex-direction:column;gap:.8rem}
 #opp .x{margin-top:1rem;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
 #room header .m.logo{display:flex;align-items:center}#room header .m.logo img{height:clamp(10px,1.05vw,15px);width:auto}@media (max-width:640px){#room header .m.logo img{height:9px}}
-@media (max-width:640px){#dcred .face{width:30vw}#dcred .face:nth-of-type(3){top:47%!important}#dcred .face:nth-of-type(4){top:43%!important}#dcred .rway{top:auto;bottom:calc(5vh + var(--safe-b,0px));width:90vw}#dtop button{padding:.65rem .8rem;font-size:.5rem}}
+@media (max-width:640px){#dcred .face{width:30vw}#dcred .face:nth-of-type(3){top:47%!important}#dcred .face:nth-of-type(4){top:43%!important}#dcred .rway{top:auto;bottom:calc(5vh + var(--safe-b,0px));width:90vw}#dtop{grid-template-columns:1fr auto 1fr;padding-left:.9rem;padding-right:.9rem}#dtop img{height:12px}#dtop button{padding:.45rem .6rem;font-size:.46rem;letter-spacing:.22em}#dtop button .lg{display:none}#dtop button .sm{display:inline}#dhint{right:.55rem}}
 @media (prefers-reduced-motion:reduce){#dhint i{animation:none}}
 
 </style>
@@ -598,7 +599,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    <div id="dtint"></div>
    <div id="dveil"></div>
 
-   <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">Conscious modern luxury</div><h2>Your inner power, <em>made visible.</em></h2></div>
+   <div class="dh low first" data-a="0" data-b=".07" data-fade="in"><div class="k">Conscious modern luxury</div><h2>Distinctive by design.<br><em>Proven in retail.</em></h2></div>
    <div class="dh low" data-a=".525" data-b=".6"><div class="k">Conscious diamonds · gold vermeil · black rhodium</div><h2>Demi-fine, <em>redefined.</em></h2></div>
 
    <div id="dpress">
@@ -672,7 +673,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    </div>
    </div>
 
-   <div id="dtop"><img src="x/logo-w.webp" alt="SALLY SKOUFIS"><button type="button" id="dSkip">Partner room →</button></div>
+   <div id="dtop"><span aria-hidden="true"></span><img src="x/logo-w.webp" alt="SALLY SKOUFIS"><button type="button" id="dSkip"><span class="lg">Partner room</span><span class="sm">Partners</span> →</button></div>
    <div id="dhint">Scroll to dive<i></i></div>
    <div id="dbar"></div>
   </div>
