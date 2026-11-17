@@ -488,6 +488,9 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #crB .crgrid{position:absolute;right:0;bottom:0;width:var(--gw);display:grid;grid-template-columns:repeat(6,1fr)}
 #crB .crgrid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
 #crB .crk{left:calc(100vw - var(--gw));top:calc(28vh + var(--safe-t,0px))}
+#crB{background:#111214}
+#crB .crph{inset:auto auto 0 0;width:auto;height:86%;max-width:none;object-position:0% 50%;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 14%),linear-gradient(90deg,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 14%),linear-gradient(90deg,#000 80%,transparent 100%);mask-composite:intersect}
+#crB .crsh{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 60%,rgba(0,0,0,.7) 100%)}
 #dcr .crk3 span{display:block;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)}
 #dcr .crk3 h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:1;margin-top:.9rem;color:#fff}
 #dcr h2 em{font-style:italic;color:var(--ice)}
@@ -508,7 +511,8 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
  #dcr .crk{left:6vw;top:calc(13vh + var(--safe-t,0px))}
  #dcr .crp{left:6vw;right:6vw;top:auto;bottom:calc(19vh + var(--safe-b,0px));font-size:.78rem}
  #dcr .crlogos{left:5vw;right:5vw;bottom:calc(6vh + var(--safe-b,0px))}#dcr .crlogos img{height:44px}#dcr .crlogos img.w{height:30px}
- #crB{--gw:100vw}#crB .crph{object-position:24% 50%}
+ #crB{--gw:100vw}#crB .crph{inset:0;width:100%;height:100%;object-position:22% 50%;-webkit-mask-image:none;mask-image:none}
+ #crB .crsh{background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 62%,rgba(0,0,0,.85) 100%)}
  #crB .crk{left:6vw;top:calc(10.4vh + var(--safe-t,0px))}
  #crB .crp{left:6vw;right:6vw;bottom:calc(var(--gw)*4/9 + 3vh);font-size:.74rem;text-shadow:0 2px 14px rgba(0,0,0,.9)}
  #crC .ichero{right:0;width:auto;bottom:auto;height:47vh}#crC .ichero::after{background:linear-gradient(180deg,rgba(5,8,11,0) 65%,rgba(5,8,11,.95) 100%)}#crC .ichero figcaption{left:6vw;bottom:1.2rem}#crC .icside{left:0;top:47vh}#dcr .crk3{top:1.2rem;left:6vw}#crC .icname{left:6vw;bottom:calc(6vh + var(--safe-b,0px))}#crC .iccnt{right:6vw;bottom:calc(6.4vh + var(--safe-b,0px))}#crC .icbar{left:6vw;right:6vw;bottom:calc(4vh + var(--safe-b,0px))}
@@ -736,7 +740,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
      <p class="crp"><b>SALLY SKOUFIS</b> has opened several runway shows at <b>New York</b> and <b>Paris Fashion Week</b> with her designs in high demand. Her highly acclaimed work has also appeared on runways at <b>OC Fashion Week</b> in California, and <b>Mercedes-Benz Fashion Week</b> in Sydney.</p>
      <div class="crlogos"><img src="x/cr/fw-nyfw.png" alt="New York Fashion Week"><img class="w" src="x/cr/fw-oc.png" alt="OC Fashion Week"><img class="w" src="x/cr/fw-mbfw.png" alt="Mercedes-Benz Fashion Week"><img src="x/cr/fw-pfw.png" alt="Paris Fashion Week"></div>
     </section>
-    <section class="crpg" id="crB"><img class="crph" src="x/cr/stool-page.webp" alt="" decoding="async">
+    <section class="crpg" id="crB"><img class="crph" src="x/cr/vogue-bg.webp" alt="" decoding="async"><div class="crsh"></div>
      <div class="crk"><i>Industry</i><b>Covers &amp; Runways</b></div>
      <p class="crp"><b>SALLY SKOUFIS</b> is worn, commissioned and celebrated by influential artists such as <b>Naomi Campbell</b>, <b>Rihanna</b>, <b>Kelly Rowland</b>, <b>Jessie J</b>, <b>Christian Louboutin</b>, <b>Tom Hanks</b> &amp; <b>Rita Wilson</b>, <b>Nia Vardalos</b>, <b>Paula Abdul</b>, <b>Rosie Huntington-Whiteley</b>, <b>Kylie Minogue</b>, <b>Dannii Minogue</b> and <b>Delta Goodrem</b>.</p>
      <div class="crgrid"><img src="x/cr/cov/c01.webp" alt="ELLE · Angelina Jolie cover"><img src="x/cr/cov/c02.webp" alt="Harper’s Bazaar Vietnam · Ana Bergman cover"><img src="x/cr/cov/c03.webp" alt="Stellar · Margot Robbie cover"><img src="x/cr/cov/c04.webp" alt="Cosmopolitan · Miley Cyrus cover"><img src="x/cr/cov/c05.webp" alt="GQ · Jennifer Lopez cover"><img src="x/cr/cov/c06.webp" alt="Vanity Fair · Natalie Portman cover"><img src="x/cr/cov/c07.webp" alt="Vogue · Cara Delevingne cover"><img src="x/cr/cov/c08.webp" alt="Grazia · Avril Lavigne cover"><img src="x/cr/cov/c09.webp" alt="ELLE · Zendaya cover"><img src="x/cr/cov/c10.webp" alt="Vogue · Lorde cover"><img src="x/cr/cov/c11.webp" alt="Vanity Fair · Billie Eilish cover"><img src="x/cr/cov/c12.webp" alt="ELLE · Margaret Zhang cover"></div>
