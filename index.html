@@ -809,22 +809,22 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
   <nav id="tabs"></nav>
   <div id="panes">
 
-    <div class="pane" data-tab="Why now">
+    <div class="pane" data-tab="Why Now">
       <div class="split">
         <div class="whynow">
           <div class="kick">Welcome to the new world of conscious modern luxury</div>
           <h3>Design is the <em>new luxury.</em></h3>
           <p class="byline">We didn’t enter this space — we helped define it.</p>
-          <p class="bio">Today’s customer wants the design, craftsmanship and emotional weight of luxury jewellery — without the price barriers. SALLY SKOUFIS™ has built at that intersection for over a decade, across digital marketplaces and in-store retail — including Australia’s largest department store, MYER. Design-led, consciously made: a niche others are only now discovering, already claimed and scaling globally.</p>
+          <p class="bio">Today’s customer wants the design, craftsmanship and emotional weight of luxury jewellery — without the price barriers. For over a decade, SALLY SKOUFIS™ has owned this intersection across digital marketplaces and in-store at MYER, Australia’s largest department store. Design-led, consciously made: a niche claimed early, now scaling globally.</p>
           <div class="kpis k4">
             <div><b>~11.6%</b><span>Global demi-fine growth a year (CAGR), 2025–2030</span></div>
             <div><b>~11.8%</b><span>US demi-fine growth a year (CAGR), 2025–2030 — faster than global</span></div>
             <div><b>~2×</b><span>The growth rate of the total jewellery market</span></div>
-            <div><b class="nc">US$151–300</b><span>The category’s largest value price point — and the brand’s core</span></div>
+            <div><b class="nc">US$151–300</b><span>The category’s largest price point — and the brand’s core</span></div>
           </div>
           <div class="src">Source: Grand View Research</div>
         </div>
-        <div class="img" style="background-image:url(w/run-2.jpg);background-position:center 20%"></div>
+        <div class="img" style="background-image:url(w/whynow-model.webp);background-position:center 30%"></div>
       </div>
     </div>
 
@@ -1211,7 +1211,7 @@ document.getElementById('skipR').onclick=e=>{e.stopPropagation();leaveSplash();d
 
 /* ---------- PART 2 (partner room) ---------- */
 const v=document.getElementById('film'), room=document.getElementById('room');
-const ROOM_FILM={'Why now':40,'Why us':30,'US performance':38,'Bestsellers':22,'The collections':14,'The founder':2,'How it works':24,'Contact':44};
+const ROOM_FILM={'Why Now':40,'Why us':30,'US performance':38,'Bestsellers':22,'The collections':14,'The founder':2,'How it works':24,'Contact':44};
 let loopFrom=null;
 function roomFilm(name){const t=ROOM_FILM[name];if(t==null)return;loopFrom=t;try{v.currentTime=t}catch(e){}v.play().catch(()=>{})}
 v.addEventListener('timeupdate',()=>{if(loopFrom!=null&&v.currentTime>loopFrom+7)v.currentTime=loopFrom});
