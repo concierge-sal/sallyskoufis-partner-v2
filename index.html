@@ -834,6 +834,20 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 #crC .iccyc{isolation:isolate;z-index:1;top:var(--lt);bottom:var(--lb)}
 #crC .iccyc img{object-position:50% 4%}
 @media (max-width:760px){#crC .iccyc{top:calc(var(--lt) + var(--band));bottom:var(--lb)}}
+
+/* The Disruptor: designer film (black & white) on the left */
+.disr .ds-media{position:relative;overflow:hidden;background:#0a0a0b;filter:none}
+.disr .ds-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+
+/* The Disruptor: film at near-native size (wide source), Sally's quote beneath it */
+.pane.disr{grid-template-columns:1fr 1fr}
+.disr .ds-left{display:flex;flex-direction:column;justify-content:center;gap:1.6rem;min-height:0}
+.disr .ds-left .ds-media{flex:none;aspect-ratio:4/3;max-height:58vh;width:100%;min-height:0}
+.disr .ds-q{margin:0;font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(.95rem,1.25vw,1.15rem);line-height:1.55;color:#fff}
+.disr .ds-q img{display:block;width:26px;height:auto;margin-bottom:.7rem;opacity:.85}
+.disr .ds-q cite{display:block;margin-top:.6rem;font-family:var(--sans);font-style:normal;font-size:var(--fk);letter-spacing:.3em;text-transform:uppercase;color:var(--tide)}
+@media (max-width:820px){.disr .ds-left{gap:1rem}.disr .ds-left .ds-media{aspect-ratio:auto;height:32vh;max-height:none}.disr .ds-q{font-size:.88rem}}
+@media (max-width:820px){.disr .ds-left{flex:none;justify-content:flex-start}.disr .ds-copy{flex:none}}
 </style>
 </head>
 <body>
@@ -1180,7 +1194,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
     </div>
 
     <div class="pane disr" data-tab="The Disruptor">
-      <div class="ds-media" style="background-image:url(sally.jpg)" role="img" aria-label="Sally Skoufis"></div>
+      <div class="ds-left"><div class="ds-media"><video class="ds-vid" src="w/designer-bw.mp4" poster="w/designer-bw.jpg" muted playsinline loop preload="none" aria-label="Sally Skoufis sketching a design at her bench"></video></div><blockquote class="ds-q"><img src="w/quote-w.png" alt="" aria-hidden="true">I’m incredibly honoured to align my craft with human and environmental impact, to connect with a conscious collective globally, and translate an unwavering desire to pioneer and create change in how jewelry is experienced, valued and represented.<cite>— Sally Skoufis</cite></blockquote></div>
       <div class="ds-copy">
         <div class="kick">An industry rebel since 2014</div>
         <h3>An activism toward <em>the anti-norm.</em></h3>
@@ -1467,7 +1481,7 @@ function countUp(root){root.querySelectorAll('.kpis b:not(.nc)').forEach(el=>{
 const panes=[...document.querySelectorAll('.pane')],tabs=document.getElementById('tabs');let tab=0;
 panes.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.textContent=p.dataset.tab;b.onclick=()=>goTab(i);tabs.appendChild(b)});
 const tb=[...tabs.children];
-function goTab(i){if(i<0||i>=panes.length)return;tab=i;document.querySelectorAll('.pane .cr-bg').forEach(v=>{const on=v.closest('.pane')===panes[i];if(on){if(innerWidth<760&&v.dataset.m&&!v.dataset.sw){v.src=v.dataset.m;v.dataset.sw=1}v.preload='auto';v.play().catch(()=>{})}else v.pause()});roomFilm(panes[i].dataset.tab);countUp(panes[i]);panes.forEach((p,n)=>p.classList.toggle('on',n===i));tb.forEach((b,n)=>b.classList.toggle('on',n===i));
+function goTab(i){if(i<0||i>=panes.length)return;tab=i;document.querySelectorAll('.pane .cr-bg,.pane .ds-vid').forEach(v=>{const on=v.closest('.pane')===panes[i];if(on){if(innerWidth<760&&v.dataset.m&&!v.dataset.sw){v.src=v.dataset.m;v.dataset.sw=1}v.preload='auto';v.play().catch(()=>{})}else v.pause()});roomFilm(panes[i].dataset.tab);countUp(panes[i]);panes.forEach((p,n)=>p.classList.toggle('on',n===i));tb.forEach((b,n)=>b.classList.toggle('on',n===i));
   document.getElementById('rPrev').disabled=i===0;document.getElementById('rNext').disabled=i===panes.length-1;tb[i].scrollIntoView({inline:'center',block:'nearest'})}
 function openRoom(i){document.body.classList.add('inroom');room.classList.add('show');goTab(i)}
 document.getElementById('backFilm').onclick=()=>{document.body.classList.remove('inroom');room.classList.remove('show');loopFrom=null;v.pause()};
