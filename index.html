@@ -829,6 +829,11 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .w-grid a:hover figure>img:not(.w-hov){opacity:0}
 .w-grid figure>img{transition:opacity .45s,transform .6s cubic-bezier(.2,.7,.2,1)}
 .bw-view .w-badge{display:block;font-style:normal;z-index:3}
+
+/* icons: photos live in their own layer under the banners, and only in the band between them (no banner over faces, no flicker) */
+#crC .iccyc{isolation:isolate;z-index:1;top:var(--lt);bottom:var(--lb)}
+#crC .iccyc img{object-position:50% 25%}
+@media (max-width:760px){#crC .iccyc{top:calc(var(--lt) + var(--band));bottom:var(--lb)}}
 </style>
 </head>
 <body>
