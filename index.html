@@ -600,31 +600,33 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .dh .k,#dstats .sk,#dcr .crk3 span{font-family:var(--sans);font-size:var(--fk);letter-spacing:.42em;text-transform:uppercase}
 @media (max-width:760px){:root{--fh:clamp(1.5rem,6.4vw,1.9rem)}}
 
-/* icons slide: framed like the "Now scaling" stats slide: centred heading, thin-lined frame, dark space above and below, black & white */
-#crC{--fw:min(1180px,90vw);--fl:calc((100vw - var(--fw))/2);--ft:31vh;--fhh:50vh;--ln:rgba(143,178,196,.22);background:radial-gradient(ellipse 80% 60% at 50% 38%,#0c2131 0%,#061420 55%,#03090f 100%)}
-#crC::before,#crC::after{content:"";position:absolute;z-index:3;pointer-events:none}
-#crC::before{left:var(--fl);top:var(--ft);width:var(--fw);height:var(--fhh);border:1px solid var(--ln);box-sizing:border-box}
-#crC::after{left:50vw;top:var(--ft);width:1px;height:var(--fhh);background:var(--ln)}
-#crC .ichero{left:var(--fl);right:auto;top:var(--ft);bottom:auto;width:calc(50vw - var(--fl));height:var(--fhh)}
+/* icons slide: see-through deep-blue bars over full-height photos; heading in the top bar, name + counter in the bottom bar; text on the shared type scale */
+#crC{--lt:23vh;--lb:15vh;--bar:rgba(4,13,21,.72);background:var(--navy)}
+#crC::before,#crC::after{content:"";position:absolute;left:0;right:0;z-index:2;background:var(--bar);pointer-events:none}
+#crC::before{top:0;height:var(--lt);background:linear-gradient(180deg,rgba(3,10,17,.86),rgba(6,20,32,.66));box-shadow:0 1px 0 rgba(143,178,196,.22)}
+#crC::after{bottom:0;height:var(--lb);background:linear-gradient(0deg,rgba(3,10,17,.86),rgba(6,20,32,.66));box-shadow:0 -1px 0 rgba(143,178,196,.22)}
+#crC .ichero{top:0;bottom:0}
 #crC .ichero::after{display:none}
-#crC .ichero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%;-webkit-mask-image:none;mask-image:none}
-#crC .ichero figcaption{z-index:4;left:1.4rem;bottom:1.2rem;font-size:var(--fk);text-shadow:0 1px 12px rgba(0,0,0,.85)}
-#crC .icside{left:50vw;right:var(--fl);top:var(--ft);bottom:auto;height:var(--fhh);overflow:visible;background:transparent}
-#crC .iccyc{position:absolute;inset:0;overflow:hidden;background:#05101a}
-#crC .iccyc img{filter:grayscale(1) contrast(1.05)}
+#crC .ichero img{position:absolute;left:0;top:calc(var(--lt) - 3vh);height:calc(100% - var(--lt) + 3vh);object-position:50% 0;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 3vh);mask-image:linear-gradient(180deg,transparent 0,#000 3vh)}
+#crC .icside{top:0;bottom:0;overflow:visible;background:transparent}
+#crC .iccyc{position:absolute;inset:0;overflow:hidden;background:var(--navy)}
 #crC .icshade{display:none}
-#dcr .crk3{left:-50vw;right:auto;width:100vw;top:auto;bottom:calc(100% + clamp(1.4rem,4vh,2.6rem));text-align:center}
-#crC .icname{left:0;bottom:auto;top:calc(100% + 1.4vh);font-size:var(--fh2)}
-#crC .iccnt{right:0;bottom:auto;top:calc(100% + 2.4vh);font-size:var(--fk)}
-#crC .icbar{left:0;right:0;bottom:0;z-index:4}
+#crC .iccyc img,#crC .ichero img{filter:grayscale(1) contrast(1.05)}
+#dcr .crk3{top:auto;left:calc(4vw - 50vw);bottom:calc(100% - var(--lt) + 2.8vh)}
+#crC .icname{font-size:var(--fh2);bottom:4.6vh}
+#crC .iccnt{font-size:var(--fk);bottom:4.9vh}
+#crC .ichero figcaption{z-index:4;left:4vw;bottom:4.9vh;font-size:var(--fk);text-shadow:none}
+#crC .icbar{bottom:calc(var(--lb) - 3.4vh)}
 @media (max-width:760px){
- #crC{--fw:88vw;--ft:calc(23vh + var(--safe-t,0px));--ph:29vh;--fhh:calc(var(--ph)*2 + 1px)}
- #crC::after{left:var(--fl);top:calc(var(--ft) + var(--ph));width:var(--fw);height:1px}
- #crC .ichero{width:var(--fw);height:var(--ph)}
- #crC .icside{left:var(--fl);right:auto;width:var(--fw);top:calc(var(--ft) + var(--ph) + 1px);height:var(--ph)}
- #dcr .crk3{left:calc(-1*var(--fl));width:100vw;bottom:calc(100% + var(--ph) + 1px + 1.4rem)}
- #crC .icname{top:calc(100% + 1.2vh)}
- #crC .iccnt{top:calc(100% + 2vh)}
+ #crC{--lt:calc(19vh + var(--safe-t,0px));--lb:calc(12vh + var(--safe-b,0px));--band:calc((100vh - var(--lt) - var(--lb))/2)}
+ #crC .ichero{right:0;width:auto;bottom:auto;height:calc(var(--lt) + var(--band))}
+ #crC .icside{left:0;top:0}
+ #crC .iccyc{top:calc(var(--lt) + var(--band));bottom:0}
+ #dcr .crk3{left:6vw;bottom:calc(100% - var(--lt) + 1.6vh)}
+ #crC .ichero figcaption{left:6vw;bottom:1.2rem;text-shadow:0 1px 12px rgba(0,0,0,.8)}
+ #crC .icname{bottom:calc(3.4vh + var(--safe-b,0px))}
+ #crC .iccnt{bottom:calc(3.6vh + var(--safe-b,0px))}
+ #crC .icbar{bottom:calc(var(--lb) - 2.6vh)}
 }
 
 /* Let’s Talk: final copy + the MYER reviews under it */
