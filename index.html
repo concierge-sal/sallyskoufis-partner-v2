@@ -657,6 +657,15 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
  #dstats .stop{left:6vw;right:6vw;padding-bottom:1.6vh}
  #dstats .ssrc{left:6vw;right:6vw;bottom:calc(3.4vh + var(--safe-b,0px))}
 }
+
+/* closing page: Sally's own logo + S-mark backdrop (email-signature artwork) instead of the S-mark film; top wordmark hides here so the logo isn't doubled */
+#dend .ewrap{display:none}
+#dend .esig{position:absolute;left:50%;top:0;height:76vh;width:auto;max-width:none;transform:translateX(-50%);-webkit-mask-image:radial-gradient(ellipse 50% 56% at 50% 42%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 56% at 50% 42%,#000 62%,transparent 100%)}
+#dend::before{background:#05080b}
+#dend .eshade{background:linear-gradient(180deg,rgba(2,8,14,0) 55%,rgba(2,8,14,.6) 72%,rgba(2,8,14,.92) 100%)}
+#dive #dtop img{transition:opacity .5s}
+#dive.endon #dtop img{opacity:0}
+@media (max-width:760px){#dend .esig{left:50%;width:auto;height:50vh;top:calc(8vh + var(--safe-t,0px));transform:translateX(-50%);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 74%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 74%,transparent 100%)}}
 </style>
 </head>
 <body>
@@ -809,7 +818,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
    </div>
 
    <div id="dend">
-    <div class="ewrap"><video id="dendV" src="x/endcard.mp4" data-m="x/endcard-m.mp4" poster="x/endcard-poster.jpg" muted playsinline preload="auto" aria-hidden="true"></video></div><div class="eshade"></div>
+    <img class="esig" src="x/end-signature.webp" alt="Sally Skoufis at the bench, with the SALLY SKOUFIS mark and wordmark" decoding="async"><div class="ewrap"><video id="dendV" src="x/endcard.mp4" data-m="x/endcard-m.mp4" poster="x/endcard-poster.jpg" muted playsinline preload="auto" aria-hidden="true"></video></div><div class="eshade"></div>
     <div class="dtxt">
     <div class="k" style="font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tide)">For selected partners</div>
     <h2>Let’s bring the ear <em>to your floor.</em></h2>
@@ -1407,7 +1416,7 @@ function render(){
  const ro=0; // reviews moved into the Partner Room · Let’s Talkrev.style.opacity=ro;if(ro>.02){if(RV.paused){RV.preload='auto';RV.play().catch(()=>{})}}else if(!RV.paused)RV.pause();
  if(ro>0){const now2=performance.now();if(ri<0||now2-(render.rt||0)>3600){ri=(ri+1)%REV.length;render.rt=now2;rq.classList.remove('in');void rq.offsetWidth;rq.textContent=REV[ri][0];rc.textContent=REV[ri][1];rq.classList.add('in')}}else{ri=-1}
  // 7 · end
- const evo=ease(seg(p,.906,.925));end.style.opacity=evo;
+ const evo=ease(seg(p,.906,.925));end.style.opacity=evo;D.classList.toggle('endon',evo>.5);
  if(evReady){const et=seg(p,.915,.975)*(EV.duration-.05);evT+=(et-evT)*(1-Math.exp(-(render.dt||16)/60));if(Math.abs(EV.currentTime-evT)>.03&&!EV.seeking){try{EV.currentTime=evT}catch(e){}}}
  const eo=ease(seg(p,.955,.985));dtxt.style.opacity=eo;dtxt.style.transform=`translateY(${(1-eo)*16}px)`;end.classList.toggle('live',eo>.6);
  if(raw>.995&&!shownOpp){shownOpp=true;setTimeout(()=>{if(!D.classList.contains('gone'))openOpp()},1800)}
