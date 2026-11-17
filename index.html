@@ -700,6 +700,17 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .whyus blockquote{font-size:clamp(1.15rem,1.8vw,1.7rem);padding:0 2rem}
 .whyus figcaption{margin:1rem 0 2rem}.whyus figcaption img{width:clamp(110px,11vw,160px)}
 @media (max-width:820px){.whyus .wu-quote{display:flex;height:62vh;margin-top:1.4rem}}
+
+/* covers page: wide Vogue image as the left-half background (face + both ears left of the centre line), white VOGUE logo like the magazine page */
+#crB{background:#16181b}
+#crB .crph{inset:auto auto 0 calc(25vw - 103.2vh);width:auto;height:80vh;max-width:none;object-fit:fill;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%),linear-gradient(90deg,transparent 0,#000 18%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 16%),linear-gradient(90deg,transparent 0,#000 18%);mask-composite:intersect;clip-path:inset(0 calc(100% - (25vw + 39.2vh) + (25vw + 39.2vh - 50vw + (25vw - 103.2vh)) ) 0 0)}
+#crB .crvg{position:absolute;left:3vw;bottom:4vh;width:min(17vw,250px);height:auto;z-index:2}
+#crB .crk{top:calc(15vh + var(--safe-t,0px))}
+@media (max-width:760px){
+ #crB .crph{inset:0 0 auto 0;width:100%;height:46vh;object-fit:cover;object-position:100% 40%}
+ #crB .crvg{left:5vw;bottom:auto;top:calc(46vh - 3.4rem);width:120px}
+ #crB .crk{top:calc(46vh + 2.2vh)}
+}
 </style>
 </head>
 <body>
@@ -814,7 +825,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
      <p class="crp"><b>SALLY SKOUFIS</b> has opened several runway shows at <b>New York</b> and <b>Paris Fashion Week</b> with her designs in high demand. Her highly acclaimed work has also appeared on runways at <b>OC Fashion Week</b> in California, and <b>Mercedes-Benz Fashion Week</b> in Sydney.</p>
      <div class="crlogos"><img src="x/cr/fw-nyfw.png" alt="New York Fashion Week"><img class="w" src="x/cr/fw-oc.png" alt="OC Fashion Week"><img class="w" src="x/cr/fw-mbfw.png" alt="Mercedes-Benz Fashion Week"><img src="x/cr/fw-pfw.png" alt="Paris Fashion Week"></div>
     </section>
-    <section class="crpg" id="crB"><img class="crph" src="x/cr/vogue-paris.webp" alt="Vogue Paris" decoding="async"><div class="crsh"></div>
+    <section class="crpg" id="crB"><img class="crph" src="x/cr/vogue-wide.webp" alt="Vogue" decoding="async"><img class="crvg" src="x/cr/vogue-logo-w.png" alt="VOGUE"><div class="crsh"></div>
      <div class="crk"><i>Industry</i><b>Covers &amp; Runways</b></div>
      <p class="crp"><b>SALLY SKOUFIS</b> is worn, commissioned and celebrated by influential artists such as <b>Naomi Campbell</b>, <b>Rihanna</b>, <b>Kelly Rowland</b>, <b>Jessie J</b>, <b>Christian Louboutin</b>, <b>Tom Hanks</b> &amp; <b>Rita Wilson</b>, <b>Nia Vardalos</b>, <b>Paula Abdul</b>, <b>Rosie Huntington-Whiteley</b>, <b>Kylie Minogue</b>, <b>Dannii Minogue</b> and <b>Delta Goodrem</b>.</p>
      <div class="crgrid"><img src="x/cr/cov/c01.webp" alt="ELLE · Angelina Jolie cover"><img src="x/cr/cov/c02.webp" alt="Harper’s Bazaar Vietnam · Ana Bergman cover"><img src="x/cr/cov/c03.webp" alt="Stellar · Margot Robbie cover"><img src="x/cr/cov/c04.webp" alt="Cosmopolitan · Miley Cyrus cover"><img src="x/cr/cov/c05.webp" alt="GQ · Jennifer Lopez cover"><img src="x/cr/cov/c06.webp" alt="Vanity Fair · Natalie Portman cover"><img src="x/cr/cov/c07.webp" alt="Vogue · Cara Delevingne cover"><img src="x/cr/cov/c08.webp" alt="Grazia · Avril Lavigne cover"><img src="x/cr/cov/c09.webp" alt="ELLE · Zendaya cover"><img src="x/cr/cov/c10.webp" alt="Vogue · Lorde cover"><img src="x/cr/cov/c11.webp" alt="Vanity Fair · Billie Eilish cover"><img src="x/cr/cov/c12.webp" alt="ELLE · Margaret Zhang cover"></div>
