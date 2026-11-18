@@ -1605,7 +1605,7 @@ const REV=[
 const rq=document.getElementById('drq'),rc=document.getElementById('drc');let ri=-1;
 const VA=.12,VB=.52; // video window (piecewise below: slows while the press pages are up)
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),seg=(p,a,b)=>cl((p-a)/(b-a)),ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-let vt=0,want=0,dur=32.5,ready=false;
+let vt=0,want=0,dur=27.4,ready=false;
 const chk=()=>{if(V.readyState>=1){dur=V.duration||dur;ready=true}};chk();V.addEventListener('loadedmetadata',chk);V.addEventListener('canplay',chk);
 function unlock(){V.play().then(()=>V.pause()).catch(()=>{});window.removeEventListener('touchstart',unlock);D.removeEventListener('scroll',unlock)}
 window.addEventListener('touchstart',unlock,{passive:true});D.addEventListener('scroll',unlock,{passive:true});
@@ -1619,7 +1619,7 @@ const labS=document.getElementById('dlabS');
 const tint=document.getElementById('dtint'),stats=document.getElementById('dstats'),sts=[...stats.querySelectorAll('.st')],made=document.getElementById('dmade'),mimg=made.querySelector('.img');
 const PR=document.getElementById('dpress'),PG=[...PR.querySelectorAll('.pg')],PC=[...PR.querySelectorAll('.hcap')],PL=[...PR.querySelectorAll('.plist .row')],turb=document.getElementById('turb');
 (function(){const b=PR.querySelector('.bub');for(let i=0;i<34;i++){const e=document.createElement('i');e.style.left=Math.random()*100+'%';const z=(.5+Math.random()*1.6)*3;e.style.width=e.style.height=z+'px';e.style.opacity=.15+Math.random()*.45;e.style.animationDuration=9+Math.random()*12+'s';e.style.animationDelay=-Math.random()*20+'s';b.appendChild(e)}})();
-const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.335)t=(p-VA)/(.335-VA)*19;else if(p<.43)t=19+(p-.335)/.095*6.5;else t=25.5+(p-.43)/(VB-.43)*12.4;return Math.min(d,t)}; // film: waves 0–2.8 · fabric scene 2.8–19 · far swim under the press pages 19–25.5 · dive, swim up, surface 25.5–37.9
+const filmT=p=>{const d=dur-.05;let t;if(p<=VA)t=0;else if(p<.152)t=(p-VA)/(.152-VA)*2.8;else t=2.8+(p-.152)/(VB-.152)*(d-2.8);return Math.min(d,t)}; // film (18 Nov 2026): splash 0–2.8 · mask · mask & ring · hand with rings · rings · swim up · rise · surface; paced by scroll distance so nothing stalls
 const vplay=(v,on)=>{if(on){if(v.paused){if(!v.src&&v.dataset.src)v.src=v.dataset.src;v.preload='auto';v.play().catch(()=>{})}}else if(!v.paused)v.pause()};
 // extra scroll for the magazines: press window .335–.43 gets 490vh of a 2300vh track instead of 190vh of 2000vh
 const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=WQ[i])return WP[i-1]+(q-WQ[i-1])/(WQ[i]-WQ[i-1])*(WP[i]-WP[i-1]);return 1};
