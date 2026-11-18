@@ -864,6 +864,40 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 .rlogo{display:block;height:3.1rem;width:auto;max-width:80%;object-fit:contain;opacity:.92}
 .r-core .rlogo,.r-ws .rlogo{width:min(15rem,80%)}
 @media (max-width:760px){.rph{height:clamp(220px,62vw,320px)}.rpic{padding-top:.6rem;gap:.6rem}.rlogo{height:2.4rem}}
+/* The Disruptor as two slides from Sally's Founder doc: 6a founder (B&W sketch film left, copy right), 6b credentials (18 Nov 2026) */
+.dsx{padding-top:0;padding-bottom:0;scroll-snap-type:y proximity}
+.dsx .tm{font-size:.5em;vertical-align:.7em;line-height:0;letter-spacing:0}
+.dx-a,.dx-b{flex:none;min-height:100%;scroll-snap-align:start}
+.dx-a{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding:clamp(1.2rem,3vh,2rem) 0}
+.dx-media{position:relative;height:min(74vh,100%);min-height:22rem;overflow:hidden;background:#0a0a0b}
+.dx-media .ds-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.dx-copy .byline{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--ice);margin:-.6rem 0 1rem}
+.dx-copy .bio{max-width:34em}
+.dx-more,.dx-b .src a{color:var(--white);text-underline-offset:.25em}
+.dx-more{display:inline-block;margin-top:1.1rem;font-size:var(--fk);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.35rem}
+.dx-next{margin-top:2.2rem;font-size:var(--fk);letter-spacing:.3em;text-transform:uppercase;color:var(--stone)}
+.dx-b{display:flex;flex-direction:column;justify-content:center;padding:clamp(1.6rem,5vh,3rem) 0;max-width:62em}
+.dx-b h3{margin-bottom:1.2rem}
+.dx-logos{display:flex;align-items:center;gap:clamp(1.2rem,3vw,2.6rem);flex-wrap:wrap;margin:0 0 1.4rem}
+.dx-logos img{height:clamp(22px,3vw,34px);width:auto;opacity:.88;filter:grayscale(1) brightness(1.6)}
+.dx-logos img[alt="Vogue"]{height:clamp(18px,2.4vw,26px)}
+.dx-myer{font-family:var(--serif);font-size:clamp(1.1rem,1.9vw,1.5rem);letter-spacing:.32em;color:#fff;opacity:.88}
+.dx-creds{margin-bottom:1.4rem}
+.dx-creds li{grid-template-columns:12rem 1fr}
+.dx-two{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(1rem,3vw,2.4rem);margin-bottom:1.2rem}
+.dx-two p{font-size:.84rem;line-height:1.65;color:var(--mist);margin:.5rem 0 0}
+.dx-close{font-family:var(--serif);font-weight:300;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.35;color:#fff;margin:.4rem 0 1rem;max-width:34em}
+.dx-close em{font-style:italic}
+@media (max-width:760px){
+ .dsx{scroll-snap-type:none}
+ .dx-a{grid-template-columns:1fr;gap:1rem;padding-top:.6rem;min-height:0}
+ .dx-media{height:32vh;min-height:0}
+ .dx-next{display:none}
+ .dx-b{min-height:0;padding-top:1.4rem;border-top:1px solid var(--line)}
+ .dx-creds li{grid-template-columns:1fr}
+ .dx-two{grid-template-columns:1fr}
+ .dx-logos{gap:1rem}.dx-logos img{height:20px}.dx-myer{font-size:1rem}
+}
 </style>
 </head>
 <body>
@@ -1190,26 +1224,38 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
       <div class="src">Source: SALLY SKOUFIS™ Materials Statement &amp; brand records</div>
     </div>
 
-    <div class="pane disr" data-tab="The Disruptor">
-      <div class="ds-left"><div class="ds-media"><video class="ds-vid" src="w/designer-bw.mp4" poster="w/designer-bw.jpg" muted playsinline loop preload="none" aria-label="Sally Skoufis sketching a design at her bench"></video></div><blockquote class="ds-q"><img src="w/quote-w.png" alt="" aria-hidden="true">I’m incredibly honoured to align my craft with human and environmental impact, to connect with a conscious collective globally, and translate an unwavering desire to pioneer and create change in how jewelry is experienced, valued and represented.<cite>— Sally Skoufis</cite></blockquote></div>
-      <div class="ds-copy">
-        <div class="kick">An industry rebel since 2014</div>
-        <h3>An activism toward <em>the anti-norm.</em></h3>
-        <p class="byline">Artist, founder, disruptor — inspiring her clients to see beauty through new eyes.</p>
-        <p class="bio">Driven by a purpose of honour — of oneself, of spirit, of each other, and of the earth we walk on — SALLY SKOUFIS™ is more than a globally recognised brand — it is a movement. An artist and jewellery designer with no temperament for the ordinary, she challenges everything with conviction and leaves no room for anything without soul. Her design signature — a single black diamond set among conscious materials — is a deliberate mark of change: access to luxury, and a provocation that global market dynamics must shift.</p>
-        <div class="kick" style="margin:1.2rem 0 .5rem">Her language</div>
-        <p class="bio">Her work is an invitation into the meaning behind the materiality — the duality of nature, the fragility and force of the earth, the contrast of light and shadow she draws from chiaroscuro. The brighter the light, the darker the shadow. Each piece is an outward reflection of intimate emotion — and a reminder that she is rare because she is real.</p>
-        <div class="kick" style="margin:1.6rem 0 .6rem">At a glance</div>
-        <ul class="creds">
-          <li><b>Since 2014</b><span>Created a marketplace offering that did not exist</span></li>
-          <li><b>Ateliers</b><span>Sydney · Paris · Thailand</span></li>
-          <li><b>Stocked</b><span>8+ countries, across department store, boutique and online · 10+ years at MYER</span></li>
-          <li><b>Runway</b><span>Mercedes-Benz Fashion Week · New York Fashion Week · Paris Fashion Week</span></li>
-          <li><b>Worn by</b><span>Rihanna · Naomi Campbell · Emma Myers · Kehlani · Bella Poarch</span></li>
-          <li><b>Mediums</b><span>Semi-precious, recycled and man-made — innovating across every medium</span></li>
+    <div class="pane scroll dsx" data-tab="The Disruptor">
+      <section class="dx-a">
+        <div class="dx-media"><video class="ds-vid" src="w/founder-bw.mp4" data-m="w/founder-bw-m.mp4" poster="w/founder-bw.jpg" muted playsinline loop preload="none" aria-label="Sally Skoufis sketching a design"></video></div>
+        <div class="dx-copy">
+          <div class="kick">Artist. Founder. Global change agent.</div>
+          <h3>Original in a world <em>of sameness.</em></h3>
+          <p class="byline">Sally Skoufis is not following the industry. She is challenging it.</p>
+          <p class="bio">An Australian artist, designer and founder, Sally established SALLY SKOUFIS<span class="tm">™</span> in 2012 to challenge convention and redefine what contemporary adornment could be. As the industry drifts toward sameness, she has stayed uncompromisingly original — edgy, modern and distinctive, grounded in artistic expression, modern asymmetry and her signature use of black. Each stone is sought out by hand and treated as a creative instrument. A pioneer of conscious materiality, she believes beautiful design should carry meaning — individuality over conformity, consciousness over excess, meaning over status.</p>
+          <a class="dx-more" href="https://sallyskoufis.com/pages/designer-profile" target="_blank" rel="noopener">Read more about Sally ↗</a>
+          <div class="dx-next" aria-hidden="true">Her credentials ↓</div>
+        </div>
+      </section>
+      <section class="dx-b">
+        <div class="kick">Proven. International. Original.</div>
+        <h3>The credentials <em>behind the vision.</em></h3>
+        <div class="dx-logos" aria-label="Vogue, New York Fashion Week, Paris Fashion Week, Mercedes-Benz Fashion Week, MYER">
+          <img src="x/cr/vogue-logo-w.png" alt="Vogue"><img src="x/cr/fw-nyfw.png" alt="New York Fashion Week"><img src="x/cr/fw-pfw.png" alt="Paris Fashion Week"><img src="x/cr/fw-mbfw.png" alt="Mercedes-Benz Fashion Week"><span class="dx-myer">MYER</span>
+        </div>
+        <ul class="creds dx-creds">
+          <li><b>Fashion Week Sydney</b><span>Opened the main-stage runway, six months after launch.</span></li>
+          <li><b>MYER</b><span>A decade-plus on the floor of Australia’s largest department store.</span></li>
+          <li><b>New York &amp; Paris</b><span>Solo show at New York Fashion Week; multiple Paris seasons.</span></li>
+          <li><b>London</b><span>Presented exclusive limited-edition creations for Her Majesty’s Platinum Jubilee.</span></li>
+          <li><b>Recognition</b><span>Private seating with Vogue, New York; bespoke commissions for global A-list clients.</span></li>
         </ul>
-        <div class="src">Source: SALLY SKOUFIS™ founder statement &amp; brand records</div>
-      </div>
+        <div class="dx-two">
+          <div><div class="kick">Why it matters to a marketplace</div><p>A founder-led brand with an authentic point of view and a recognisable signature — distinct from conventional jewellery, relevant to customers who buy for individuality and meaning. An established international footprint: ateliers across Australia, Paris and Thailand, stocked in 8+ countries through department store, boutique and online.</p></div>
+          <div><div class="kick">A return to truth</div><p>Conscious materiality over excess. Meaning over status. Individuality over conformity. Not jewellery that signals status — adornment that means something.</p></div>
+        </div>
+        <p class="dx-close">She didn’t set out to fit into the industry. <em>She set out to change what the industry could be.</em></p>
+        <div class="src">Source: SALLY SKOUFIS<span class="tm">™</span> founder statement &amp; brand records · <a href="https://sallyskoufis.com/pages/designer-profile" target="_blank" rel="noopener">read more on sallyskoufis.com</a></div>
+      </section>
     </div>
 
     <div class="pane web" data-tab="The Website">
