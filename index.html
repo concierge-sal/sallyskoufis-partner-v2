@@ -1550,8 +1550,10 @@ function openRoom(i){document.body.classList.add('inroom');room.classList.add('s
 document.getElementById('backFilm').onclick=()=>{document.body.classList.remove('inroom');room.classList.remove('show');loopFrom=null;v.pause()};
 document.getElementById('rPrev').onclick=()=>goTab(tab-1);
 document.getElementById('rNext').onclick=()=>goTab(tab+1);
-let rx=null;room.addEventListener('touchstart',e=>{rx=e.touches[0].clientX},{passive:true});
-room.addEventListener('touchend',e=>{if(rx===null)return;const dx=e.changedTouches[0].clientX-rx;if(Math.abs(dx)>60)goTab(tab+(dx<0?1:-1));rx=null});
+/* swipe between tabs: only a clearly sideways swipe, and never on the tab names or on anything that scrolls sideways itself (18 Nov 2026) */
+let rx=null,ry=0;const noSwipe=t=>{for(let el=t;el&&el!==room;el=el.parentElement){if(el.id==='tabs'||el.classList.contains('bw')||el.classList.contains('lt-strip'))return true;const cs=getComputedStyle(el);if(/(auto|scroll)/.test(cs.overflowX)&&el.scrollWidth>el.clientWidth+4)return true}return false};
+room.addEventListener('touchstart',e=>{if(e.touches.length!==1||noSwipe(e.target)){rx=null;return}rx=e.touches[0].clientX;ry=e.touches[0].clientY},{passive:true});
+room.addEventListener('touchend',e=>{if(rx===null)return;const dx=e.changedTouches[0].clientX-rx,dy=e.changedTouches[0].clientY-ry;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.8)goTab(tab+(dx<0?1:-1));rx=null});
 document.addEventListener('keydown',e=>{if(!room.classList.contains('show'))return;if(e.key==='ArrowRight')goTab(tab+1);if(e.key==='ArrowLeft')goTab(tab-1);if(e.key==='Escape')document.getElementById('backFilm').click()});
 if(CONTACT.email){document.getElementById('who').innerHTML=CONTACT.name+'<small>'+CONTACT.title+'</small>';document.getElementById('mail').textContent=CONTACT.email;
   const m=document.getElementById('mail');m.innerHTML='<a href="mailto:'+CONTACT.email+'" style="color:inherit">'+CONTACT.email+'</a>';}
