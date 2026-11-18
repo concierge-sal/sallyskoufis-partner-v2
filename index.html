@@ -854,6 +854,16 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 /* Edge line: US #1 sub-line under the headline; phone splits the kicker in two (18 Nov 2026) */
 .dh .ks{font-family:var(--sans);font-size:var(--fk);letter-spacing:.32em;text-transform:uppercase;color:#cfcfd2;margin-top:.9rem}
 @media (max-width:760px){.dh .dsk{display:none}}
+/* Who She Is: picture under each range, flicking between two shots, logo under it; smaller ™ (18 Nov 2026) */
+.whoshe .tm{display:inline!important;font-size:.5em;vertical-align:.7em;letter-spacing:0;margin-left:.05em;line-height:0;color:inherit}
+.rpic{margin-top:auto;padding-top:1rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.rph{position:relative;width:100%;height:clamp(260px,30vw,440px);overflow:hidden;background:#0b0f14}
+.rph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;opacity:0;transition:opacity .9s ease}
+.rph img.on{opacity:1}
+.r-ws .rph{background:#fff}.r-ws .rph img.prod{transform-origin:50% 77%;transform:translateY(-27%) scale(1.75)}
+.rlogo{display:block;height:3.1rem;width:auto;max-width:80%;object-fit:contain;opacity:.92}
+.r-core .rlogo,.r-ws .rlogo{width:min(15rem,80%)}
+@media (max-width:760px){.rph{height:clamp(220px,62vw,320px)}.rpic{padding-top:.6rem;gap:.6rem}.rlogo{height:2.4rem}}
 </style>
 </head>
 <body>
@@ -1106,18 +1116,19 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
       </div>
       <div class="xs27">
         <i>New for 2027</i>
-        <b>XS by SALLY SKOUFIS™</b>
+        <b>XS by SALLY SKOUFIS<span class="tm">™</span></b>
         <span>Early 2027, the brand launches its first diffusion line — younger, social-first and accessibly priced — capturing the next generation earlier and extending both market share and lifetime value. Newness, never fast fashion.</span>
       </div>
       <div class="sep"></div>
       <div class="kick" style="margin-bottom:.8rem">Discovery (XS) → signature (Core) → collector (Warrior Soul)</div>
       <div class="ranges">
         <div class="rng">
-          <i>XS by SALLY SKOUFIS™ · Discovery</i>
+          <i>XS by SALLY SKOUFIS<span class="tm">™</span> · Discovery</i>
           <b>A$40 – A$220</b>
           <span class="role">Young, fresh, high-volume. Ear cuffs, huggies, hoops and rings built for volume and promotional moments.</span>
           <span class="row"><em>Starts at</em>XStyle &amp; XSculpt Ear Cuffs · A$40</span>
           <span class="row"><em>Status</em>Launching early 2027 · pricing indicative</span>
+            <div class="rpic r-xs"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_X.Slick18KGold.png?v=1774931510&width=640" alt="XS by SALLY SKOUFIS — ear stacks" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_X.SenseGrandeEarringsSilver_9bb7810d-8802-4b24-9ba6-b7ee576bb3af.png?v=1774860395&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/xs-logo-w.webp" alt=""></div>
         </div>
         <div class="rng feat">
           <i>Core · Signature</i>
@@ -1126,6 +1137,7 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
           <span class="row"><em>Starts at</em>Alchemy Mono Ear Cuff · US$70</span>
           <span class="row"><em>US bestseller</em>Edge Ear Cuff · Black Destiny · Hybrid Climber</span>
           <span class="chips">Includes Iconic · Queen Bee · Eclipse · Freedom · Revival · The Seeker</span>
+            <div class="rpic r-core"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY-SKOUFIS_-Gold-Edge-Ear-Cuff-and-Light-Hoop.png?v=1750235260&width=640" alt="Core — Gold Edge Ear Cuff and Light Hoop" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_-Naked-Climber-18k-Gold.png?v=1782195108&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/logo-w.webp" alt=""></div>
         </div>
         <div class="rng">
           <i>Warrior Soul · Collector</i>
@@ -1134,32 +1146,11 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
           <span class="row"><em>Starts at</em>Urge Ear Cuff · US$120</span>
           <span class="row"><em>US bestseller</em>Nourish Necklace · natural black diamond &amp; labradorite</span>
           <span class="row"><em>Signature</em>Black Diamond Signature Series · US$350 – US$1,200</span>
+            <div class="rpic r-ws"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY-SKOUFIS_-Destiny-Cuff-Light-Huggie-Black-Diamond_6b721cfa-01ac-4fed-b165-bd46ab0363a2.png?v=1781165000&width=640" alt="Warrior Soul — Light Huggies with black diamonds, on the ear" loading="lazy"><img class="prod" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SS-LightHuggieHoops-BlkinGold.png?v=1769760380&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/logo-w.webp" alt=""></div>
         </div>
       </div>
       <div class="src">Core &amp; Warrior Soul: US retail prices as listed for the US market on <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a>, 6 Nov 2026 · XS: indicative AUD, not yet live</div>
-      <div class="sep"></div>
-      <div class="kick">What she buys · in the colours she buys</div>
-      <h3>The pieces people mean <em>when they say our name.</em></h3>
-      <div class="cards"><a class="card" href="https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0101m02000000" target="_blank" rel="noopener"><div class="ph"><img alt="Edge Ear Cuff — White diamonds · 18K gold vermeil" src="p/edge-gold.jpg" onerror="this.remove()"></div><h4>Edge Ear Cuff</h4><em>White diamonds · 18K gold vermeil</em><small>#1 piece in the US</small><small class="p">RRP US$140</small></a><a class="card" href="https://sallyskoufis.com/products/destiny-ear-cuff-qbt103u0103m01000000" target="_blank" rel="noopener"><div class="ph"><img alt="Black Destiny — Black diamonds · black rhodium" src="p/destiny-black.jpg" onerror="this.remove()"></div><h4>Black Destiny</h4><em>Black diamonds · black rhodium</em><small>Best-selling Destiny · most units sold</small><small class="p">RRP US$100</small></a><a class="card" href="https://sallyskoufis.com/products/hybrid-climber" target="_blank" rel="noopener"><div class="ph"><img alt="Hybrid Climber — White diamonds · 18K gold" src="p/hybrid-gold.jpg" onerror="this.remove()"></div><h4>Hybrid Climber</h4><em>White diamonds · 18K gold</em><small>#1 ear climber in the US</small><small class="p">RRP US$390</small></a><a class="card" href="https://sallyskoufis.com/products/suspension-solitaire-climber" target="_blank" rel="noopener"><div class="ph"><img alt="Suspension Solitaire Climber — Sterling silver · UNCONTAINED" src="p/suspension.jpg" onerror="this.remove()"></div><h4>Suspension Solitaire Climber</h4><em>Sterling silver · UNCONTAINED</em><small>New · already selling in 10 countries</small><small class="p">RRP US$260</small></a><a class="card" href="https://sallyskoufis.com/products/edge-ear-cuff-qbt203u0103m01000000" target="_blank" rel="noopener"><div class="ph"><img alt="Edge Ear Cuff — Black diamonds · black rhodium" src="p/edge-black.jpg" onerror="this.remove()"></div><h4>Edge Ear Cuff</h4><em>Black diamonds · black rhodium</em><small>The Black Diamond signature</small><small class="p">RRP US$140</small></a></div>
-      <div class="src">Source: Shopify, US net sales Nov 2024 – Nov 2026 · tap any piece to see it on <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a></div>
-      <div class="sep"></div>
-      <div class="kick">Where she is</div>
-      <div class="kpis k3">
-        <div><b>66K</b><span>US visitors to sallyskoufis.com in 12 months · our #1 country, twice Australia</span></div>
-        <div><b>337</b><span>US customers in the last 12 months</span></div>
-        <div><b>2 in 5</b><span>Customers return to buy again · online and in-store</span></div>
-      </div>
-      <div class="states">
-        <div class="kick" style="margin:1.6rem 0 .4rem">Top US states · net sales, last two years</div>
-        <div class="blist">
-          <div><span>California</span><u style="--w:100%"></u><span>A$41.7K</span></div>
-          <div><span>New York</span><u style="--w:85%"></u><span>A$35.5K</span></div>
-          <div><span>Florida</span><u style="--w:65%"></u><span>A$27.1K</span></div>
-          <div><span>New Jersey</span><u style="--w:53%"></u><span>A$22.3K</span></div>
-          <div><span>Texas</span><u style="--w:49%"></u><span>A$20.5K</span></div>
-        </div>
-      </div>
-      <div class="src">Source: SALLY SKOUFIS™ brand segmentation; Shopify performance (sessions, net sales, states over the last two years)</div>
+      
     </div>
 
     <div class="pane" data-tab="How It Works">
@@ -1654,6 +1645,11 @@ document.getElementById('backFilm').addEventListener('click',()=>{D.classList.re
 if(location.hash==='#room')toRoom();
 })();
 
+</script>
+
+<script>
+/* Who She Is: flick each range picture between its two shots, staggered (18 Nov 2026) */
+(()=>{const boxes=[...document.querySelectorAll('.rph')];boxes.forEach((b,k)=>{const im=b.querySelectorAll('img');if(im.length<2)return;let i=0;setTimeout(()=>setInterval(()=>{im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},4200),k*1400)})})();
 </script>
 </body>
 </html>
