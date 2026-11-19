@@ -919,6 +919,9 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 
 /* Partner Room tab bar spread to fill the line (17 Nov meeting) (18 Nov 2026) */
 @media (min-width:761px){#tabs{justify-content:space-between}}
+
+/* tab bar: whole line is clickable on desktop (19 Nov 2026) */
+@media (min-width:761px){#tabs{cursor:pointer}#tabs button.hov:not(.on){color:var(--bone)}}
 </style>
 </head>
 <body>
@@ -1545,6 +1548,11 @@ function countUp(root){root.querySelectorAll('.kpis b:not(.nc)').forEach(el=>{
 const panes=[...document.querySelectorAll('.pane')],tabs=document.getElementById('tabs');let tab=0;
 panes.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.textContent=p.dataset.tab;b.onclick=()=>goTab(i);tabs.appendChild(b)});
 const tb=[...tabs.children];
+/* desktop: clicking the empty space in the tab bar opens the nearest tab; hovering lights it up (19 Nov 2026) */
+const nearTab=x=>{let k=0,d=1e9;tb.forEach((b,i)=>{const r=b.getBoundingClientRect(),c=Math.abs(x-(r.left+r.width/2));if(c<d){d=c;k=i}});return k};
+tabs.addEventListener('click',e=>{if(innerWidth<761||e.target.closest('button'))return;goTab(nearTab(e.clientX))});
+tabs.addEventListener('mousemove',e=>{if(innerWidth<761)return;const k=nearTab(e.clientX);tb.forEach((b,i)=>b.classList.toggle('hov',i===k))});
+tabs.addEventListener('mouseleave',()=>tb.forEach(b=>b.classList.remove('hov')));
 function goTab(i){if(i<0||i>=panes.length)return;tab=i;document.querySelectorAll('.pane .cr-bg,.pane .ds-vid').forEach(v=>{const on=v.closest('.pane')===panes[i];if(on){if(innerWidth<760&&v.dataset.m&&!v.dataset.sw){v.src=v.dataset.m;v.dataset.sw=1}v.preload='auto';v.play().catch(()=>{})}else v.pause()});roomFilm(panes[i].dataset.tab);countUp(panes[i]);panes.forEach((p,n)=>p.classList.toggle('on',n===i));tb.forEach((b,n)=>b.classList.toggle('on',n===i));
   document.getElementById('rPrev').disabled=i===0;document.getElementById('rNext').disabled=i===panes.length-1;tb[i].scrollIntoView({inline:'center',block:'nearest'})}
 function openRoom(i){document.body.classList.add('inroom');room.classList.add('show');goTab(i)}
