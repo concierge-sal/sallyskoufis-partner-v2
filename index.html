@@ -1643,7 +1643,7 @@ const WQ=[0,.2913,.5043,1],WP=[0,.335,.43,1],warp=q=>{for(let i=1;i<4;i++)if(q<=
 const CR=document.getElementById('dcr'),crA=document.getElementById('crA'),crB=document.getElementById('crB'),crC=document.getElementById('crC'),crk3=document.getElementById('crk3'),ICF=[...document.querySelectorAll('#iccyc img')],icname=document.getElementById('icname'),iccnt=document.getElementById('iccnt'),icbar=document.getElementById('icbar');let icT0=0,icK=-1,stIn=0;
 function renderCR(n){
  // the section fades in from the handmade film and out to the US snapshot
- const o=Math.min(ease(seg(n,0,.035)),n>.9?1-stIn:1);CR.style.opacity=o; // crossfade into Now scaling: banners stay put, only the content changesif(o<=.001){icT0=0;icK=-1;return}
+ const o=Math.min(ease(seg(n,0,.035)),1-stIn);CR.style.opacity=o; // crossfade into Now scaling: banners stay put, only the content changesif(o<=.001){icT0=0;icK=-1;return}
  // two media-kit pages, shown as still images; each new page fades in over the last
  const bIn=ease(seg(n,.28,.33)),cIn=ease(seg(n,.6,.65));
  crA.style.opacity=bIn>=1?0:1;crB.style.opacity=cIn>=1?0:bIn;crC.style.opacity=cIn;
@@ -1692,7 +1692,8 @@ function render(){
   h.style.opacity=o;const y=(1-o)*18*(p<(a+b)/2?1:-1);
   h.style.transform=h.classList.contains('low')?`translate(-50%,${y}px)`:`translate(-50%,calc(-50% + ${y}px))`});
  // 3 · US snapshot (builds tile by tile, then holds together)
- stIn=ease(seg(p,.676,.698));stats.style.opacity=Math.min(stIn,1-ease(seg(p,.772,.79)));
+ stats.style.opacity=0;stats.style.visibility='hidden'; // 'Now scaling' page removed from the film (19 Nov 2026): icons hold, then fade straight into the end page
+ stIn=ease(seg(p,.906,.925));
  sts.forEach((t,i)=>t.classList.toggle('on',p>.70+i*.018));
  // 4 · credentials
  const cr=0,co=0;cred.style.opacity=0;
