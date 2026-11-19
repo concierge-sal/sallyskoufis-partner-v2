@@ -922,6 +922,12 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 
 /* tab bar: whole line is clickable on desktop (19 Nov 2026) */
 @media (min-width:761px){#tabs{cursor:pointer}#tabs button.hov:not(.on){color:var(--bone)}}
+
+/* Covers & Celebrity (desktop): covers as a 6 × 2 landscape strip, centred evenly between the pull-quote and the body copy (19 Nov 2026) */
+@media (min-width:761px){#crB.g43 .crgrid{grid-template-columns:repeat(6,1fr);width:44vw}}
+
+/* every Partner Room tab scrolls if its content doesn't fit the window; still centred when it does (19 Nov 2026) */
+.pane:not(.scroll):not(.whyus):not(.disr){overflow-y:auto;overflow-x:hidden;justify-content:safe center}
 </style>
 </head>
 <body>
@@ -1727,6 +1733,16 @@ if(location.hash==='#room')toRoom();
 <script>
 /* Who She Is: flick each range picture between its two shots, staggered (18 Nov 2026) */
 (()=>{const boxes=[...document.querySelectorAll('.rph')];boxes.forEach((b,k)=>{const im=b.querySelectorAll('img');if(im.length<2)return;let i=0;setTimeout(()=>setInterval(()=>{im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},4200),k*1400)})})();
+</script>
+
+<script>
+/* Covers & Celebrity (desktop): keep the 6 × 2 covers strip centred between the quote and the body copy, sized to fit (19 Nov 2026) */
+(()=>{const B=document.getElementById('crB');if(!B)return;const k=B.querySelector('.crk'),g=B.querySelector('.crgrid'),p=B.querySelector('.crp');if(!k||!g||!p)return;
+const fit=()=>{if(innerWidth<761||!B.classList.contains('g43')){g.style.top='';g.style.width='';return}
+const top=k.offsetTop+k.offsetHeight,bot=p.offsetTop,room=bot-top,pad=Math.max(16,room*.12);
+let w=Math.min(innerWidth*.44,(room-2*pad)/0.452);g.style.width=w+'px';
+g.style.top=(top+(room-g.offsetHeight)/2)+'px'};
+addEventListener('resize',fit);addEventListener('load',fit);if(document.fonts)document.fonts.ready.then(fit);setTimeout(fit,300);fit()})();
 </script>
 </body>
 </html>
