@@ -855,6 +855,25 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
 /* Edge line: US #1 sub-line under the headline; phone splits the kicker in two (18 Nov 2026) */
 .dh .ks{font-family:var(--sans);font-size:var(--fk);letter-spacing:.32em;text-transform:uppercase;color:#cfcfd2;margin-top:.9rem}
 @media (max-width:760px){.dh .dsk{display:none}}
+/* Who She Is: flip cards — range info on the front, the piece on the back (20 Nov 2026) */
+.ranges.flips{background:none;border:0;gap:clamp(.6rem,1.2vw,1rem);align-items:stretch}
+.rng.flip{padding:0;background:none;gap:0;perspective:1800px;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+.rng.flip .fin{position:relative;display:grid;flex:1;transform-style:preserve-3d;transition:transform .85s cubic-bezier(.2,.7,.2,1)!important}
+.rng.flip.on .fin{transform:rotateY(180deg)}
+.rng.flip .ff,.rng.flip .fb{grid-area:1/1;-webkit-backface-visibility:hidden;backface-visibility:hidden;border:1px solid var(--line)}
+.rng.flip .ff{background:rgba(4,14,22,.82);padding:clamp(1rem,2vw,1.6rem);display:flex;flex-direction:column;gap:.55rem;min-height:clamp(420px,33vw,540px)}
+.rng.flip.feat .ff{background:rgba(12,32,48,.88)}
+.rng.flip .fb{transform:rotateY(180deg);position:absolute;inset:0;overflow:hidden;background:#0b0f14}
+.rng.flip .fph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.rng.flip.r-ws .fb{background:#07090c}.rng.flip.r-ws .fph{object-fit:contain;object-position:50% 0;padding:.4rem .6rem 5.4rem;box-sizing:border-box}
+.rng.flip .fcap{position:absolute;left:0;right:0;bottom:0;padding:3.2rem 1.2rem 1.1rem;display:flex;flex-direction:column;align-items:center;gap:.45rem;text-align:center;background:linear-gradient(180deg,transparent,rgba(4,10,16,.82) 55%)}
+.rng.flip .fcap span{font-size:.74rem;color:var(--white)}
+.rng.flip .fcap em,.rng.flip .fcue span{font-style:normal;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mist)}
+.rng.flip .fcue{margin-top:auto;padding-top:1.2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.rng.flip b[aria-hidden]{font-family:var(--sans);font-size:.8rem;font-weight:400;letter-spacing:0;display:inline-block;margin-left:.3rem;color:var(--bone)}
+.rng.flip:hover .fcue span,.rng.flip:focus-visible .fcue span{color:var(--bone)}
+.rng.flip .rlogo{height:2.8rem}
+@media (max-width:760px){.rng.flip .ff{min-height:84vw}.rng.flip .fcue{padding-top:.8rem;gap:.55rem}.rng.flip .rlogo{height:2.1rem}.rng.flip .ff{padding:.9rem 1rem}}
 /* Who She Is: picture under each range, flicking between two shots, logo under it; smaller ™ (18 Nov 2026) */
 .whoshe .tm{display:inline!important;font-size:.5em;vertical-align:.7em;letter-spacing:0;margin-left:.05em;line-height:0;color:inherit}
 .rpic{margin-top:auto;padding-top:1rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
@@ -1185,32 +1204,47 @@ body.v3 #splash,body.v3 #space,body.v3 #idx,body.v3 #mark,body.v3 #toRoom2,body.
       </div>
       <div class="sep"></div>
       <div class="kick" style="margin-bottom:.8rem">Discovery (XS) → signature (Core) → collector (Warrior Soul)</div>
-      <div class="ranges">
-        <div class="rng">
+      <div class="ranges flips">
+        <div class="rng flip r-xs" tabindex="0" role="button" aria-pressed="false" aria-label="XS: flip card to see the piece">
+          <div class="fin">
+          <div class="ff">
           <i>XS by SALLY SKOUFIS<span class="tm">™</span> · Discovery</i>
           <b>US$40 – US$240</b>
           <span class="role">Young, fresh, high-volume. Ear cuffs, huggies, hoops and rings built for volume and promotional moments.</span>
           <span class="row"><em>Starts at</em>XStyle Ear Cuff · US$40</span>
           <span class="row"><em>Status</em>Launching early 2027 · pricing indicative</span>
-            <div class="rpic r-xs"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_X.Slick18KGold.png?v=1774931510&width=640" alt="XS by SALLY SKOUFIS — ear stacks" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_X.SenseGrandeEarringsSilver_9bb7810d-8802-4b24-9ba6-b7ee576bb3af.png?v=1774860395&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/xs-logo-w.webp" alt=""></div>
+            <div class="fcue"><img class="rlogo" src="x/xs-logo-w.webp" alt=""><span>See the piece <b aria-hidden="true">↻</b></span></div>
+          </div>
+          <div class="fb"><img class="fph" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_-X.Sculpt-Huggie-Erarings-18k-Gold.png?v=1794408003&width=720" alt="XS by SALLY SKOUFIS — XSculpt Grande Huggie Earrings in 18k gold, worn" loading="lazy"><div class="fcap"><img class="rlogo" src="x/xs-logo-w.webp" alt=""><span>XSculpt Grande Huggie Earrings</span><em>Back to the range <b aria-hidden="true">↻</b></em></div></div>
+          </div>
         </div>
-        <div class="rng feat">
+        <div class="rng flip feat r-core" tabindex="0" role="button" aria-pressed="false" aria-label="Core: flip card to see the piece">
+          <div class="fin">
+          <div class="ff">
           <i>Core · Signature</i>
           <b>US$70 – US$1,800</b>
           <span class="role">The brand's engine. Sculptural ear cuffs and climbers that bring her in, then rings, hoops and necklaces.</span>
           <span class="row"><em>Starts at</em>Alchemy Mono Ear Cuff · US$70</span>
           <span class="row"><em>US bestseller</em>Edge Ear Cuff · Black Destiny · Hybrid Climber</span>
           <span class="chips">Includes Iconic · Queen Bee · Eclipse · Freedom · Revival · The Seeker</span>
-            <div class="rpic r-core"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY-SKOUFIS_-Gold-Edge-Ear-Cuff-and-Light-Hoop.png?v=1750235260&width=640" alt="Core — Gold Edge Ear Cuff and Light Hoop" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_-Edge-Ear-Cuff-Black-Diamond_1.png?v=1782203768&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/logo-w.webp" alt=""></div>
+            <div class="fcue"><img class="rlogo" src="x/logo-w.webp" alt=""><span>See the piece <b aria-hidden="true">↻</b></span></div>
+          </div>
+          <div class="fb"><img class="fph" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS_-Edge-Ear-Cuff-White-Diamond-Black-Rhodium.png?v=1782202652&width=720" alt="Core — Edge Ear Cuff stack, white diamonds in black rhodium, worn" loading="lazy"><div class="fcap"><img class="rlogo" src="x/logo-w.webp" alt=""><span>Edge Ear Cuff · white diamonds in black rhodium</span><em>Back to the range <b aria-hidden="true">↻</b></em></div></div>
+          </div>
         </div>
-        <div class="rng">
+        <div class="rng flip r-ws" tabindex="0" role="button" aria-pressed="false" aria-label="Warrior Soul: flip card to see the piece">
+          <div class="fin">
+          <div class="ff">
           <i>Warrior Soul · Collector</i>
           <b>US$120 – US$3,500</b>
           <span class="role">The collector's world. Black diamonds, palm cuffs, statement rings, the Warrior Headpiece.</span>
           <span class="row"><em>Starts at</em>Urge Ear Cuff · US$120</span>
           <span class="row"><em>US bestseller</em>Nourish Necklace · natural black diamond &amp; labradorite</span>
           <span class="row"><em>Signature</em>Black Diamond Signature Series · US$350 – US$1,200</span>
-            <div class="rpic r-ws"><div class="rph"><img class="on" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLY-SKOUFIS_-Light-Earrings-Black-in-Platinum_49e43a79-6d2b-4b54-a36a-c6af7bb8a2a7.png?v=1749708365&width=640" alt="Warrior Soul — Light Earrings, natural black diamond, on the ear" loading="lazy"><img class="prod" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS-LIGHT_EARRINGS_Black_Diamonds_in_Platinum_991e182b-c643-47e3-b352-86a34237ffbb.png?v=1749708365&width=640" alt="" loading="lazy"></div><img class="rlogo" src="x/logo-w.webp" alt=""></div>
+            <div class="fcue"><img class="rlogo" src="x/logo-w.webp" alt=""><span>See the piece <b aria-hidden="true">↻</b></span></div>
+          </div>
+          <div class="fb"><img class="fph" src="https://cdn.shopify.com/s/files/1/0836/8458/9859/files/SALLYSKOUFIS-LIGHT_EARRINGS_Black_Diamonds_in_Platinum_991e182b-c643-47e3-b352-86a34237ffbb.png?v=1749708365&width=720" alt="Warrior Soul — Light Earrings, black diamonds in platinum" loading="lazy"><div class="fcap"><img class="rlogo" src="x/logo-w.webp" alt=""><span>Light Earrings · black diamonds in platinum</span><em>Back to the range <b aria-hidden="true">↻</b></em></div></div>
+          </div>
         </div>
       </div>
       <div class="src">Core &amp; Warrior Soul: US retail prices as listed for the US market on <a href="https://sallyskoufis.com" target="_blank" rel="noopener">sallyskoufis.com</a>, 6 Nov 2026 · XS: indicative US prices, not yet live</div>
@@ -1732,6 +1766,13 @@ if(location.hash==='#room')toRoom();
 </script>
 
 <script>
+/* Who She Is: flip cards — hover flips on desktop, tap or Enter flips anywhere (20 Nov 2026) */
+(()=>{document.querySelectorAll('.rng.flip').forEach(c=>{let mouse=false;const set=v=>{c.classList.toggle('on',v);c.setAttribute('aria-pressed',v)};
+c.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'){mouse=true;set(true)}});
+c.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse'){set(false)}});
+c.addEventListener('pointerdown',e=>{mouse=e.pointerType==='mouse'});
+c.addEventListener('click',()=>{if(!mouse)set(!c.classList.contains('on'))});
+c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();set(!c.classList.contains('on'))}})})})();
 /* Who She Is: flick each range picture between its two shots, staggered (18 Nov 2026) */
 (()=>{const boxes=[...document.querySelectorAll('.rph')];boxes.forEach((b,k)=>{const im=b.querySelectorAll('img');if(im.length<2)return;let i=0;setTimeout(()=>setInterval(()=>{im[i].classList.remove('on');i=(i+1)%im.length;im[i].classList.add('on')},4200),k*1400)})})();
 </script>
